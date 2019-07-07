@@ -7,7 +7,10 @@ Should be cloned to your home directory, then run the install script, that will 
 
 Uses the Vundle package manager.
 
-Update plugins by running: nvim +PluginInstall +PluginUpdate +UpdateRemotePlugins +qa
+Update plugins by running: 
+```bash
+nvim +PluginInstall +PluginUpdate +UpdateRemotePlugins +qa
+```
 
 # Screenshot:
 ![Screenshot](screenshot.png)
