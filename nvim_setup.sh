@@ -12,7 +12,7 @@ mkdir ~/.config/nvim
 echo -e 'symlink init.vim'
 ln -sv ~/neovim-config/init.vim ~/.config/nvim/init.vim
 
-echo -e '\ncloning Vundle Package Manager ...'
+echo -e '\nCloning Vundle Package Manager ...'
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 echo -e '\nInstalling plugins using vundle ... (Press enter if primpted)'
