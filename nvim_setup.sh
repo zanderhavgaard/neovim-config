@@ -15,7 +15,7 @@ ln -sv ~/neovim-config/init.vim ~/.config/nvim/init.vim
 echo -e '\nCloning Vundle Package Manager ...'
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-echo -e '\nInstalling plugins using vundle ... (Press enter if primpted)'
+echo -e '\nInstalling plugins using vundle ... (Press enter if prompted)'
 nvim +PluginInstall +UpdateRemotePlugins +qa
 
 echo -e '\nDone setting up NeoVim.'
