@@ -24,6 +24,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 " ===== plugins =====
 
+" trying out defx
+" Plugin 'Shougo/defx.nvim'
+
 " VimFiler file explorer and unite dependency
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimfiler'
@@ -31,6 +34,9 @@ Plugin 'Shougo/vimfiler'
 " nerdtree file explorer
 " Plugin 'scrooloose/nerdtree'
 " Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+" add icons to stuff
+Plugin 'ryanoasis/vim-devicons'
 
 " starting splash screen with sessions
 Plugin 'mhinz/vim-startify'
@@ -88,6 +94,9 @@ Plugin 'vim-airline/vim-airline-themes'
 
 " show colorcodes as background
 Plugin 'chrisbra/Colorizer'
+
+" color math parentheses in scope
+Plugin 'luochen1990/rainbow'
 
 " better python syntax highlighting
 Plugin 'kh3phr3n/python-syntax'
@@ -193,6 +202,9 @@ let g:airline_powerline_fonts = 1
 " use utf-8
 set encoding=utf-8
 
+" enable rainbow parentheses
+let g:rainbow_active = 1
+
 " syntastic settings
 " for more settings :help syntastic
 set statusline+=%#warningmsg#
@@ -226,7 +238,21 @@ let g:NERDSpaceDelims = 1
 " Use compact syntax for prettified multi-line comments
 let g:NERDCompactSexyComs = 1
 
-" nerdtree
+" better python highlighting, enable all features
+let python_highlight_all = 1
+
+" ===== VimFiler Settings =====
+
+" Set VimFiler as default file manager
+let g:vimfiler_as_default_explorer = 1
+
+" set some icons
+let g:vimfiler_tree_leaf_icon = '|'
+let g:vimfiler_tree_opened_icon = '▾'
+let g:vimfiler_tree_closed_icon = '▸'
+let g:vimfiler_marked_file_icon = '✓'
+
+" ===== NerdTree Settings =====
 
 " start automatically
 "autocmd vimenter * NERDTree
@@ -236,23 +262,29 @@ let g:NERDCompactSexyComs = 1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " if nerdtree is the only buffer, close the vim window
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " style arrows
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+" let g:NERDTreeDirArrowExpandable = '▸'
+" let g:NERDTreeDirArrowCollapsible = '▾'
 
 " make ui nicer
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-
-" better python highlighting, enable all features
-let python_highlight_all = 1
+" let NERDTreeMinimalUI = 1
+" let NERDTreeDirArrows = 1
 
 " ===== Custom Keybindings =====
 
 " set the <Leader> var
 let mapleader = " "
+
+" Toggle nerdtree
+" map <Leader>f :NERDTreeToggle<CR>
+
+" Toggle VimFilerExplorer
+map <Leader>f :VimFilerExplorer<CR>
+
+" Open new file in current buffer
+map <Leader>g :VimFiler<CR>
 
 " switch buffers
 nnoremap <C-J> <C-W><C-J>
@@ -270,11 +302,9 @@ map <A-Left> gT
 nnoremap <silent> <C-A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <C-A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 
-" Toggle nerdtree
-map <Leader>f :NERDTreeToggle<CR>
-
 " remove highlighting
 nnoremap <Leader><space> :let @/=""<CR>
 
 " close syntastic
 map <Leader>l :lclose<CR>
+
