@@ -25,12 +25,12 @@ Plugin 'VundleVim/Vundle.vim'
 " ===== plugins =====
 
 " VimFiler file explorer and unite dependency
-"Plugin 'Shougo/unite.vim'
-"Plugin 'Shougo/vimfiler'
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimfiler'
 
 " nerdtree file explorer
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+" Plugin 'scrooloose/nerdtree'
+" Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " starting splash screen with sessions
 Plugin 'mhinz/vim-startify'
@@ -99,6 +99,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'jacoborus/tender.vim'
 Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'mr-ubik/vim-hackerman-syntax'
+Plugin 'drewtempelmeyer/palenight.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -106,22 +107,29 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" ===== Custom settings =====
+" ===== Colorscheme =====
 
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
-colorscheme onedark
+" colorscheme onedark
 " colorscheme solarized
 " colorscheme tender
 " colorscheme hybrid_material
 " colorscheme hybrid_reverse
 " colorscheme hackerman
+colorscheme palenight
+
+" choose an airline theme, or comment all out to use one 
+" from colorscheme if available
+let g:airline_theme='deus'
+" let g:airline_theme='base16'
+
+
+" transparent background
+au ColorScheme * hi Normal ctermbg=none guibg=none
 
 " use dark background
 set background=dark
-
-" highlight current line
-set cursorline
 
 " return to terminal's own cursor setting on exit, by not changing cursor settings at all..
 " set guicursor=
@@ -129,11 +137,33 @@ set cursorline
 " enable syntax highlightinh
 syntax on
 
+" ===== Colorscheme specific configs =====
+
+" Italics for palenight
+let g:palenight_terminal_italics=1
+
+" ===== Custom settings =====
+
+" highlight current line
+set cursorline
+
 " enable line numbers 
 set number
 
 " enable relative line numbers
 set relativenumber
+
+" faster scrolling
+set lazyredraw
+
+" show current command
+set showcmd
+
+" show current mode
+set showmode
+
+" highlight matching braces
+set showmatch
 
 " not exactly sure what wrapmargin does
 " set wrapmargin=8
