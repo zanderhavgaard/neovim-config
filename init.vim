@@ -275,3 +275,6 @@ map <Leader>f :NERDTreeToggle<CR>
 
 " remove highlighting
 nnoremap <Leader><space> :let @/=""<CR>
+
+" close syntastic
+map <Leader>l :lclose<CR>
