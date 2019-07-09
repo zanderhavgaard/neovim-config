@@ -308,3 +308,8 @@ nnoremap <Leader><space> :let @/=""<CR>
 " close syntastic
 map <Leader>l :lclose<CR>
 
+" Colorize
+map <Leader>h :ColorHighlight<CR>
+" Clear colorize
+map <Leader>j :ColorClear<CR>
+
