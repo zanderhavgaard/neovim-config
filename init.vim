@@ -177,6 +177,11 @@ set showmatch
 " not exactly sure what wrapmargin does
 " set wrapmargin=8
 
+" configure tab indents
+set tabstop=4
+set softtabstop=0 noexpandtab
+set shiftwidth=4
+
 " enable bold fonts:
 let g:enable_bold_font = 1
 
