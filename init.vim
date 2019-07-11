@@ -211,6 +211,8 @@ set encoding=utf-8
 let g:rainbow_active = 1
 
 " syntastic settings
+" allow more than one linter at the same time
+let g:syntastic_aggregate_errors = 1
 " for more settings :help syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
