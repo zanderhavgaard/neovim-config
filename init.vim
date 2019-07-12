@@ -134,16 +134,16 @@ let ayucolor="dark"   " for dark version of theme
 " colorscheme onedark
 " colorscheme solarized
 " colorscheme hybrid_material
-" colorscheme hybrid_reverse
+colorscheme hybrid_reverse
 " colorscheme hackerman
 " colorscheme palenight
 " colorscheme ayu
-colorscheme OceanicNext
+" colorscheme OceanicNext
 
 " choose an airline theme, or comment all out to use one 
 " from colorscheme if available
-let g:airline_theme='deus'
-" let g:airline_theme='base16'
+" let g:airline_theme='deus'
+let g:airline_theme='base16'
 
 
 " transparent background
