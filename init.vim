@@ -105,12 +105,11 @@ Plugin 'kh3phr3n/python-syntax'
 Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'mr-ubik/vim-hackerman-syntax'
 Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'ayu-theme/ayu-vim'
 Plugin 'mhartington/oceanic-next'
-Plugin 'dikiaap/minimalist'
+Plugin 'srcery-colors/srcery-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -134,13 +133,11 @@ let ayucolor="dark"   " for dark version of theme
 " colorscheme gruvbox
 " colorscheme onedark
 " colorscheme solarized
-" colorscheme hybrid_material
-" colorscheme hybrid_reverse
 " colorscheme hackerman
-colorscheme palenight
+" colorscheme palenight
 " colorscheme ayu
 " colorscheme OceanicNext
-" colorscheme minimalist
+colorscheme srcery
 
 " choose an airline theme, or comment all out to use one 
 " from colorscheme if available
