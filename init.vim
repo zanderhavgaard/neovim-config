@@ -110,6 +110,7 @@ Plugin 'mr-ubik/vim-hackerman-syntax'
 Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'ayu-theme/ayu-vim'
 Plugin 'mhartington/oceanic-next'
+Plugin 'dikiaap/minimalist'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -134,16 +135,17 @@ let ayucolor="dark"   " for dark version of theme
 " colorscheme onedark
 " colorscheme solarized
 " colorscheme hybrid_material
-colorscheme hybrid_reverse
+" colorscheme hybrid_reverse
 " colorscheme hackerman
-" colorscheme palenight
+colorscheme palenight
 " colorscheme ayu
 " colorscheme OceanicNext
+" colorscheme minimalist
 
 " choose an airline theme, or comment all out to use one 
 " from colorscheme if available
-" let g:airline_theme='deus'
-let g:airline_theme='base16'
+let g:airline_theme='deus'
+" et g:airline_theme='base16'
 
 
 " transparent background
