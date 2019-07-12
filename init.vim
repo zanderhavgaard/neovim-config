@@ -105,10 +105,11 @@ Plugin 'kh3phr3n/python-syntax'
 Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'jacoborus/tender.vim'
 Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'mr-ubik/vim-hackerman-syntax'
 Plugin 'drewtempelmeyer/palenight.vim'
+Plugin 'ayu-theme/ayu-vim'
+Plugin 'mhartington/oceanic-next'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -116,17 +117,28 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" ===== Colorscheme specific configs =====
+
+" Italics for palenight
+let g:palenight_terminal_italics=1
+
+" choose ayu version
+" let ayucolor="light"  " for light version of theme
+" let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+
 " ===== Colorscheme =====
 
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
 " colorscheme onedark
 " colorscheme solarized
-" colorscheme tender
 " colorscheme hybrid_material
 " colorscheme hybrid_reverse
 " colorscheme hackerman
-colorscheme palenight
+" colorscheme palenight
+" colorscheme ayu
+colorscheme OceanicNext
 
 " choose an airline theme, or comment all out to use one 
 " from colorscheme if available
@@ -145,11 +157,6 @@ set background=dark
 
 " enable syntax highlightinh
 syntax on
-
-" ===== Colorscheme specific configs =====
-
-" Italics for palenight
-let g:palenight_terminal_italics=1
 
 " ===== Custom settings =====
 
