@@ -131,13 +131,13 @@ let ayucolor="dark"   " for dark version of theme
 
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
-" colorscheme onedark
+colorscheme onedark
 " colorscheme solarized
 " colorscheme hackerman
 " colorscheme palenight
 " colorscheme ayu
 " colorscheme OceanicNext
-colorscheme srcery
+" colorscheme srcery
 
 " choose an airline theme, or comment all out to use one 
 " from colorscheme if available
