@@ -265,6 +265,9 @@ let g:vimfiler_tree_opened_icon = '▾'
 let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_marked_file_icon = '✓'
 
+" show hidden files
+let g:vimfiler_ignore_pattern = '^\%(\.git\|\.DS_Store\)$'
+
 " ===== NerdTree Settings =====
 
 " start automatically
