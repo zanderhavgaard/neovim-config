@@ -213,6 +213,10 @@ let g:airline_powerline_fonts = 1
 " use utf-8
 set encoding=utf-8
 
+" do not start indenLine for .md files, since it hides some text, by setting
+" :set conceallevel=2
+autocmd FileType markdown let g:indentLine_enabled=0
+
 " enable rainbow parentheses
 let g:rainbow_active = 1
 
