@@ -101,6 +101,9 @@ Plugin 'luochen1990/rainbow'
 " better python syntax highlighting
 Plugin 'kh3phr3n/python-syntax'
 
+" cycle colorschems
+Plugin 'vim-scripts/CycleColor'
+
 " ===== colorschemes =====
 Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
@@ -110,6 +113,7 @@ Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'ayu-theme/ayu-vim'
 Plugin 'mhartington/oceanic-next'
 Plugin 'srcery-colors/srcery-vim'
+Plugin 'dracula/vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -131,17 +135,18 @@ let ayucolor="dark"   " for dark version of theme
 
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
-colorscheme onedark
+" colorscheme onedark
 " colorscheme solarized
 " colorscheme hackerman
 " colorscheme palenight
 " colorscheme ayu
 " colorscheme OceanicNext
 " colorscheme srcery
+colorscheme dracula
 
 " choose an airline theme, or comment all out to use one 
 " from colorscheme if available
-let g:airline_theme='deus'
+" let g:airline_theme='deus'
 " et g:airline_theme='base16'
 
 
@@ -204,6 +209,14 @@ endif
 " airline configuartion
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+" let g:airline_left_sep=''
+" let g:airline_right_sep=''
+" let g:airline_left_sep=' '
+" let g:airline_right_sep=' '
+" let g:airline_left_sep=' '
+" let g:airline_right_sep=' '
+" let g:airline_left_sep=''
+" let g:airline_right_sep=''
 " enable tabline extension
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
