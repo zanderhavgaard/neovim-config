@@ -114,6 +114,7 @@ Plugin 'ayu-theme/ayu-vim'
 Plugin 'mhartington/oceanic-next'
 Plugin 'srcery-colors/srcery-vim'
 Plugin 'dracula/vim'
+Plugin 'chriskempson/base16-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -131,6 +132,9 @@ let g:palenight_terminal_italics=1
 " let ayucolor="mirage" " for mirage version of theme
 let ayucolor="dark"   " for dark version of theme
 
+" base16 correct colors
+let base16colorspace=256 
+
 " ===== Colorscheme =====
 
 " set colorscheme, only use one (duh)
@@ -142,7 +146,8 @@ let ayucolor="dark"   " for dark version of theme
 " colorscheme ayu
 " colorscheme OceanicNext
 " colorscheme srcery
-colorscheme dracula
+" colorscheme dracula
+colorscheme base16-default-dark
 
 " choose an airline theme, or comment all out to use one 
 " from colorscheme if available
