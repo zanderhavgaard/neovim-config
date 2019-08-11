@@ -101,6 +101,9 @@ Plugin 'luochen1990/rainbow'
 " better python syntax highlighting
 Plugin 'kh3phr3n/python-syntax'
 
+" docker files syntax
+Plugin 'ekalinin/Dockerfile.vim'
+
 " cycle colorschems
 Plugin 'vim-scripts/CycleColor'
 
