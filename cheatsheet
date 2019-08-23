@@ -5,6 +5,20 @@ https://vim.rtorr.com/
 
 General:
 
+u - undo
+ctrl-r - undo undo
+
+gg - goto first line
+G - goto last line
+
+move up/down a half screen
+ctrl-u
+ctrl-d
+
+move up/down a whole screen
+ctrl-b
+ctrl-f
+
 nerdcommenter:
 <Leader>c<space> - toggle selected text as line comment
 <Leader>cs - block comment selection
