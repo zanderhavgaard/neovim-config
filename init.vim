@@ -207,6 +207,12 @@ let g:enable_bold_font = 1
 " enable italics
 let g:enable_italic_font = 1
 
+" ignore case when searching
+set ignorecase
+
+" move cursor to nearest match while typing
+set incsearch
+
 " use 24bit color if available
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"

@@ -19,6 +19,24 @@ move up/down a whole screen
 ctrl-b
 ctrl-f
 
+searching:
+
+/<search-term>
+n - next
+N - previous
+ggn - first match in file
+GN - last match in file
+
+* - in normal mode search forward for word at caret
+g* - partially match words as well
+# - in normal mode search nackwards for word at caret
+g# partially match words as well
+
+/ ctrl-r ctrl-w - open search bar and copy word at caret into search term
+/ arrow-up/down - scroll search history
+
+ctrl-o - go back to position @ before searching
+
 nerdcommenter:
 <Leader>c<space> - toggle selected text as line comment
 <Leader>cs - block comment selection
