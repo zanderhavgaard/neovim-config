@@ -19,6 +19,10 @@ move up/down a whole screen
 ctrl-b
 ctrl-f
 
+Move screen view, but leave cursor
+ctrl-e - move view up
+ctrl-y - move vier down
+
 searching:
 
 /<search-term>
