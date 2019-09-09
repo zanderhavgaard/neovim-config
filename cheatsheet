@@ -44,6 +44,8 @@ search-replace:
 :&/foo/bar/g - replace all 'foo' with 'bar', only current line
 (you can also use ctrl-r ctrl-w to copy current word to search bar)
 
+syntastic:
+<Leader>l - close syntastic
 
 nerdcommenter:
 <Leader>c<space> - toggle selected text as line comment
