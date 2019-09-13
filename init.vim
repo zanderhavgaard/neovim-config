@@ -1,4 +1,4 @@
-"   _  _       __   ___        
+"  _  _       __   ___        
 " | \| |___ __\ \ / (_)_ __   
 " | .` / -_) _ \ V /| | '  \  
 " |_|\_\___\___/\_/ |_|_|_|_| 
@@ -55,7 +55,10 @@ Plugin 'moll/vim-bbye'
 
 " syntax checking / linting, requires external tools for specific languages,
 " see :help syntactic-checkers
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'vim-syntastic/syntastic'
+
+" Asynchronous linting
+Plugin 'dense-analysis/ale'
 
 " git gutter
 Plugin 'airblade/vim-gitgutter'
@@ -247,21 +250,27 @@ autocmd FileType markdown let g:indentLine_enabled=0
 " enable rainbow parentheses
 let g:rainbow_active = 1
 
+" ALE settings
+let g:ale_linters = {
+  \ 'python': ['flake8'],
+  \ 'java': ['javac'],
+  \ 'scala': ['scalac']}
+
 " syntastic settings
 " allow more than one linter at the same time
-let g:syntastic_aggregate_errors = 1
+" let g:syntastic_aggregate_errors = 1
 " for more settings :help syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 " syntastic flake8 for python configuartion:
 " ignore these error codes:
-let g:syntastic_python_flake8_post_args='--ignore=E501,E402,E303,E302,E301,E231,E225,E123,F401,W391'
+" let g:syntastic_python_flake8_post_args='--ignore=E501,E402,E303,E302,E301,E231,E225,E123,F401,W391'
 
 " draw indent guides for tab-indented code
 set listchars=tab:\|\ 
