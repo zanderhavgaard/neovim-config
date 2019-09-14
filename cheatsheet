@@ -23,6 +23,11 @@ Move screen view, but leave cursor
 ctrl-e - move view up
 ctrl-y - move vier down
 
+Indent lines:
+< - one tab back
+> - one tab forward
+= on a visual selection will attempt to auto inden
+
 searching:
 
 /<search-term>
