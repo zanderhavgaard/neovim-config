@@ -48,6 +48,16 @@ search-replace:
 :&/foo/bar/g - replace all 'foo' with 'bar', only current line
 (you can also use ctrl-r ctrl-w to copy current word to search bar)
 
+multiple cursors:
+multi_cursor_start_word_key      = '<C-n>'
+multi_cursor_select_all_word_key = '<A-n>'
+multi_cursor_start_key           = 'g<C-n>'
+multi_cursor_select_all_key      = 'g<A-n>'
+multi_cursor_next_key            = '<C-n>'
+multi_cursor_prev_key            = '<C-p>'
+multi_cursor_skip_key            = '<C-x>'
+multi_cursor_quit_key            = '<Esc>'
+
 syntastic:
 <Leader>l - close syntastic
 
