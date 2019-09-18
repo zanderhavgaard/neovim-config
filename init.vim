@@ -348,8 +348,10 @@ let mapleader = " "
 map <Leader>f :VimFilerExplorer<CR>
 
 " Open new file in current buffer
-" map <Leader>g :VimFiler<CR>
-map <Leader>g :Files<CR>
+map <Leader>g :VimFiler<CR>
+
+" open new file in current buffer with fzf
+map <Leader>d :Files<CR>
 
 " switch buffers
 nnoremap <C-J> <C-W><C-J>
