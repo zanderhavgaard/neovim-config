@@ -261,7 +261,8 @@ let g:rainbow_active = 1
 let g:ale_linters = {
   \ 'python': ['flake8'],
   \ 'java': ['javac'],
-  \ 'scala': ['scalac']}
+  \ 'scala': ['scalac'],
+  \ 'cpp': ['gcc']}
 
 " syntastic settings
 " allow more than one linter at the same time
