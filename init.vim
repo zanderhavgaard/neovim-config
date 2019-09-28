@@ -261,7 +261,7 @@ let g:rainbow_active = 1
 let g:ale_linters = {
   \ 'python': ['flake8'],
   \ 'java': ['javac'],
-  \ 'scala': ['scalac'],
+  \ 'scala': ['scalac', 'sbtserver'],
   \ 'cpp': ['gcc']}
 
 " syntastic settings
