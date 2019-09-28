@@ -12,6 +12,10 @@ mkdir ~/.config/nvim
 echo -e 'symlink init.vim'
 ln -sv ~/neovim-config/init.vim ~/.config/nvim/init.vim
 
+echo -e 'symlinking syntax dirs'
+ln -sv /home/$USER/neovim-config/syntax /home/$USER/.config/nvim
+ln -sv /home/$USER/neovim-config/after /home/$USER/.config/nvim
+
 echo -e '\nCloning Vundle Package Manager ...'
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
