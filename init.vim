@@ -155,16 +155,16 @@ let base16colorspace=256
 " colorscheme onedark
 " colorscheme solarized
 " colorscheme hackerman
-colorscheme palenight
+" colorscheme palenight
 " colorscheme ayu
 " colorscheme OceanicNext
 " colorscheme srcery
-" colorscheme dracula
+colorscheme dracula
 " colorscheme base16-default-dark
 
 " choose an airline theme, or comment all out to use one 
 " from colorscheme if available
-let g:airline_theme='deus'
+" let g:airline_theme='deus'
 " et g:airline_theme='base16'
 
 
