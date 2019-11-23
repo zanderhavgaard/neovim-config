@@ -169,7 +169,7 @@ colorscheme dracula
 
 
 " transparent background
-au ColorScheme * hi Normal ctermbg=none guibg=none
+" au ColorScheme * hi Normal ctermbg=none guibg=none
 
 " use dark background
 set background=dark
@@ -229,6 +229,9 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+
+" auto save files on window focus loss
+:au FocusLost * :wa
 
 " airline configuartion
 let g:airline_left_sep=''
