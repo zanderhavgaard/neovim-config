@@ -152,14 +152,14 @@ let base16colorspace=256
 
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
-" colorscheme onedark
+colorscheme onedark
 " colorscheme solarized
 " colorscheme hackerman
 " colorscheme palenight
 " colorscheme ayu
 " colorscheme OceanicNext
 " colorscheme srcery
-colorscheme dracula
+" colorscheme dracula
 " colorscheme base16-default-dark
 
 " choose an airline theme, or comment all out to use one 
