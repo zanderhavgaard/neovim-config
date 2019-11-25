@@ -242,11 +242,8 @@ let g:airline_right_sep=''
 " let g:airline_right_sep=' '
 " let g:airline_left_sep=' '
 " let g:airline_right_sep=' '
-" let g:airline_left_sep=''
-" let g:airline_right_sep=''
 " enable tabline extension
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ''
 " enale powerline fonts
 let g:airline_powerline_fonts = 1
 
@@ -359,13 +356,13 @@ let mapleader = " "
 " map <Leader>f :NERDTreeToggle<CR>
 
 " Toggle VimFilerExplorer
-map <Leader>f :VimFilerExplorer<CR>
+map <Leader>m :VimFilerExplorer<CR>
 
 " Open new file in current buffer
-map <Leader>g :VimFiler<CR>
+map <Leader>n :VimFiler<CR>
 
 " open new file in current buffer with fzf
-map <Leader>d :Files<CR>
+map <Leader>n :Files<CR>
 
 " switch buffers
 nnoremap <C-J> <C-W><C-J>
