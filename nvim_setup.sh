@@ -12,6 +12,9 @@ mkdir ~/.config/nvim
 echo -e 'symlink init.vim'
 ln -sv ~/neovim-config/init.vim ~/.config/nvim/init.vim
 
+echo -e 'symlink ginit.vim'
+ln -sv ~/neovim-config/ginit.vim ~/.config/nvim/ginit.vim
+
 echo -e 'symlinking syntax dirs'
 ln -sv /home/$USER/neovim-config/syntax /home/$USER/.config/nvim
 ln -sv /home/$USER/neovim-config/after /home/$USER/.config/nvim
