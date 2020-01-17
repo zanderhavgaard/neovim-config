@@ -24,16 +24,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 " ===== plugins =====
 
-" trying out defx
-" Plugin 'Shougo/defx.nvim'
-
 " VimFiler file explorer and unite dependency
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimfiler'
-
-" nerdtree file explorer
-" Plugin 'scrooloose/nerdtree'
-" Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " fzf for vim
 set rtp+=/usr/bin/fzf
@@ -56,10 +49,6 @@ Plugin 'tpope/vim-sensible'
 
 " do not change layout when closing buffers
 Plugin 'moll/vim-bbye'
-
-" syntax checking / linting, requires external tools for specific languages,
-" see :help syntactic-checkers
-" Plugin 'vim-syntastic/syntastic'
 
 " Asynchronous linting
 Plugin 'dense-analysis/ale'
@@ -231,26 +220,17 @@ let g:rainbow_active = 1
 
 " ALE settings
 let g:ale_linters = {
-  \ 'python': ['flake8'],
-  \ 'java': ['javac'],
-  \ 'scala': ['scalac', 'sbtserver'],
-  \ 'cpp': ['gcc']}
-
-" syntastic settings
-" allow more than one linter at the same time
-" let g:syntastic_aggregate_errors = 1
-" for more settings :help syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
+  \ 'python':['flake8'],
+  \ 'java'  :['javac'],
+  \ 'scala' :['scalac', 'sbtserver'],
+  \ 'yaml'  :['yamllint'],
+  \ 'sh'    :['shellcheck'],
+  \ 'cpp'   :['gcc']}
 
 " syntastic flake8 for python configuartion:
 " ignore these error codes:
 " let g:syntastic_python_flake8_post_args='--ignore=E501,E402,E303,E302,E301,E231,E225,E123,F401,W391'
+" TODO adapt for ALE
 
 " draw indent guides for tab-indented code
 set listchars=tab:\|\ 
