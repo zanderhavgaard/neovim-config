@@ -120,14 +120,7 @@ Plugin 'vim-scripts/CycleColor'
 " ===== colorschemes =====
 Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'mr-ubik/vim-hackerman-syntax'
-Plugin 'drewtempelmeyer/palenight.vim'
-Plugin 'ayu-theme/ayu-vim'
-Plugin 'mhartington/oceanic-next'
-Plugin 'srcery-colors/srcery-vim'
 Plugin 'dracula/vim'
-Plugin 'chriskempson/base16-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -140,32 +133,16 @@ filetype plugin indent on    " required
 " Italics for palenight
 let g:palenight_terminal_italics=1
 
-" choose ayu version
-" let ayucolor="light"  " for light version of theme
-" let ayucolor="mirage" " for mirage version of theme
-let ayucolor="dark"   " for dark version of theme
-
-" base16 correct colors
-let base16colorspace=256 
-
 " ===== Colorscheme =====
 
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
 colorscheme onedark
-" colorscheme solarized
-" colorscheme hackerman
-" colorscheme palenight
-" colorscheme ayu
-" colorscheme OceanicNext
-" colorscheme srcery
 " colorscheme dracula
-" colorscheme base16-default-dark
 
-" choose an airline theme, or comment all out to use one 
-" from colorscheme if available
+" choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme='deus'
-" et g:airline_theme='base16'
+" let g:airline_theme='base16'
 
 
 " transparent background
@@ -204,6 +181,7 @@ set showmode
 set showmatch
 
 " not exactly sure what wrapmargin does
+" TODO ?
 " set wrapmargin=8
 
 " configure tab indents
@@ -236,12 +214,6 @@ endif
 " airline configuartion
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-" let g:airline_left_sep=''
-" let g:airline_right_sep=''
-" let g:airline_left_sep=' '
-" let g:airline_right_sep=' '
-" let g:airline_left_sep=' '
-" let g:airline_right_sep=' '
 " enable tabline extension
 let g:airline#extensions#tabline#enabled = 1
 " enale powerline fonts
@@ -313,7 +285,7 @@ let g:vimfiler_tree_opened_icon = '▾'
 let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_marked_file_icon = '✓'
 
-" show hidden files
+" ignore some files
 let g:vimfiler_ignore_pattern = '^\%(\.git\|\.DS_Store\)$'
 
 " ===== NerdTree Settings =====
@@ -339,10 +311,6 @@ let g:vimfiler_ignore_pattern = '^\%(\.git\|\.DS_Store\)$'
 " ===== try to improve java syntax highlighting =====
 let java_highlight_functions = 1
 let java_highlight_all = 1
-" If you are trying this at runtime, you need to reload the syntax file
-set filetype=java
-
-" Some more highlights, in addition to those suggested by cmcginty
 highlight link javaScopeDecl Statement
 highlight link javaType Type
 highlight link javaDocTags PreProc
@@ -358,8 +326,8 @@ let mapleader = " "
 " Toggle VimFilerExplorer
 map <Leader>m :VimFilerExplorer<CR>
 
-" Open new file in current buffer
-map <Leader>n :VimFiler<CR>
+" Open new file in current buffer with vimfiler
+" map <Leader>n :VimFiler<CR>
 
 " open new file in current buffer with fzf
 map <Leader>n :Files<CR>
@@ -371,6 +339,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " resize buffers - dont work...
+" TODO fix
 "nnoremap <S-C-J> <C-W><+>
 "nnoremap <S-C-K> <C-W><->
 
