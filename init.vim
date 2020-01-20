@@ -25,8 +25,13 @@ Plugin 'VundleVim/Vundle.vim'
 " ===== plugins =====
 
 " VimFiler file explorer and unite dependency
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/vimfiler'
+" Plugin 'Shougo/unite.vim'
+" Plugin 'Shougo/vimfiler'
+
+" visual file browser
+Plugin 'preservim/nerdtree'
+" git integration for nerd tree
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " fzf for vim
 set rtp+=/usr/bin/fzf
@@ -104,7 +109,7 @@ Plugin 'kh3phr3n/python-syntax'
 Plugin 'ekalinin/Dockerfile.vim'
 
 " cycle colorschems
-Plugin 'vim-scripts/CycleColor'
+" Plugin 'vim-scripts/CycleColor'
 
 " ===== colorschemes =====
 Plugin 'morhetz/gruvbox'
@@ -200,6 +205,9 @@ endif
 " auto save files on window focus loss
 :au FocusLost * :wa
 
+" decrease update time such git gutter works faster
+set updatetime=100
+
 " airline configuartion
 let g:airline_left_sep=''
 let g:airline_right_sep=''
@@ -257,36 +265,36 @@ let python_highlight_all = 1
 " ===== VimFiler Settings =====
 
 " Set VimFiler as default file manager
-let g:vimfiler_as_default_explorer = 1
+" let g:vimfiler_as_default_explorer = 1
 
 " set some icons
-let g:vimfiler_tree_leaf_icon = '|'
-let g:vimfiler_tree_opened_icon = '▾'
-let g:vimfiler_tree_closed_icon = '▸'
-let g:vimfiler_marked_file_icon = '✓'
+" let g:vimfiler_tree_leaf_icon = '|'
+" let g:vimfiler_tree_opened_icon = '▾'
+" let g:vimfiler_tree_closed_icon = '▸'
+" let g:vimfiler_marked_file_icon = '✓'
 
 " ignore some files
-let g:vimfiler_ignore_pattern = '^\%(\.git\|\.DS_Store\)$'
+" let g:vimfiler_ignore_pattern = '^\%(\.git\|\.DS_Store\)$'
 
 " ===== NerdTree Settings =====
 
 " start automatically
-"autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 
 " start automatically when no file is given as argument
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " if nerdtree is the only buffer, close the vim window
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " style arrows
-" let g:NERDTreeDirArrowExpandable = '▸'
-" let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 " make ui nicer
-" let NERDTreeMinimalUI = 1
-" let NERDTreeDirArrows = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 
 " ===== try to improve java syntax highlighting =====
 let java_highlight_functions = 1
@@ -301,10 +309,10 @@ highlight link javaDocTags PreProc
 let mapleader = " "
 
 " Toggle nerdtree
-" map <Leader>f :NERDTreeToggle<CR>
+map <Leader>m :NERDTreeToggle<CR>
 
 " Toggle VimFilerExplorer
-map <Leader>m :VimFilerExplorer<CR>
+" map <Leader>m :VimFilerExplorer<CR>
 
 " Open new file in current buffer with vimfiler
 " map <Leader>n :VimFiler<CR>
@@ -346,13 +354,13 @@ map <Leader>j :ColorClear<CR>
 
 " neovim terminal
 if has('nvim')
-	" exit terminal insert mode
-	tnoremap <Esc> <C-\><C-n>
-	" move buffers
-	tnoremap <M-h> <c-\><c-n><c-w>h
-	tnoremap <M-j> <c-\><c-n><c-w>j
-	tnoremap <M-k> <c-\><c-n><c-w>k
-	tnoremap <M-l> <c-\><c-n><c-w>l
+  " exit terminal insert mode
+  tnoremap <Esc> <C-\><C-n>
+  " move buffers
+  tnoremap <M-h> <c-\><c-n><c-w>h
+  tnoremap <M-j> <c-\><c-n><c-w>j
+  tnoremap <M-k> <c-\><c-n><c-w>k
+  tnoremap <M-l> <c-\><c-n><c-w>l
 endif
 
 " multiple cursors settings
