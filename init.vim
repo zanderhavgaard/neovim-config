@@ -24,16 +24,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 " ===== plugins =====
 
-" trying out defx
-" Plugin 'Shougo/defx.nvim'
-
 " VimFiler file explorer and unite dependency
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimfiler'
-
-" nerdtree file explorer
-" Plugin 'scrooloose/nerdtree'
-" Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " fzf for vim
 set rtp+=/usr/bin/fzf
@@ -56,10 +49,6 @@ Plugin 'tpope/vim-sensible'
 
 " do not change layout when closing buffers
 Plugin 'moll/vim-bbye'
-
-" syntax checking / linting, requires external tools for specific languages,
-" see :help syntactic-checkers
-" Plugin 'vim-syntastic/syntastic'
 
 " Asynchronous linting
 Plugin 'dense-analysis/ale'
@@ -120,14 +109,7 @@ Plugin 'vim-scripts/CycleColor'
 " ===== colorschemes =====
 Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'mr-ubik/vim-hackerman-syntax'
-Plugin 'drewtempelmeyer/palenight.vim'
-Plugin 'ayu-theme/ayu-vim'
-Plugin 'mhartington/oceanic-next'
-Plugin 'srcery-colors/srcery-vim'
 Plugin 'dracula/vim'
-Plugin 'chriskempson/base16-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -140,32 +122,16 @@ filetype plugin indent on    " required
 " Italics for palenight
 let g:palenight_terminal_italics=1
 
-" choose ayu version
-" let ayucolor="light"  " for light version of theme
-" let ayucolor="mirage" " for mirage version of theme
-let ayucolor="dark"   " for dark version of theme
-
-" base16 correct colors
-let base16colorspace=256 
-
 " ===== Colorscheme =====
 
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
 colorscheme onedark
-" colorscheme solarized
-" colorscheme hackerman
-" colorscheme palenight
-" colorscheme ayu
-" colorscheme OceanicNext
-" colorscheme srcery
 " colorscheme dracula
-" colorscheme base16-default-dark
 
-" choose an airline theme, or comment all out to use one 
-" from colorscheme if available
+" choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme='deus'
-" et g:airline_theme='base16'
+" let g:airline_theme='base16'
 
 
 " transparent background
@@ -204,6 +170,7 @@ set showmode
 set showmatch
 
 " not exactly sure what wrapmargin does
+" TODO ?
 " set wrapmargin=8
 
 " configure tab indents
@@ -236,12 +203,6 @@ endif
 " airline configuartion
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-" let g:airline_left_sep=''
-" let g:airline_right_sep=''
-" let g:airline_left_sep=' '
-" let g:airline_right_sep=' '
-" let g:airline_left_sep=' '
-" let g:airline_right_sep=' '
 " enable tabline extension
 let g:airline#extensions#tabline#enabled = 1
 " enale powerline fonts
@@ -259,26 +220,17 @@ let g:rainbow_active = 1
 
 " ALE settings
 let g:ale_linters = {
-  \ 'python': ['flake8'],
-  \ 'java': ['javac'],
-  \ 'scala': ['scalac', 'sbtserver'],
-  \ 'cpp': ['gcc']}
-
-" syntastic settings
-" allow more than one linter at the same time
-" let g:syntastic_aggregate_errors = 1
-" for more settings :help syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
+  \ 'python':['flake8'],
+  \ 'java'  :['javac'],
+  \ 'scala' :['scalac', 'sbtserver'],
+  \ 'yaml'  :['yamllint'],
+  \ 'sh'    :['shellcheck'],
+  \ 'cpp'   :['gcc']}
 
 " syntastic flake8 for python configuartion:
 " ignore these error codes:
 " let g:syntastic_python_flake8_post_args='--ignore=E501,E402,E303,E302,E301,E231,E225,E123,F401,W391'
+" TODO adapt for ALE
 
 " draw indent guides for tab-indented code
 set listchars=tab:\|\ 
@@ -313,7 +265,7 @@ let g:vimfiler_tree_opened_icon = '▾'
 let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_marked_file_icon = '✓'
 
-" show hidden files
+" ignore some files
 let g:vimfiler_ignore_pattern = '^\%(\.git\|\.DS_Store\)$'
 
 " ===== NerdTree Settings =====
@@ -339,10 +291,6 @@ let g:vimfiler_ignore_pattern = '^\%(\.git\|\.DS_Store\)$'
 " ===== try to improve java syntax highlighting =====
 let java_highlight_functions = 1
 let java_highlight_all = 1
-" If you are trying this at runtime, you need to reload the syntax file
-set filetype=java
-
-" Some more highlights, in addition to those suggested by cmcginty
 highlight link javaScopeDecl Statement
 highlight link javaType Type
 highlight link javaDocTags PreProc
@@ -358,8 +306,8 @@ let mapleader = " "
 " Toggle VimFilerExplorer
 map <Leader>m :VimFilerExplorer<CR>
 
-" Open new file in current buffer
-map <Leader>n :VimFiler<CR>
+" Open new file in current buffer with vimfiler
+" map <Leader>n :VimFiler<CR>
 
 " open new file in current buffer with fzf
 map <Leader>n :Files<CR>
@@ -371,14 +319,19 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " resize buffers - dont work...
+" TODO fix
 "nnoremap <S-C-J> <C-W><+>
 "nnoremap <S-C-K> <C-W><->
 
 " tab switching use alt+left/right
 map <A-Right> gt
 map <A-Left> gT
+map <A-h> gT
+map <A-l> gt
 nnoremap <silent> <C-A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <C-A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
+nnoremap <silent> <C-A-h> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <silent> <C-A-l> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 
 " remove highlighting
 nnoremap <Leader><space> :let @/=""<CR>
