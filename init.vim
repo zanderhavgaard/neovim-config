@@ -109,11 +109,7 @@ call plug#end()
 
 " ===== Colorscheme specific configs =====
 
-" Italics for palenight
-let g:palenight_terminal_italics = 1
-
-" italics for one
-let g:one_allow_italics = 1
+" ...
 
 " ===== Colorscheme =====
 
