@@ -253,6 +253,11 @@ let g:deoplete#enable_at_startup = 1
 set splitbelow
 set splitright
 
+" make vertical splits look nicer
+set fillchars=vert:┃ " for vsplits
+set fillchars+=fold:· " for folds
+hi VertSplit guifg=#000000
+
 " nerdcommenter config
 filetype plugin on
 " Add spaces after comment delimiters by default
