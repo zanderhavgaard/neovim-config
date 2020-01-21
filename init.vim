@@ -282,8 +282,11 @@ let python_highlight_all = 1
 " autocmd vimenter * NERDTree
 
 " start automatically when no file is given as argument
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" show hidden files
+let NERDTreeShowHidden = 1
 
 " if nerdtree is the only buffer, close the vim window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
