@@ -103,23 +103,29 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 Plug 'dracula/vim'
+Plug 'kaicataldo/material.vim'
 
 " done installing plugins
 call plug#end()
 
 " ===== Colorscheme specific configs =====
 
-" ...
+" configuer material theme
+" let g:material_theme_style = 'default' 
+let g:material_theme_style = 'palenight'
+" let g:material_theme_style = 'dark'
 
 " ===== Colorscheme =====
 
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
-colorscheme one
+" colorscheme one
 " colorscheme dracula
+colorscheme material
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
-" let g:airline_theme='deus'
+" let g:airline_theme = 'deus'
+let g:airline_theme = 'one'
 
 " transparent background
 " au ColorScheme * hi Normal ctermbg=none guibg=none
@@ -171,7 +177,7 @@ set showmatch
 
 " not exactly sure what wrapmargin does
 " TODO ?
-" set wrapmargin=8
+set wrapmargin=8
 
 " configure tab indents
 set tabstop=4
