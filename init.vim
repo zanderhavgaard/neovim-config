@@ -8,135 +8,122 @@
 "  \___\___/_||_|_| |_\__, |  
 "                     |___/   
 
-" for neovim v0.3.6 or higher
-" requires the Vundle package manager, install:
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" install plugins
+call plug#begin('~/.vim/plugged')
 
 " ===== plugins =====
 
+" register vim-plug to get help files
+Plug 'junegunn/vim-plug'
+
 " VimFiler file explorer and unite dependency
-" Plugin 'Shougo/unite.vim'
-" Plugin 'Shougo/vimfiler'
+" Plug 'Shougo/unite.vim'
+" Plug 'Shougo/vimfiler'
 
 " visual file browser
-Plugin 'preservim/nerdtree'
+Plug 'preservim/nerdtree'
 " git integration for nerd tree
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " fzf for vim
 set rtp+=/usr/bin/fzf
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 
 " add icons to stuff
-Plugin 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 
 " starting splash screen with sessions
-Plugin 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
 
 " autocloses brackets and parentheses in insert mode
-Plugin 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
 
 " support for many languages
-Plugin 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 
 " sensible defaults for many vim settings
-Plugin 'tpope/vim-sensible'
+Plug 'tpope/vim-sensible'
 
 " do not change layout when closing buffers
-Plugin 'moll/vim-bbye'
+Plug 'moll/vim-bbye'
 
 " Asynchronous linting
-Plugin 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 
 " git gutter
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 " for other VCS than git:
-" Plugin 'mhinz/vim-signify'
+" Plug 'mhinz/vim-signify'
 
 " draws indent guides based on spaces
-Plugin 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 
 " automatically set indent width
-Plugin 'tpope/vim-sleuth'
+Plug 'tpope/vim-sleuth'
 
 " multiple cursor support
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 
 " provides autocompletion
 " more autocomple sources are available here:
 " https://github.com/Shougo/deoplete.nvim/wiki/Completion-Sources
-Plugin 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim'
 " jedi integration for deoplete
-Plugin 'deoplete-plugins/deoplete-jedi'
+Plug 'deoplete-plugins/deoplete-jedi'
 
 " adds file handling to vim command mode
-Plugin 'tpope/vim-eunuch'
+Plug 'tpope/vim-eunuch'
 
 " toggle lines as comment
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 
 " git controls
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " sensibly toggle between absolute and relative line numbers
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 " nicer bottom line
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " show colorcodes as background
-Plugin 'chrisbra/Colorizer'
+Plug 'chrisbra/Colorizer'
 
 " color math parentheses in scope
-Plugin 'luochen1990/rainbow'
+Plug 'luochen1990/rainbow'
 
 " better python syntax highlighting
-Plugin 'kh3phr3n/python-syntax'
+Plug 'kh3phr3n/python-syntax'
 
 " docker files syntax
-Plugin 'ekalinin/Dockerfile.vim'
-
-" cycle colorschems
-" Plugin 'vim-scripts/CycleColor'
+Plug 'ekalinin/Dockerfile.vim'
 
 " ===== colorschemes =====
-Plugin 'morhetz/gruvbox'
-Plugin 'joshdick/onedark.vim'
-Plugin 'dracula/vim'
+Plug 'morhetz/gruvbox'
+Plug 'rakr/vim-one'
+Plug 'dracula/vim'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" done installing plugins
+call plug#end()
 
 " ===== Colorscheme specific configs =====
 
 " Italics for palenight
-let g:palenight_terminal_italics=1
+let g:palenight_terminal_italics = 1
+
+" italics for one
+let g:one_allow_italics = 1
 
 " ===== Colorscheme =====
 
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
-colorscheme onedark
+colorscheme one
 " colorscheme dracula
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme='deus'
-" let g:airline_theme='base16'
-
 
 " transparent background
 " au ColorScheme * hi Normal ctermbg=none guibg=none

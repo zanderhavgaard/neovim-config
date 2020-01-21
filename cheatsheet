@@ -48,9 +48,9 @@ ctrl-o - go back to position @ before searching
 
 search-replace:
 
-:&s/foo/bar/g - replace all 'foo' with 'bar'
-:&s/foo/bar/gc - replace all 'foo' with 'bar', ask for permission for each instance
-:&/foo/bar/g - replace all 'foo' with 'bar', only current line
+:%s/foo/bar/g - replace all 'foo' with 'bar'
+:%s/foo/bar/gc - replace all 'foo' with 'bar', ask for permission for each instance
+:%/foo/bar/g - replace all 'foo' with 'bar', only current line
 (you can also use ctrl-r ctrl-w to copy current word to search bar)
 
 multiple cursors:
