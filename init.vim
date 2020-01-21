@@ -73,12 +73,11 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'terryma/vim-multiple-cursors'
 
 " provides autocompletion
-" needs python3 integration, :echo has("python3") should return 1
-" otherwise install 'pip3 install --user pynvim' (make sure you use system python3)
-" after installing the plugin run :UpdateRemotePlugins to allow completion
 " more autocomple sources are available here:
 " https://github.com/Shougo/deoplete.nvim/wiki/Completion-Sources
 Plugin 'Shougo/deoplete.nvim'
+" jedi integration for deoplete
+Plugin 'deoplete-plugins/deoplete-jedi'
 
 " adds file handling to vim command mode
 Plugin 'tpope/vim-eunuch'
@@ -150,6 +149,19 @@ set background=dark
 
 " enable syntax highlightinh
 syntax on
+
+" ===== Providers ======
+
+" setup to use system python2
+let g:python_host_prog = '/usr/bin/python2'
+
+" setup to use system python2
+let g:python3_host_prog = '/usr/bin/python'
+
+" ===== Clipboard =====
+
+" automatically use system clipboard for all yanking and pasting
+set clipboard+=unnamedplus
 
 " ===== Custom settings =====
 
@@ -228,7 +240,7 @@ let g:rainbow_active = 1
 
 " ALE settings
 let g:ale_linters = {
-  \ 'python':['flake8'],
+  \ 'python':['flake8', 'black'],
   \ 'java'  :['javac'],
   \ 'scala' :['scalac', 'sbtserver'],
   \ 'yaml'  :['yamllint'],
