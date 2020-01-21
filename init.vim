@@ -256,7 +256,7 @@ set splitright
 " make vertical splits look nicer
 set fillchars=vert:┃ " for vsplits
 set fillchars+=fold:· " for folds
-hi VertSplit guifg=#000000
+hi VertSplit guifg=#1C1F2B
 
 " nerdcommenter config
 filetype plugin on
