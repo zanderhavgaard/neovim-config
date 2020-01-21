@@ -119,13 +119,13 @@ let g:material_theme_style = 'palenight'
 
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
-" colorscheme one
+colorscheme one
 " colorscheme dracula
-colorscheme material
+" colorscheme material
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme = 'deus'
-let g:airline_theme = 'one'
+" let g:airline_theme = 'one'
 
 " transparent background
 " au ColorScheme * hi Normal ctermbg=none guibg=none
