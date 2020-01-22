@@ -24,6 +24,8 @@ Plug 'junegunn/vim-plug'
 Plug 'preservim/nerdtree'
 " git integration for nerd tree
 Plug 'Xuyuanp/nerdtree-git-plugin'
+" vimfiler like navigation
+Plug 'flw-cn/vim-nerdtree-l-open-h-close'
 
 " fzf for vim
 set rtp+=/usr/bin/fzf
@@ -297,6 +299,9 @@ let NERDTreeShowHidden = 1
 " if nerdtree is the only buffer, close the vim window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" delete buffer if file is deleted
+let NERDTreeAutoDeleteBuffer = 1
+
 " style arrows
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
@@ -304,6 +309,20 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 " make ui nicer
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+
+" icons for git integration
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
 
 " ===== try to improve java syntax highlighting =====
 let java_highlight_functions = 1
