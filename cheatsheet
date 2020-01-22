@@ -63,8 +63,22 @@ multi_cursor_prev_key            = '<C-p>'
 multi_cursor_skip_key            = '<C-x>'
 multi_cursor_quit_key            = '<Esc>'
 
-syntastic:
-<Leader>l - close syntastic
+nerdtree:
+C - change root directory
+u - go up one directory
+I - toggle show hidden files
+R - refresh the tree
+? - help
+m - file actions menu
+ma - make new file
+
+Press o to open the file in a new buffer or open/close directory.
+Press t to open the file in a new tab.
+Press i to open the file in a new horizontal split.
+Press s to open the file in a new vertical split.
+Press p to go to parent directory.
+Press r to refresh the current directory.
+Press m to launch NERDTree menu inside Vim.
 
 nerdcommenter:
 <Leader>c<space> - toggle selected text as line comment
@@ -139,30 +153,6 @@ Vim Eunuch
 File type detection for sudo -e is based on original file name.
 New files created with a shebang line are automatically made executable.
 New init scripts are automatically prepopulated with /etc/init.d/skeleton.
-
-
-Vundle
-:PluginInstall - install plugins
-:PluginUpdate - update intsalled plugins
-:PluginList - list installed plugins, use 'D' to delete
-:PluginSearch foo - search for vim plugin 'foo
-
-VimFiler
-:VimFiler - choose a new file for current buffer
-:VimFilerExplorer - attach file explorer buffer to side
-
-Toggle safe mode: gs
-Create new file: N
-Delete file: d
-Rename file: r
-New directory: K
-Open file: e
-Move file: m
-Open VimFilerExplorer: e
-Open current directory in a new buffer: dl
-Open current directory in a new split: ds
-Open VimFiler: \e
-Find files under current directory (Unite): \f
 
 vim bbye
 :Bdelete - instead of :bdelete, closes current buffer, but remians in jumplist
