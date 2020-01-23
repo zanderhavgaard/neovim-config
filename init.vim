@@ -85,15 +85,18 @@ Plug 'tpope/vim-fugitive'
 " sensibly toggle between absolute and relative line numbers
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
-" nicer bottom line
+" nicer status bar 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " show colorcodes as background
 Plug 'chrisbra/Colorizer'
 
-" color math parentheses in scope
+" color matching parentheses in scope
 Plug 'luochen1990/rainbow'
+
+" help finding Keybindings
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
 " better python syntax highlighting
 Plug 'kh3phr3n/python-syntax'
@@ -207,6 +210,14 @@ endif
 
 " auto save files on window focus loss
 :au FocusLost * :wa
+
+" decrease timeout so that whichkey shows faster
+set timeoutlen=500
+
+" hide statusbar when whichkey is showed
+autocmd! FileType which_key
+autocmd  FileType which_key set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 " decrease update time such git gutter works faster
 set updatetime=100
@@ -334,7 +345,8 @@ highlight link javaDocTags PreProc
 " ===== Custom Keybindings =====
 
 " set the <Leader> var
-let mapleader = " "
+let mapleader = "\<Space>"
+let maplocalleader = ","
 
 " Toggle nerdtree
 map <Leader>m :NERDTreeToggle<CR>
@@ -402,3 +414,13 @@ let g:multi_cursor_next_key            = '<C-n>'
 let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
+
+" start whichkey
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+
+" search and replace
+nnoremap <Leader>sr :%s//gc<left><left><left>
+" search and replace, but search word at caret
+nnoremap <leader>r :%s/<C-r><C-w>//gc<Left><Left><Left>
+
