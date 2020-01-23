@@ -16,10 +16,6 @@ call plug#begin('~/.vim/plugged')
 " register vim-plug to get help files
 Plug 'junegunn/vim-plug'
 
-" VimFiler file explorer and unite dependency
-" Plug 'Shougo/unite.vim'
-" Plug 'Shougo/vimfiler'
-
 " visual file browser
 Plug 'preservim/nerdtree'
 " git integration for nerd tree
@@ -54,8 +50,6 @@ Plug 'dense-analysis/ale'
 
 " git gutter
 Plug 'airblade/vim-gitgutter'
-" for other VCS than git:
-" Plug 'mhinz/vim-signify'
 
 " draws indent guides based on spaces
 Plug 'Yggdroot/indentLine'
@@ -108,25 +102,16 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 Plug 'dracula/vim'
-Plug 'kaicataldo/material.vim'
 
 " done installing plugins
 call plug#end()
 
-" ===== Colorscheme specific configs =====
-
-" configuer material theme
-" let g:material_theme_style = 'default' 
-let g:material_theme_style = 'palenight'
-" let g:material_theme_style = 'dark'
-
-" ===== Colorscheme =====
+" ===== Colorscheme // UI =====
 
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
 colorscheme one
 " colorscheme dracula
-" colorscheme material
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme = 'deus'
@@ -143,6 +128,11 @@ set background=dark
 
 " enable syntax highlightinh
 syntax on
+
+" make vertical splits look nicer
+set fillchars=vert:┃ " for vsplits
+set fillchars+=fold:· " for folds
+hi VertSplit guifg=#2C323C
 
 " ===== Providers ======
 
@@ -266,11 +256,6 @@ let g:deoplete#enable_at_startup = 1
 set splitbelow
 set splitright
 
-" make vertical splits look nicer
-set fillchars=vert:┃ " for vsplits
-set fillchars+=fold:· " for folds
-hi VertSplit guifg=#2C323C
-
 " nerdcommenter config
 filetype plugin on
 " Add spaces after comment delimiters by default
@@ -281,28 +266,7 @@ let g:NERDCompactSexyComs = 1
 " better python highlighting, enable all features
 let python_highlight_all = 1
 
-" ===== VimFiler Settings =====
-
-" Set VimFiler as default file manager
-" let g:vimfiler_as_default_explorer = 1
-
-" set some icons
-" let g:vimfiler_tree_leaf_icon = '|'
-" let g:vimfiler_tree_opened_icon = '▾'
-" let g:vimfiler_tree_closed_icon = '▸'
-" let g:vimfiler_marked_file_icon = '✓'
-
-" ignore some files
-" let g:vimfiler_ignore_pattern = '^\%(\.git\|\.DS_Store\)$'
-
 " ===== NerdTree Settings =====
-
-" start automatically
-" autocmd vimenter * NERDTree
-
-" start automatically when no file is given as argument
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " show hidden files
 let NERDTreeShowHidden = 1
@@ -321,20 +285,6 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
-" icons for git integration
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
-    \ "Unknown"   : "?"
-    \ }
-
 " ===== try to improve java syntax highlighting =====
 let java_highlight_functions = 1
 let java_highlight_all = 1
@@ -350,12 +300,6 @@ let maplocalleader = ","
 
 " Toggle nerdtree
 map <Leader>m :NERDTreeToggle<CR>
-
-" Toggle VimFilerExplorer
-" map <Leader>m :VimFilerExplorer<CR>
-
-" Open new file in current buffer with vimfiler
-" map <Leader>n :VimFiler<CR>
 
 " open new file in current buffer with fzf
 map <Leader>n :Files<CR>
@@ -381,6 +325,10 @@ nnoremap <silent> <C-A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 nnoremap <silent> <C-A-h> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <C-A-l> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 
+" search and replace
+nnoremap <Leader>sr :%s//gc<left><left><left>
+" search and replace, but search word at caret
+nnoremap <leader>r :%s/<C-r><C-w>//gc<Left><Left><Left>
 " remove highlighting
 nnoremap <Leader><space> :let @/=""<CR>
 
@@ -419,8 +367,31 @@ let g:multi_cursor_quit_key            = '<Esc>'
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 
-" search and replace
-nnoremap <Leader>sr :%s//gc<left><left><left>
-" search and replace, but search word at caret
-nnoremap <leader>r :%s/<C-r><C-w>//gc<Left><Left><Left>
+" creates a floating fzf window with a file preview
+" FZF {{{
+let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+function! FloatingFZF()
+  let buf = nvim_create_buf(v:false, v:true)
+  call setbufvar(buf, '&signcolumn', 'no')
+  let height = float2nr(&lines * 0.4) " 40% of screen
+  let width = float2nr(&columns * 0.7) " 70% of screen
+  let horizontal = float2nr((&columns - width) / 2)
+  let vertical = float2nr(&lines * 0.1) " space to top: 10%
+  let opts = {
+        \ 'relative': 'editor',
+        \ 'row': vertical,
+        \ 'col': horizontal,
+        \ 'width': width,
+        \ 'height': height,
+        \ 'anchor': 'NW',
+        \ 'style': 'minimal'
+        \ }
+  call nvim_open_win(buf, v:true, opts)
+endfunction
+" }}}
 
+" open floating fzf with preview for files in git repo
+map <C-P> :call fzf#vim#gitfiles('--cached --exclude-standard --others', fzf#vim#with_preview('right'))<CR>
+
+" open floating fzf for current dir
+nmap <leader>p :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
