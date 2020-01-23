@@ -98,6 +98,9 @@ Plug 'kh3phr3n/python-syntax'
 " docker files syntax
 Plug 'ekalinin/Dockerfile.vim'
 
+" add org-mode functionality
+Plug 'jceb/vim-orgmode'
+
 " ===== colorschemes =====
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
