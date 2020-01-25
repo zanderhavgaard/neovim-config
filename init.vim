@@ -114,8 +114,8 @@ call plug#end()
 " ===== Colorscheme // UI =====
 
 " set colorscheme, only use one (duh)
-colorscheme gruvbox
-" colorscheme one
+" colorscheme gruvbox
+colorscheme one
 " colorscheme dracula
 " colorscheme molokai
 
@@ -304,12 +304,6 @@ highlight link javaDocTags PreProc
 let mapleader = "\<Space>"
 let maplocalleader = ","
 
-" Toggle nerdtree
-map <Leader>m :NERDTreeToggle<CR>
-
-" open new file in current buffer with fzf
-map <Leader>n :Files<CR>
-
 " switch buffers
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -318,8 +312,8 @@ nnoremap <C-H> <C-W><C-H>
 
 " resize buffers - dont work...
 " TODO fix
-"nnoremap <S-C-J> <C-W><+>
-"nnoremap <S-C-K> <C-W><->
+" nnoremap <S-C-J> <C-W><+>
+" nnoremap <S-C-K> <C-W><->
 
 " tab switching use alt+left/right
 map <A-Right> gt
@@ -331,6 +325,24 @@ nnoremap <silent> <C-A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 nnoremap <silent> <C-A-h> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <C-A-l> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 
+" cycle tabs
+nmap <silent> <Tab> :tabnext<CR>
+nmap <silent> <S-Tab> :tabprevious<CR>
+
+" open a new tab
+nmap <silent> <Leader>t :tabnew<CR>
+" open current buffer in new tab
+nmap <silent> <Leader>tt <C-w>T 
+
+" move one tab back in insert mode
+inoremap <silent> <S-Tab> <C-d>
+
+" focus current buffer
+nnoremap <silent> <Leader>f <C-W>\|<C-W>_
+
+" equal size all bufffers
+nmap <silent> <Leader>e <C-w>=
+
 " search and replace
 nnoremap <Leader>sr :%s//gc<left><left><left>
 " search and replace, but search word at caret
@@ -338,14 +350,10 @@ nnoremap <leader>r :%s/<C-r><C-w>//gc<Left><Left><Left>
 " remove highlighting
 nnoremap <Leader><space> :let @/=""<CR>
 
-" close syntastic
-map <Leader>l :lclose<CR>
-
 " Colorize
 map <Leader>h :ColorHighlight<CR>
 " Clear colorize
 map <Leader>j :ColorClear<CR>
-
 " neovim terminal
 if has('nvim')
   " exit terminal insert mode
@@ -356,6 +364,10 @@ if has('nvim')
   tnoremap <M-k> <c-\><c-n><c-w>k
   tnoremap <M-l> <c-\><c-n><c-w>l
 endif
+
+" start whichkey
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 
 " multiple cursors settings
 let g:multi_cursor_use_default_mapping=0
@@ -369,9 +381,8 @@ let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
 
-" start whichkey
-nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
-nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+" Toggle nerdtree
+map <Leader>m :NERDTreeToggle<CR>
 
 " creates a floating fzf window with a file preview
 " FZF {{{
@@ -379,8 +390,8 @@ let g:fzf_layout = { 'window': 'call FloatingFZF()' }
 function! FloatingFZF()
   let buf = nvim_create_buf(v:false, v:true)
   call setbufvar(buf, '&signcolumn', 'no')
-  let height = float2nr(&lines * 0.4) " 40% of screen
-  let width = float2nr(&columns * 0.7) " 70% of screen
+  let height = float2nr(&lines * 0.6) " 40% of screen
+  let width = float2nr(&columns * 0.8) " 70% of screen
   let horizontal = float2nr((&columns - width) / 2)
   let vertical = float2nr(&lines * 0.1) " space to top: 10%
   let opts = {
@@ -397,7 +408,14 @@ endfunction
 " }}}
 
 " open floating fzf with preview for files in git repo
-map <C-P> :call fzf#vim#gitfiles('--cached --exclude-standard --others', fzf#vim#with_preview('right'))<CR>
+map <Leader>gn :call fzf#vim#gitfiles('--cached --exclude-standard --others', fzf#vim#with_preview('right'))<CR>
 
 " open floating fzf for current dir
-nmap <leader>p :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
+map <Leader>n :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
+
+" open new file in current buffer with fzf and no preview
+map <Leader>nf :Files<CR>
+
+" open a new spilt and select file using fzf
+nnoremap <silent> <Leader>v :vsp <bar> :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
+nnoremap <silent> <Leader>b :sp  <bar> :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
