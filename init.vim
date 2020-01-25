@@ -314,16 +314,20 @@ nnoremap <C-H> <C-W><C-H>
 " TODO fix
 " nnoremap <S-C-J> <C-W><+>
 " nnoremap <S-C-K> <C-W><->
+nnoremap <C-A-h> :vertical resize -5<cr>
+nnoremap <C-A-j> :resize +5<cr>
+nnoremap <C-A-k> :resize -5<cr>
+nnoremap <C-A-l> :vertical resize +5<cr>
 
 " tab switching use alt+left/right
-map <A-Right> gt
-map <A-Left> gT
+" map <A-Right> gt
+" map <A-Left> gT
 map <A-h> gT
 map <A-l> gt
 nnoremap <silent> <C-A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <C-A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
-nnoremap <silent> <C-A-h> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <C-A-l> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
+" nnoremap <silent> <C-A-h> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+" nnoremap <silent> <C-A-l> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 
 " cycle tabs
 nmap <silent> <Tab> :tabnext<CR>
