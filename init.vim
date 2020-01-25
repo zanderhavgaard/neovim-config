@@ -102,9 +102,11 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'jceb/vim-orgmode'
 
 " ===== colorschemes =====
+" Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 Plug 'dracula/vim'
+Plug 'tomasr/molokai'
 
 " done installing plugins
 call plug#end()
@@ -112,9 +114,10 @@ call plug#end()
 " ===== Colorscheme // UI =====
 
 " set colorscheme, only use one (duh)
-" colorscheme gruvbox
-colorscheme one
+colorscheme gruvbox
+" colorscheme one
 " colorscheme dracula
+" colorscheme molokai
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme = 'deus'
