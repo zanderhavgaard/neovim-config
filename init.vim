@@ -176,9 +176,8 @@ set showmode
 " highlight matching braces
 set showmatch
 
-" not exactly sure what wrapmargin does
-" TODO ?
-set wrapmargin=8
+" wrap line at number of columns from right
+" set wrapmargin=8
 
 " configure tab indents
 set tabstop=4
@@ -310,10 +309,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" resize buffers - dont work...
-" TODO fix
-" nnoremap <S-C-J> <C-W><+>
-" nnoremap <S-C-K> <C-W><->
+" resize buffers 
 nnoremap <C-A-h> :vertical resize -5<cr>
 nnoremap <C-A-j> :resize +5<cr>
 nnoremap <C-A-k> :resize -5<cr>
