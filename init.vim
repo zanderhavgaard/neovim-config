@@ -101,23 +101,47 @@ Plug 'ekalinin/Dockerfile.vim'
 " add org-mode functionality
 Plug 'jceb/vim-orgmode'
 
+" smooth scrolling
+Plug 'psliwka/vim-smoothie'
+
 " ===== colorschemes =====
 " Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 Plug 'dracula/vim'
 Plug 'tomasr/molokai'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'ayu-theme/ayu-vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'mhartington/oceanic-next'
+Plug 'KeitaNakamura/neodark.vim'
 
 " done installing plugins
 call plug#end()
 
 " ===== Colorscheme // UI =====
 
+" set ayu theme variant
+let ayucolor="mirage"
+
+" set italics and bold for oceanicnext colorscheme
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+
+let g:neodark#background = '#282C34'
+" let g:neodark#solid_vertsplit = 1
+let g:neodark#use_custom_terminal_theme = 1
+
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
-colorscheme one
+" colorscheme one
 " colorscheme dracula
 " colorscheme molokai
+" colorscheme palenight
+" colorscheme ayu
+" colorscheme nord
+colorscheme OceanicNext
+" colorscheme neodark
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme = 'deus'
@@ -231,6 +255,13 @@ set encoding=utf-8
 " do not start indenLine for .md files, since it hides some text, by setting
 " :set conceallevel=2
 autocmd FileType markdown let g:indentLine_enabled=0
+
+" configure indentline
+let g:indentLine_char = '▏'
+let g:indentLine_first_char = '▏'
+let g:indentLine_showFirstIndentLevel = 1
+" let g:indentLine_setColors = 0
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊','▏']
 
 " enable rainbow parentheses
 let g:rainbow_active = 1
