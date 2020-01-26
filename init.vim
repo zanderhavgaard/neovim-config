@@ -134,13 +134,13 @@ let g:neodark#use_custom_terminal_theme = 1
 
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
-" colorscheme one
+colorscheme one
 " colorscheme dracula
 " colorscheme molokai
 " colorscheme palenight
 " colorscheme ayu
 " colorscheme nord
-colorscheme OceanicNext
+" colorscheme OceanicNext
 " colorscheme neodark
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
