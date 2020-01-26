@@ -104,6 +104,11 @@ Plug 'jceb/vim-orgmode'
 " smooth scrolling
 Plug 'psliwka/vim-smoothie'
 
+" distraction free mode
+Plug 'junegunn/goyo.vim'
+" highlight current paragraph and dim rest of file
+Plug 'junegunn/limelight.vim'
+
 " ===== colorschemes =====
 " Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
@@ -241,6 +246,10 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 " decrease update time such git gutter works faster
 set updatetime=100
 
+" activate limelight when entering goyo
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
 " airline configuartion
 let g:airline_left_sep=''
 let g:airline_right_sep=''
@@ -369,10 +378,13 @@ nmap <silent> <Leader>tt <C-w>T
 inoremap <silent> <S-Tab> <C-d>
 
 " focus current buffer
-nnoremap <silent> <Leader>f <C-W>\|<C-W>_
+nnoremap <silent> <Leader>ff <C-W>\|<C-W>_
+
+" enter goyo
+nnoremap <silent> <Leader>fg :Goyo<CR>
 
 " equal size all bufffers
-nmap <silent> <Leader>e <C-w>=
+nmap <silent> <Leader>fe <C-w>=
 
 " search and replace
 nnoremap <Leader>sr :%s//gc<left><left><left>
@@ -384,7 +396,7 @@ nnoremap <Leader><space> :let @/=""<CR>
 " Colorize
 map <Leader>h :ColorHighlight<CR>
 " Clear colorize
-map <Leader>j :ColorClear<CR>
+map <Leader>hh :ColorClear<CR>
 " neovim terminal
 if has('nvim')
   " exit terminal insert mode
