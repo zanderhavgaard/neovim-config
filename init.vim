@@ -278,11 +278,20 @@ let g:rainbow_active = 1
 " ALE settings
 let g:ale_linters = {
   \ 'python':['flake8', 'black'],
+  \ 'python3':['flake8', 'black'],
   \ 'java'  :['javac'],
   \ 'scala' :['scalac', 'sbtserver'],
   \ 'yaml'  :['yamllint'],
   \ 'sh'    :['shellcheck'],
   \ 'cpp'   :['gcc']}
+
+let g:ale_fixers = {
+  \ '*':['remove_trailing_lines', 'trim_whitespace'],
+  \ 'python':['black', 'autopep8'],
+  \ 'python3':['black', 'autopep8'],
+  \}
+
+let g:ale_fix_on_save = 1
 
 " syntastic flake8 for python configuartion:
 " ignore these error codes:
