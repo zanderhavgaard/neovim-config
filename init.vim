@@ -1,12 +1,12 @@
-"  _  _       __   ___        
-" | \| |___ __\ \ / (_)_ __   
-" | .` / -_) _ \ V /| | '  \  
-" |_|\_\___\___/\_/ |_|_|_|_| 
-"   ___           __ _        
-"  / __|___ _ _  / _(_)__ _   
-" | (__/ _ \ ' \|  _| / _` |  
-"  \___\___/_||_|_| |_\__, |  
-"                     |___/   
+"  _  _       __   ___
+" | \| |___ __\ \ / (_)_ __
+" | .` / -_) _ \ V /| | '  \
+" |_|\_\___\___/\_/ |_|_|_|_|
+"   ___           __ _
+"  / __|___ _ _  / _(_)__ _
+" | (__/ _ \ ' \|  _| / _` |
+"  \___\___/_||_|_| |_\__, |
+"                     |___/
 
 " install plugins
 call plug#begin('~/.vim/plugged')
@@ -79,7 +79,7 @@ Plug 'tpope/vim-fugitive'
 " sensibly toggle between absolute and relative line numbers
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
-" nicer status bar 
+" nicer status bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -133,7 +133,7 @@ let ayucolor="mirage"
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
 
-let g:neodark#background = '#282C34'
+let g:neodark#background = '#2C323C'
 " let g:neodark#solid_vertsplit = 1
 let g:neodark#use_custom_terminal_theme = 1
 
@@ -187,7 +187,7 @@ set clipboard+=unnamedplus
 " highlight current line
 set cursorline
 
-" enable line numbers 
+" enable line numbers
 set number
 
 " enable relative line numbers
@@ -299,7 +299,7 @@ let g:ale_fix_on_save = 1
 " TODO adapt for ALE
 
 " draw indent guides for tab-indented code
-set listchars=tab:\|\ 
+set listchars=tab:\|\
 set list
 
 " Use deoplete.
@@ -358,7 +358,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" resize buffers 
+" resize buffers
 nnoremap <C-A-h> :vertical resize -5<cr>
 nnoremap <C-A-j> :resize +5<cr>
 nnoremap <C-A-k> :resize -5<cr>
@@ -381,7 +381,7 @@ nmap <silent> <S-Tab> :tabprevious<CR>
 " open a new tab
 nmap <silent> <Leader>t :tabnew<CR>
 " open current buffer in new tab
-nmap <silent> <Leader>tt <C-w>T 
+nmap <silent> <Leader>tt <C-w>T
 
 " move one tab back in insert mode
 inoremap <silent> <S-Tab> <C-d>
