@@ -235,6 +235,9 @@ endif
 " auto save files on window focus loss
 :au FocusLost * :wa
 
+" auto save when switching buffers
+:set autowrite
+
 " decrease timeout so that whichkey shows faster
 set timeoutlen=500
 
