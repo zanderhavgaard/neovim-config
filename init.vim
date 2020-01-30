@@ -151,6 +151,7 @@ colorscheme one
 " choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme = 'deus'
 " let g:airline_theme = 'one'
+" let g:airline_theme = 'distinguished'
 
 " transparent background
 " au ColorScheme * hi Normal ctermbg=none guibg=none
