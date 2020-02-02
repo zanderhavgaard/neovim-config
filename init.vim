@@ -45,6 +45,9 @@ Plug 'tpope/vim-sensible'
 " do not change layout when closing buffers
 Plug 'moll/vim-bbye'
 
+" clpse all buffers not open in a window
+Plug 'artnez/vim-wipeout'
+
 " Asynchronous linting
 Plug 'dense-analysis/ale'
 
@@ -120,6 +123,7 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'mhartington/oceanic-next'
 Plug 'KeitaNakamura/neodark.vim'
+Plug 'bluz71/vim-nightfly-guicolors'
 
 " done installing plugins
 call plug#end()
@@ -137,16 +141,24 @@ let g:neodark#background = '#2C323C'
 " let g:neodark#solid_vertsplit = 1
 let g:neodark#use_custom_terminal_theme = 1
 
+" use 24bit color if available
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
-colorscheme one
+" colorscheme one
 " colorscheme dracula
 " colorscheme molokai
 " colorscheme palenight
-" colorscheme ayu
+colorscheme ayu
 " colorscheme nord
 " colorscheme OceanicNext
 " colorscheme neodark
+" colorscheme nightfly
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme = 'deus'
@@ -226,15 +238,18 @@ set ignorecase
 " move cursor to nearest match while typing
 set incsearch
 
-" use 24bit color if available
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
+" automactically reload file if changed
+" outside vim and there are no unsaved edits
+set autoread
+
+" trigger check if file was changed outside vim
+" when then cursor stops moving
+au CursorHold,CursorHoldI * :checktime
+au FocusGained,BufEnter * :checktime
 
 " auto save files on window focus loss
 :au FocusLost * :wa
+:au BufLeave * :wa
 
 " auto save when switching buffers
 :set autowrite
@@ -255,8 +270,14 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
 " airline configuartion
-let g:airline_left_sep=''
-let g:airline_right_sep=''
+" let g:airline_left_sep=''
+let g:airline_left_sep=' '
+let g:airline_left_alt_sep=' '
+
+" let g:airline_right_sep=''
+let g:airline_right_sep=' '
+let g:airline_right_alt_sep=' '
+
 " enable tabline extension
 let g:airline#extensions#tabline#enabled = 1
 " enale powerline fonts
@@ -475,3 +496,9 @@ map <Leader>nf :Files<CR>
 " open a new spilt and select file using fzf
 nnoremap <silent> <Leader>v :vsp <bar> :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
 nnoremap <silent> <Leader>b :sp  <bar> :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
+
+" close all buffers not open in a window
+nnoremap <Leader>w :Wipeout<CR>
+
+" close buffer but keep window
+nnoremap <Leader>q :Bdelete<CR>
