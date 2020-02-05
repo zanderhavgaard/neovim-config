@@ -221,10 +221,16 @@ set showmatch
 " wrap line at number of columns from right
 " set wrapmargin=8
 
-" configure tab indents
+" set width of tabs in spaces
 set tabstop=4
-set softtabstop=0 noexpandtab
 set shiftwidth=4
+" turn off softtab / space mixing
+set softtabstop=0
+" expand tabs to spaces
+set expandtab
+
+" automatically use same indentation on new line
+set autoindent
 
 " enable bold fonts:
 let g:enable_bold_font = 1
