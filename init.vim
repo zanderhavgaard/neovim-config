@@ -493,9 +493,13 @@ map <Leader>n :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
 " open new file in current buffer with fzf and no preview
 map <Leader>nf :Files<CR>
 
+" open new split
+nnoremap <silent> <Leader>v :vsp <CR>
+nnoremap <silent> <Leader>b :sp <CR>
+
 " open a new spilt and select file using fzf
-nnoremap <silent> <Leader>v :vsp <bar> :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
-nnoremap <silent> <Leader>b :sp  <bar> :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
+nnoremap <silent> <Leader>nv :vsp <bar> :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
+nnoremap <silent> <Leader>nb :sp  <bar> :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
 
 " close all buffers not open in a window
 nnoremap <Leader>w :Wipeout<CR>
