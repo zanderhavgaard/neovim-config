@@ -150,11 +150,11 @@ endif
 
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
-" colorscheme one
+colorscheme one
 " colorscheme dracula
 " colorscheme molokai
 " colorscheme palenight
-colorscheme ayu
+" colorscheme ayu
 " colorscheme nord
 " colorscheme OceanicNext
 " colorscheme neodark
