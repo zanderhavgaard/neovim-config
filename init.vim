@@ -23,10 +23,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " vimfiler like navigation
 Plug 'flw-cn/vim-nerdtree-l-open-h-close'
 
-" fzf for vim
-set rtp+=/usr/bin/fzf
-Plug 'junegunn/fzf.vim'
-
 " add icons to stuff
 Plug 'ryanoasis/vim-devicons'
 
@@ -112,34 +108,29 @@ Plug 'junegunn/goyo.vim'
 " highlight current paragraph and dim rest of file
 Plug 'junegunn/limelight.vim'
 
+" open file at specific line
+Plug 'bogado/file-line'
+
+" nice floating window fzf implementation
+set rtp+=/usr/bin/fzf
+Plug 'junegunn/fzf.vim'
+Plug 'yuki-ycino/fzf-preview.vim'
+
 " ===== colorschemes =====
 " Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 Plug 'dracula/vim'
 Plug 'tomasr/molokai'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'ayu-theme/ayu-vim'
 Plug 'arcticicestudio/nord-vim'
-Plug 'mhartington/oceanic-next'
-Plug 'KeitaNakamura/neodark.vim'
-Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'hzchirs/vim-material'
 
 " done installing plugins
 call plug#end()
 
 " ===== Colorscheme // UI =====
 
-" set ayu theme variant
-let ayucolor="mirage"
-
-" set italics and bold for oceanicnext colorscheme
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
-
-let g:neodark#background = '#2C323C'
-" let g:neodark#solid_vertsplit = 1
-let g:neodark#use_custom_terminal_theme = 1
+let g:material_style='palenight'
 
 " use 24bit color if available
 if exists('+termguicolors')
@@ -150,20 +141,15 @@ endif
 
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
-colorscheme one
+" colorscheme one
 " colorscheme dracula
 " colorscheme molokai
-" colorscheme palenight
-" colorscheme ayu
 " colorscheme nord
-" colorscheme OceanicNext
-" colorscheme neodark
-" colorscheme nightfly
+colorscheme vim-material
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme = 'deus'
-" let g:airline_theme = 'one'
-" let g:airline_theme = 'distinguished'
+let g:airline_theme = 'material'
 
 " transparent background
 " au ColorScheme * hi Normal ctermbg=none guibg=none
@@ -398,8 +384,8 @@ nnoremap <C-A-l> :vertical resize +5<cr>
 " tab switching use alt+left/right
 " map <A-Right> gt
 " map <A-Left> gT
-map <A-h> gT
-map <A-l> gt
+nnoremap <A-h> gT
+nnoremap <A-l> gt
 nnoremap <silent> <C-A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <C-A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 " nnoremap <silent> <C-A-h> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
@@ -434,9 +420,9 @@ nnoremap <leader>r :%s/<C-r><C-w>//gc<Left><Left><Left>
 nnoremap <Leader><space> :let @/=""<CR>
 
 " Colorize
-map <Leader>h :ColorHighlight<CR>
+nnoremap <Leader>h :ColorHighlight<CR>
 " Clear colorize
-map <Leader>hh :ColorClear<CR>
+nnoremap <Leader>hh :ColorClear<CR>
 " neovim terminal
 if has('nvim')
   " exit terminal insert mode
@@ -465,47 +451,32 @@ let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
 
 " Toggle nerdtree
-map <Leader>m :NERDTreeToggle<CR>
-
-" creates a floating fzf window with a file preview
-" FZF {{{
-let g:fzf_layout = { 'window': 'call FloatingFZF()' }
-function! FloatingFZF()
-  let buf = nvim_create_buf(v:false, v:true)
-  call setbufvar(buf, '&signcolumn', 'no')
-  let height = float2nr(&lines * 0.6) " 40% of screen
-  let width = float2nr(&columns * 0.8) " 70% of screen
-  let horizontal = float2nr((&columns - width) / 2)
-  let vertical = float2nr(&lines * 0.1) " space to top: 10%
-  let opts = {
-        \ 'relative': 'editor',
-        \ 'row': vertical,
-        \ 'col': horizontal,
-        \ 'width': width,
-        \ 'height': height,
-        \ 'anchor': 'NW',
-        \ 'style': 'minimal'
-        \ }
-  call nvim_open_win(buf, v:true, opts)
-endfunction
-" }}}
-
-" open floating fzf with preview for files in git repo
-map <Leader>gn :call fzf#vim#gitfiles('--cached --exclude-standard --others', fzf#vim#with_preview('right'))<CR>
-
-" open floating fzf for current dir
-map <Leader>n :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
-
-" open new file in current buffer with fzf and no preview
-map <Leader>nf :Files<CR>
+nnoremap <Leader>m :NERDTreeToggle<CR>
 
 " open new split
 nnoremap <silent> <Leader>v :vsp <CR>
 nnoremap <silent> <Leader>b :sp <CR>
 
 " open a new spilt and select file using fzf
-nnoremap <silent> <Leader>nv :vsp <bar> :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
-nnoremap <silent> <Leader>nb :sp  <bar> :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR>
+nnoremap <silent> <Leader>vn :vsp <bar> :Files <CR>
+nnoremap <silent> <Leader>bn :sp  <bar> :Files <CR>
+
+" change fzf :Files to use preview
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+" fzf on current dir and all subdirs
+nnoremap <Leader>n :Files <CR>
+" fzf project files --> not sure how this is different than FzfPerviewGitFiles
+nnoremap <Leader>np :FzfPreviewProjectFiles <CR>
+" fzf grep line in files
+nnoremap <Leader>ngr :FzfPreviewProjectGrep <CR>
+" fzf open buffers
+nnoremap <Leader>nb :FzfPreviewBuffers <CR>
+" open floating fzf with preview for files in git repo
+nnoremap <Leader>ng :FzfPreviewGitFiles <CR>
+" fzf git staus
+nnoremap <Leader>ngs :FzfPreviewGitStatus <CR>
 
 " close all buffers not open in a window
 nnoremap <Leader>w :Wipeout<CR>
