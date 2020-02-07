@@ -130,7 +130,8 @@ call plug#end()
 
 " ===== Colorscheme // UI =====
 
-let g:material_style='palenight'
+" let g:material_style='palenight'
+let g:material_style='oceanic'
 
 " use 24bit color if available
 if exists('+termguicolors')
