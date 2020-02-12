@@ -297,11 +297,12 @@ let g:rainbow_active = 1
 let g:ale_linters = {
   \ 'python':['flake8', 'black'],
   \ 'python3':['flake8', 'black'],
-  \ 'java'  :['javac'],
-  \ 'scala' :['scalac', 'sbtserver'],
-  \ 'yaml'  :['yamllint'],
-  \ 'sh'    :['shellcheck'],
-  \ 'cpp'   :['gcc']}
+  \ 'java':['javac'],
+  \ 'scala':['scalac', 'sbtserver'],
+  \ 'yaml':['yamllint'],
+  \ 'sh':['shellcheck'],
+  \ 'dockerfile':['dockerfilelint'],
+  \ 'cpp':['gcc']}
 
 let g:ale_fixers = {
   \ '*':['remove_trailing_lines', 'trim_whitespace'],
