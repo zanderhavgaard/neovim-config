@@ -75,6 +75,9 @@ Plug 'scrooloose/nerdcommenter'
 " git controls
 Plug 'tpope/vim-fugitive'
 
+" inline git blame
+Plug 'APZelos/blamer.nvim'
+
 " sensibly toggle between absolute and relative line numbers
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
@@ -485,3 +488,6 @@ nnoremap <Leader>w :Wipeout<CR>
 
 " close buffer but keep window
 nnoremap <Leader>q :Bdelete<CR>
+
+" activate ineline git blame
+nnoremap <Leader>gb :BlamerToggle<CR>
