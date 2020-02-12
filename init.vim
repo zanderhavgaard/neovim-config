@@ -304,7 +304,6 @@ let g:ale_linters = {
   \ 'scala':['scalac', 'sbtserver'],
   \ 'yaml':['yamllint'],
   \ 'sh':['shellcheck'],
-  \ 'dockerfile':['dockerfilelint'],
   \ 'cpp':['gcc']}
 
 let g:ale_fixers = {
