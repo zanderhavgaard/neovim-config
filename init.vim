@@ -66,6 +66,9 @@ Plug 'Shougo/deoplete.nvim'
 " jedi integration for deoplete
 Plug 'deoplete-plugins/deoplete-jedi'
 
+" language server intgration
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " adds file handling to vim command mode
 Plug 'tpope/vim-eunuch'
 
