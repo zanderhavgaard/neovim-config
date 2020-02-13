@@ -98,7 +98,8 @@ Plug 'luochen1990/rainbow'
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
 " better python syntax highlighting
-Plug 'kh3phr3n/python-syntax'
+" Plug 'kh3phr3n/python-syntax'
+Plug 'numirias/semshi'
 
 " docker files syntax
 Plug 'ekalinin/Dockerfile.vim'
