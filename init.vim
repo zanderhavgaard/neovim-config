@@ -123,6 +123,8 @@ set rtp+=/usr/bin/fzf
 Plug 'junegunn/fzf.vim'
 Plug 'yuki-ycino/fzf-preview.vim'
 
+Plug 'voldikss/vim-floaterm'
+
 " ===== colorschemes =====
 " Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
@@ -494,3 +496,9 @@ nnoremap <Leader>q :Bdelete<CR>
 
 " activate ineline git blame
 nnoremap <Leader>gb :BlamerToggle<CR>
+
+nnoremap <Leader>, :FloatermToggle<CR>
+nnoremap <Leader>.. :FloatermNew<CR>
+nnoremap <Leader>.n :FloatermNext<CR>
+nnoremap <Leader>.p :FloatermPrev<CR>
+nnoremap <Leader>.s :FloatermSend<CR>
