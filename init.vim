@@ -375,9 +375,19 @@ highlight link javaDocTags PreProc
 
 " ===== Custom Keybindings =====
 
-" set the <Leader> var
-let mapleader = "\<Space>"
-let maplocalleader = ","
+" neovim terminal
+if has('nvim')
+  " exit terminal insert mode
+  tnoremap <Esc> <C-\><C-n>
+  " move buffers
+  tnoremap <M-h> <c-\><c-n><c-w>h
+  tnoremap <M-j> <c-\><c-n><c-w>j
+  tnoremap <M-k> <c-\><c-n><c-w>k
+  tnoremap <M-l> <c-\><c-n><c-w>l
+endif
+
+" remove one tab character back in insert mode
+inoremap <silent> <S-Tab> <C-d>
 
 " switch buffers
 nnoremap <C-J> <C-W><C-J>
@@ -392,8 +402,6 @@ nnoremap <C-A-k> :resize -5<cr>
 nnoremap <C-A-l> :vertical resize +5<cr>
 
 " tab switching use alt+left/right
-" map <A-Right> gt
-" map <A-Left> gT
 nnoremap <A-h> gT
 nnoremap <A-l> gt
 nnoremap <silent> <C-A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
@@ -405,13 +413,23 @@ nnoremap <silent> <C-A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 nmap <silent> <Tab> :tabnext<CR>
 nmap <silent> <S-Tab> :tabprevious<CR>
 
-" open a new tab
-nmap <silent> <Leader>t :tabnew<CR>
-" open current buffer in new tab
-nmap <silent> <Leader>tt <C-w>T
+" set the <Leader> var
+let mapleader = "\<Space>"
+let maplocalleader = ","
 
-" move one tab back in insert mode
-inoremap <silent> <S-Tab> <C-d>
+
+autocmd! User vim-which-key call which_key#register('<Space>', 'g:which_key_map')
+
+let g:which_key_map = {}
+
+" start whichkey
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+
+" open a new tab
+nnoremap <silent> <Leader>tt :tabnew<CR>
+" open current buffer in new tab
+nnoremap <silent> <Leader>tc <C-w>T
 
 " focus current buffer
 nnoremap <silent> <Leader>ff <C-W>\|<C-W>_
@@ -433,20 +451,7 @@ nnoremap <Leader><space> :let @/=""<CR>
 nnoremap <Leader>h :ColorHighlight<CR>
 " Clear colorize
 nnoremap <Leader>hh :ColorClear<CR>
-" neovim terminal
-if has('nvim')
-  " exit terminal insert mode
-  tnoremap <Esc> <C-\><C-n>
-  " move buffers
-  tnoremap <M-h> <c-\><c-n><c-w>h
-  tnoremap <M-j> <c-\><c-n><c-w>j
-  tnoremap <M-k> <c-\><c-n><c-w>k
-  tnoremap <M-l> <c-\><c-n><c-w>l
-endif
 
-" start whichkey
-nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
-nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 
 " multiple cursors settings
 let g:multi_cursor_use_default_mapping=0
@@ -497,6 +502,7 @@ nnoremap <Leader>q :Bdelete<CR>
 " activate ineline git blame
 nnoremap <Leader>gb :BlamerToggle<CR>
 
+" floating terminal window
 nnoremap <Leader>, :FloatermToggle<CR>
 nnoremap <Leader>.. :FloatermNew<CR>
 nnoremap <Leader>.n :FloatermNext<CR>
