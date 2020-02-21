@@ -95,7 +95,8 @@ Plug 'chrisbra/Colorizer'
 Plug 'luochen1990/rainbow'
 
 " help finding Keybindings
-Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+" Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+Plug 'liuchengxu/vim-which-key'
 
 " better python syntax highlighting
 " Plug 'kh3phr3n/python-syntax'
@@ -417,10 +418,12 @@ nmap <silent> <S-Tab> :tabprevious<CR>
 let mapleader = "\<Space>"
 let maplocalleader = ","
 
-
-autocmd! User vim-which-key call which_key#register('<Space>', 'g:which_key_map')
-
+" create dictionary for which key entries
 let g:which_key_map = {}
+
+" load the dictionary
+" autocmd! User vim-which-key call which_key#register(<Space>,', 'g:which_key_map')
+call which_key#register('<Space>', 'g:which_key_map')
 
 " start whichkey
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
@@ -430,28 +433,47 @@ nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 nnoremap <silent> <Leader>tt :tabnew<CR>
 " open current buffer in new tab
 nnoremap <silent> <Leader>tc <C-w>T
+let g:which_key_map['t'] = {
+      \ 'name':'+tabs',
+      \ 't':'open new tab',
+      \ 'c':'open current buffer in new tab',
+      \}
 
 " focus current buffer
 nnoremap <silent> <Leader>ff <C-W>\|<C-W>_
-
 " enter goyo
 nnoremap <silent> <Leader>fg :Goyo<CR>
-
 " equal size all bufffers
 nmap <silent> <Leader>fe <C-w>=
+let g:which_key_map['f'] = {
+      \ 'name':'+focus_buffers',
+      \ 'f':'focus current buffer',
+      \ 'g':'focus current buffer with goyo',
+      \ 'e':'equal size for all buffers',
+      \}
 
 " search and replace
-nnoremap <Leader>sr :%s//gc<left><left><left>
+nnoremap <Leader>rs :%s//gc<left><left><left>
 " search and replace, but search word at caret
-nnoremap <leader>r :%s/<C-r><C-w>//gc<Left><Left><Left>
+nnoremap <leader>rr :%s/<C-r><C-w>//gc<Left><Left><Left>
+let g:which_key_map['r'] = {
+      \ 'name':'+replace',
+      \ 's':'search and replace',
+      \ 'r':'replace word at cursor',
+      \}
+
 " remove highlighting
 nnoremap <Leader><space> :let @/=""<CR>
+let g:which_key_map[' '] = {'name':'clear_highlight'}
 
 " Colorize
-nnoremap <Leader>h :ColorHighlight<CR>
+nnoremap <Leader>hh :ColorHighlight<CR>
 " Clear colorize
-nnoremap <Leader>hh :ColorClear<CR>
-
+nnoremap <Leader>hc :ColorClear<CR>
+let g:which_key_map['h'] = {
+      \ 'name':'+color_highlight',
+      \ 'h':'highlight colors',
+      \ 'c':'clear color highlight'}
 
 " multiple cursors settings
 let g:multi_cursor_use_default_mapping=0
