@@ -464,14 +464,14 @@ let g:which_key_map['r'] = {
 
 " remove highlighting
 nnoremap <Leader><space> :let @/=""<CR>
-let g:which_key_map[' '] = {'name':'clear_highlight'}
+let g:which_key_map[' '] = {'name':'Clear search highlight'}
 
 " Colorize
 nnoremap <Leader>hh :ColorHighlight<CR>
 " Clear colorize
 nnoremap <Leader>hc :ColorClear<CR>
 let g:which_key_map['h'] = {
-      \ 'name':'+color_highlight',
+      \ 'name':'+Color Righlight',
       \ 'h':'highlight colors',
       \ 'c':'clear color highlight'}
 
@@ -489,44 +489,71 @@ let g:multi_cursor_quit_key            = '<Esc>'
 
 " Toggle nerdtree
 nnoremap <Leader>m :NERDTreeToggle<CR>
+let g:which_key_map['m'] = {'name':'NERDTree'}
 
 " open new split
 nnoremap <silent> <Leader>v :vsp <CR>
+let g:which_key_map['v'] = {'name':'Vertical split'}
 nnoremap <silent> <Leader>b :sp <CR>
+let g:which_key_map['b'] = {'name':'Horizontal split'}
+
 
 " open a new spilt and select file using fzf
-nnoremap <silent> <Leader>vn :vsp <bar> :Files <CR>
-nnoremap <silent> <Leader>bn :sp  <bar> :Files <CR>
+" nnoremap <silent> <Leader>vn :vsp <bar> :Files <CR>
+" nnoremap <silent> <Leader>bn :sp  <bar> :Files <CR>
 
 " change fzf :Files to use preview
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 " fzf on current dir and all subdirs
-nnoremap <Leader>n :Files <CR>
+nnoremap <Leader>nn :Files <CR>
 " fzf project files --> not sure how this is different than FzfPerviewGitFiles
 nnoremap <Leader>np :FzfPreviewProjectFiles <CR>
 " fzf grep line in files
-nnoremap <Leader>ngr :FzfPreviewProjectGrep <CR>
+nnoremap <Leader>nw :FzfPreviewProjectGrep <CR>
 " fzf open buffers
 nnoremap <Leader>nb :FzfPreviewBuffers <CR>
 " open floating fzf with preview for files in git repo
 nnoremap <Leader>ng :FzfPreviewGitFiles <CR>
 " fzf git staus
-nnoremap <Leader>ngs :FzfPreviewGitStatus <CR>
+nnoremap <Leader>ns :FzfPreviewGitStatus <CR>
+let g:which_key_map['n'] = {
+      \ 'name':'+Fzf',
+      \ 'n':'Fzf all child files',
+      \ 'p':'Fzf Project files',
+      \ 'w':'Fzf Project grep word',
+      \ 'b':'Fzf buffers',
+      \ 'g':'Fzf git prjoct files',
+      \ 's':'Fzf git project status',
+      \}
 
 " close all buffers not open in a window
 nnoremap <Leader>w :Wipeout<CR>
+let g:which_key_map['w'] = {'name':'Delete hidden buffers'}
 
 " close buffer but keep window
 nnoremap <Leader>q :Bdelete<CR>
+let g:which_key_map['q'] = {'name':'Delete buffer'}
 
 " activate ineline git blame
 nnoremap <Leader>gb :BlamerToggle<CR>
+let g:which_key_map['g'] = {
+      \ 'name':'+git',
+      \ 'b':'toggle blame in visual mode',
+      \}
 
 " floating terminal window
 nnoremap <Leader>, :FloatermToggle<CR>
+let g:which_key_map[','] = {'name':'Floaterm toggle'}
 nnoremap <Leader>.. :FloatermNew<CR>
 nnoremap <Leader>.n :FloatermNext<CR>
 nnoremap <Leader>.p :FloatermPrev<CR>
 nnoremap <Leader>.s :FloatermSend<CR>
+let g:which_key_map['.'] = {
+      \ 'name':'+Floaterm',
+      \ '.':'Floaterm new',
+      \ 'n':'Floaterm next',
+      \ 'p':'Floaterm previous',
+      \ 's':'Floaterm send to term',
+      \}
