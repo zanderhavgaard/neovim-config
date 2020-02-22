@@ -134,6 +134,9 @@ Plug 'dracula/vim'
 Plug 'tomasr/molokai'
 Plug 'arcticicestudio/nord-vim'
 Plug 'hzchirs/vim-material'
+Plug 'ajmwagar/vim-deus'
+Plug 'fneu/breezy'
+Plug 'aradunovic/perun.vim'
 
 " done installing plugins
 call plug#end()
@@ -156,11 +159,14 @@ endif
 " colorscheme dracula
 " colorscheme molokai
 " colorscheme nord
-colorscheme vim-material
+" colorscheme vim-material
+colorscheme deus
+" colorscheme breezy
+" colorscheme perun
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme = 'deus'
-let g:airline_theme = 'material'
+" let g:airline_theme = 'material'
 
 " transparent background
 " au ColorScheme * hi Normal ctermbg=none guibg=none
