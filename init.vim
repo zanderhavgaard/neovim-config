@@ -124,7 +124,15 @@ set rtp+=/usr/bin/fzf
 Plug 'junegunn/fzf.vim'
 Plug 'yuki-ycino/fzf-preview.vim'
 
+" floating terminal window
 Plug 'voldikss/vim-floaterm'
+
+" dim inactive windows
+Plug 'blueyed/vim-diminactive'
+
+" animate and dynamically resize windows
+Plug 'camspiers/animate.vim'
+Plug 'camspiers/lens.vim'
 
 " ===== colorschemes =====
 " Plug 'chriskempson/base16-vim'
@@ -137,6 +145,7 @@ Plug 'hzchirs/vim-material'
 Plug 'ajmwagar/vim-deus'
 Plug 'fneu/breezy'
 Plug 'aradunovic/perun.vim'
+Plug 'jaredgorski/spacecamp'
 
 " done installing plugins
 call plug#end()
@@ -163,6 +172,7 @@ endif
 colorscheme deus
 " colorscheme breezy
 " colorscheme perun
+" colorscheme spacecamp
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme = 'deus'
@@ -562,4 +572,13 @@ let g:which_key_map['.'] = {
       \ 'n':'Floaterm next',
       \ 'p':'Floaterm previous',
       \ 's':'Floaterm send to term',
+      \}
+
+" dynamic resize windows with animations
+nnoremap <Leader>ae :let g:lens#disabled = 0<CR>
+nnoremap <Leader>ad :let g:lens#disabled = 1<CR>
+let g:which_key_map['a'] = {
+      \ 'name':'+Lens/Animate',
+      \ 'e':'Enable lens resize',
+      \ 'd':'Disable lens resize',
       \}
