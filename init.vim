@@ -130,6 +130,9 @@ Plug 'voldikss/vim-floaterm'
 " dim inactive windows
 Plug 'blueyed/vim-diminactive'
 
+" jump to definition
+Plug 'pechorin/any-jump.nvim'
+
 " animate and dynamically resize windows
 Plug 'camspiers/animate.vim'
 Plug 'camspiers/lens.vim'
@@ -588,3 +591,15 @@ let g:which_key_map['a'] = {
       \ 'e':'Enable lens resize',
       \ 'd':'Disable lens resize',
       \}
+
+" Jump to definition under cursore
+nnoremap <leader>jj :AnyJump<CR>
+" open previous opened file (after jump)
+nnoremap <leader>jb :AnyJumpBack<CR>
+" open last closed search window again
+nnoremap <leader>jl :AnyJumpLastResults<CR>
+let g:which_key_map['j'] = {
+      \ 'name':'+Any Jump',
+      \ 'j':'Jump to def at cursor',
+      \ 'b':'Jump back to original file',
+      \ 'l':'Open last closed search window'}
