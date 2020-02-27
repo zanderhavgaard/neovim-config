@@ -144,14 +144,12 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'hzchirs/vim-material'
 Plug 'ajmwagar/vim-deus'
 Plug 'crusoexia/vim-monokai'
+Plug 'sainnhe/sonokai'
 
 " done installing plugins
 call plug#end()
 
 " ===== Colorscheme // UI =====
-
-" let g:material_style='palenight'
-let g:material_style='oceanic'
 
 " use 24bit color if available
 if exists('+termguicolors')
@@ -160,15 +158,27 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
+" let g:material_style='palenight'
+let g:material_style='oceanic'
+
+" the configuration options should be placed before `colorscheme sonokai`
+let g:sonokai_style = 'andromeda'
+" let g:sonokai_style = 'shusia'
+" let g:sonokai_style = 'atlantis'
+" let g:sonokai_style = 'maia'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 1
+
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
-colorscheme one
 " colorscheme dracula
-" colorscheme molokai
+" colorscheme one
+" colorscheme deus
 " colorscheme nord
 " colorscheme vim-material
-" colorscheme deus
+" colorscheme molokai
 " colorscheme monokai
+colorscheme sonokai
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme = 'deus'
