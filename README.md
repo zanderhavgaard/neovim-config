@@ -1,18 +1,12 @@
-# neovim-config
+# NeoVim Configuration
 My personal neovim config.
 
+## Setup
 Requires a powerline font, I use nerd-fonts: https://nerdfonts.com/
 
-Also requires python3 and the pynvim package, install with pip.
+Some of the plugins rely on python 3, so in order to run the setup script you must have python 3 installed on your path as `python`, same with a pip installation that points to that python interpreter on the path as `pip`.
 
-Should be cloned to your home directory, then run the install script, that will create the directory ~/.config/nvim and symlink ~/neovim-config/init.vim to ~/.config/nvim/init.vim.
-
-Uses the vim-plug package manager.
-
-Update plugins by running: 
-```bash
-nvim +PlugUpdate +UpdateRemotePlugins +qa
-```
+Run the install script `nvim_setup.sh` to create the initial installation, then whenever you want to update the installation run the update script `update.sh`.
 
 # Screenshot:
 ![Screenshot](screenshot.png)

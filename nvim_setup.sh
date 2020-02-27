@@ -23,10 +23,7 @@ echo -e '\nGetting vim-plug package manager ...'
 curl -fLo /home/$USER/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-echo -e '\nInstalling plugins vim-plug ... (Press enter if prompted)'
+echo -e '\nInstalling plugins uisng vim-plug ... (Press enter if prompted)'
 nvim +PlugUpdate +UpdateRemotePlugins +qa
 
-
 echo -e '\nDone setting up NeoVim.'
-
-
