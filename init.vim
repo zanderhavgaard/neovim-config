@@ -175,13 +175,13 @@ let g:sonokai_disable_italic_comment = 1
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
 " colorscheme dracula
-" colorscheme one
+colorscheme one
 " colorscheme deus
 " colorscheme nord
 " colorscheme vim-material
 " colorscheme molokai
 " colorscheme monokai
-colorscheme sonokai
+" colorscheme sonokai
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme = 'deus'
