@@ -134,8 +134,8 @@ Plug 'blueyed/vim-diminactive'
 Plug 'pechorin/any-jump.nvim'
 
 " animate and dynamically resize windows
-Plug 'camspiers/animate.vim'
-Plug 'camspiers/lens.vim'
+" Plug 'camspiers/animate.vim'
+" Plug 'camspiers/lens.vim'
 
 " ===== colorschemes =====
 " Plug 'chriskempson/base16-vim'
