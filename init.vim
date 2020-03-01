@@ -1,4 +1,4 @@
-"  _  _       __   ___
+"    _       __   ___
 " | \| |___ __\ \ / (_)_ __
 " | .` / -_) _ \ V /| | '  \
 " |_|\_\___\___/\_/ |_|_|_|_|
@@ -22,6 +22,8 @@ Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " vimfiler like navigation
 Plug 'flw-cn/vim-nerdtree-l-open-h-close'
+" more colors in nerdtree
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " add icons to stuff
 Plug 'ryanoasis/vim-devicons'
@@ -148,6 +150,8 @@ Plug 'hzchirs/vim-material'
 Plug 'ajmwagar/vim-deus'
 Plug 'crusoexia/vim-monokai'
 Plug 'sainnhe/sonokai'
+Plug 'joshdick/onedark.vim'
+Plug 'junegunn/seoul256.vim'
 
 " done installing plugins
 call plug#end()
@@ -172,16 +176,21 @@ let g:sonokai_style = 'andromeda'
 let g:sonokai_enable_italic = 1
 let g:sonokai_disable_italic_comment = 1
 
+" seoul256 background
+let g:seoul256_background = 234
+
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
 " colorscheme dracula
-colorscheme one
+" colorscheme one
 " colorscheme deus
 " colorscheme nord
 " colorscheme vim-material
 " colorscheme molokai
 " colorscheme monokai
 " colorscheme sonokai
+colorscheme onedark
+" colorscheme seoul256
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme = 'deus'
