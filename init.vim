@@ -153,7 +153,6 @@ Plug 'hzchirs/vim-material'
 Plug 'ajmwagar/vim-deus'
 Plug 'crusoexia/vim-monokai'
 Plug 'sainnhe/sonokai'
-Plug 'joshdick/onedark.vim'
 Plug 'junegunn/seoul256.vim'
 
 " done installing plugins
@@ -185,14 +184,13 @@ let g:seoul256_background = 234
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
 " colorscheme dracula
-" colorscheme one
+colorscheme one
 " colorscheme deus
 " colorscheme nord
 " colorscheme vim-material
 " colorscheme molokai
 " colorscheme monokai
 " colorscheme sonokai
-colorscheme onedark
 " colorscheme seoul256
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
