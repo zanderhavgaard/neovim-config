@@ -135,6 +135,9 @@ Plug 'blueyed/vim-diminactive'
 " jump to definition
 Plug 'pechorin/any-jump.nvim'
 
+" view ctags in sidebar
+Plug 'liuchengxu/vista.vim'
+
 " animate and dynamically resize windows
 " Plug 'camspiers/animate.vim'
 " Plug 'camspiers/lens.vim'
@@ -612,3 +615,7 @@ let g:which_key_map['j'] = {
       \ 'j':'Jump to def at cursor',
       \ 'b':'Jump back to original file',
       \ 'l':'Open last closed search window'}
+
+" show ctags in sidebar
+nnoremap <Leader>x :Vista!!<CR>
+let g:which_key_map['x'] = {'name':'Vista'}
