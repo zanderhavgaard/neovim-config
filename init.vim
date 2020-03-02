@@ -8,6 +8,22 @@
 "  \___\___/_||_|_| |_\__, |
 "                     |___/
 
+" ===== Providers ======
+
+" first we disable some integrations we do not need
+" to speed up start time
+" disable ruby integration
+let g:loaded_ruby_provider = 0
+" disable node.js integration
+let g:loaded_node_provider = 0
+" disable python2 integration
+let g:loaded_python_provider = 0
+
+" setup to use system python3
+let g:python3_host_prog = '/usr/bin/python'
+
+" ===== Vim Plug =====
+
 " install plugins
 call plug#begin('~/.vim/plugged')
 
@@ -214,14 +230,6 @@ set fillchars=vert:┃ " for vsplits
 set fillchars+=fold:· " for folds
 hi VertSplit guifg=#2C323C
 
-" ===== Providers ======
-
-" setup to use system python2
-let g:python_host_prog = '/usr/bin/python2'
-
-" setup to use system python2
-let g:python3_host_prog = '/usr/bin/python'
-
 " ===== Clipboard =====
 
 " automatically use system clipboard for all yanking and pasting
@@ -340,8 +348,8 @@ let g:rainbow_active = 1
 
 " ALE settings
 let g:ale_linters = {
-  \ 'python':['flake8', 'black'],
-  \ 'python3':['flake8', 'black'],
+  \ 'python':['pylint', 'flake8'],
+  \ 'python3':['pylint', 'flake8'],
   \ 'java':['javac'],
   \ 'scala':['scalac', 'sbtserver'],
   \ 'yaml':['yamllint'],
