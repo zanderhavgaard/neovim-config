@@ -332,6 +332,12 @@ let g:airline_powerline_fonts = 1
 " use utf-8
 set encoding=utf-8
 
+" set default floaterm position
+let g:floaterm_position = "center"
+" set size of the floaterm
+let g:floaterm_width = 0.8
+let g:floaterm_height = 0.8
+
 " do not start indenLine for .md files, since it hides some text, by setting
 " :set conceallevel=2
 autocmd FileType markdown let g:indentLine_enabled=0
