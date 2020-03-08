@@ -32,6 +32,9 @@ call plug#begin('~/.vim/plugged')
 " register vim-plug to get help files
 Plug 'junegunn/vim-plug'
 
+" sensible defaults for many vim settings
+Plug 'tpope/vim-sensible'
+
 " visual file browser
 Plug 'preservim/nerdtree'
 " git integration for nerd tree
@@ -53,12 +56,6 @@ Plug 'Raimondi/delimitMate'
 " support for many languages
 Plug 'sheerun/vim-polyglot'
 
-" sensible defaults for many vim settings
-Plug 'tpope/vim-sensible'
-
-" do not change layout when closing buffers
-Plug 'moll/vim-bbye'
-
 " clpse all buffers not open in a window
 Plug 'artnez/vim-wipeout'
 
@@ -67,6 +64,12 @@ Plug 'dense-analysis/ale'
 
 " git gutter
 Plug 'airblade/vim-gitgutter'
+
+" git controls
+Plug 'tpope/vim-fugitive'
+
+" inline git blame
+Plug 'APZelos/blamer.nvim'
 
 " draws indent guides based on spaces
 Plug 'Yggdroot/indentLine'
@@ -84,20 +87,11 @@ Plug 'Shougo/deoplete.nvim'
 " jedi integration for deoplete
 Plug 'deoplete-plugins/deoplete-jedi'
 
-" language server intgration
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 " adds file handling to vim command mode
 Plug 'tpope/vim-eunuch'
 
 " toggle lines as comment
 Plug 'scrooloose/nerdcommenter'
-
-" git controls
-Plug 'tpope/vim-fugitive'
-
-" inline git blame
-Plug 'APZelos/blamer.nvim'
 
 " sensibly toggle between absolute and relative line numbers
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
@@ -137,9 +131,10 @@ Plug 'junegunn/limelight.vim'
 " open file at specific line
 Plug 'bogado/file-line'
 
-" nice floating window fzf implementation
+" use fzf in vim
 set rtp+=/usr/bin/fzf
 Plug 'junegunn/fzf.vim'
+" nice floating window fzf implementation
 Plug 'yuki-ycino/fzf-preview.vim'
 
 " floating terminal window
@@ -159,7 +154,6 @@ Plug 'liuchengxu/vista.vim'
 " Plug 'camspiers/lens.vim'
 
 " ===== colorschemes =====
-" Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 Plug 'dracula/vim'
