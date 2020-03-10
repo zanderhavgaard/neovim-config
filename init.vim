@@ -164,6 +164,7 @@ Plug 'ajmwagar/vim-deus'
 Plug 'crusoexia/vim-monokai'
 Plug 'sainnhe/sonokai'
 Plug 'junegunn/seoul256.vim'
+Plug 'kyoz/purify', { 'rtp': 'vim' }
 
 " done installing plugins
 call plug#end()
@@ -202,6 +203,7 @@ colorscheme one
 " colorscheme monokai
 " colorscheme sonokai
 " colorscheme seoul256
+" colorscheme purify
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme = 'deus'
