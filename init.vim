@@ -165,6 +165,9 @@ Plug 'crusoexia/vim-monokai'
 Plug 'sainnhe/sonokai'
 Plug 'junegunn/seoul256.vim'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'sainnhe/gruvbox-material'
+Plug 'owickstrom/vim-colors-paramount'
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
 " done installing plugins
 call plug#end()
@@ -192,10 +195,15 @@ let g:sonokai_disable_italic_comment = 1
 " seoul256 background
 let g:seoul256_background = 234
 
+" gruvbox-material style
+" let g:gruvbox_material_background = 'soft'
+let g:gruvbox_material_background = 'medium'
+" let g:gruvbox_material_background = 'hard'
+
 " set colorscheme, only use one (duh)
 " colorscheme gruvbox
 " colorscheme dracula
-colorscheme one
+" colorscheme one
 " colorscheme deus
 " colorscheme nord
 " colorscheme vim-material
@@ -204,6 +212,9 @@ colorscheme one
 " colorscheme sonokai
 " colorscheme seoul256
 " colorscheme purify
+colorscheme gruvbox-material
+" colorscheme paramount
+" colorscheme challenger_deep
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme = 'deus'
