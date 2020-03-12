@@ -154,20 +154,17 @@ Plug 'liuchengxu/vista.vim'
 " Plug 'camspiers/lens.vim'
 
 " ===== colorschemes =====
-Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
+Plug 'morhetz/gruvbox'
 Plug 'dracula/vim'
-Plug 'tomasr/molokai'
-Plug 'arcticicestudio/nord-vim'
-Plug 'hzchirs/vim-material'
-Plug 'ajmwagar/vim-deus'
-Plug 'crusoexia/vim-monokai'
 Plug 'sainnhe/sonokai'
-Plug 'junegunn/seoul256.vim'
-Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'sainnhe/gruvbox-material'
 Plug 'owickstrom/vim-colors-paramount'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+Plug 'mhartington/oceanic-next'
+Plug 'liuchengxu/space-vim-dark'
+Plug 'ayu-theme/ayu-vim'
+Plug 'tyrannicaltoucan/vim-deep-space'
 
 " done installing plugins
 call plug#end()
@@ -181,9 +178,6 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-" let g:material_style='palenight'
-let g:material_style='oceanic'
-
 " the configuration options should be placed before `colorscheme sonokai`
 let g:sonokai_style = 'andromeda'
 " let g:sonokai_style = 'shusia'
@@ -192,29 +186,33 @@ let g:sonokai_style = 'andromeda'
 let g:sonokai_enable_italic = 1
 let g:sonokai_disable_italic_comment = 1
 
-" seoul256 background
-let g:seoul256_background = 234
-
 " gruvbox-material style
 " let g:gruvbox_material_background = 'soft'
 let g:gruvbox_material_background = 'medium'
 " let g:gruvbox_material_background = 'hard'
 
+" oceanic next settings
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+
+" ayu variants
+" let ayucolor="light"
+let ayucolor="mirage"
+" let ayucolor="dark"
+
 " set colorscheme, only use one (duh)
+" colorscheme one
 " colorscheme gruvbox
 " colorscheme dracula
-" colorscheme one
-" colorscheme deus
-" colorscheme nord
-" colorscheme vim-material
-" colorscheme molokai
-" colorscheme monokai
 " colorscheme sonokai
 " colorscheme seoul256
-" colorscheme purify
-colorscheme gruvbox-material
+" colorscheme gruvbox-material
 " colorscheme paramount
 " colorscheme challenger_deep
+" colorscheme OceanicNext
+" colorscheme space-vim-dark
+colorscheme ayu
+" colorscheme deep-space
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme = 'deus'
