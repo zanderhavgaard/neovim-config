@@ -201,7 +201,7 @@ let ayucolor="mirage"
 " let ayucolor="dark"
 
 " set colorscheme, only use one (duh)
-" colorscheme one
+colorscheme one
 " colorscheme gruvbox
 " colorscheme dracula
 " colorscheme sonokai
@@ -211,7 +211,7 @@ let ayucolor="mirage"
 " colorscheme challenger_deep
 " colorscheme OceanicNext
 " colorscheme space-vim-dark
-colorscheme ayu
+" colorscheme ayu
 " colorscheme deep-space
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
