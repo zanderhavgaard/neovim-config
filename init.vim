@@ -251,6 +251,9 @@ set number
 " enable relative line numbers
 set relativenumber
 
+" no linenumbers in terminal buffers
+au TermOpen * setlocal nonumber norelativenumber
+
 " faster scrolling
 set lazyredraw
 
