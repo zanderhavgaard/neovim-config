@@ -254,6 +254,9 @@ set relativenumber
 " no linenumbers in terminal buffers
 au TermOpen * setlocal nonumber norelativenumber
 
+" always center the currnet line in the buffer
+set scrolloff=999
+
 " faster scrolling
 set lazyredraw
 
@@ -347,7 +350,7 @@ let g:floaterm_width = 0.8
 let g:floaterm_height = 0.8
 
 " do not start indenLine for .md files, since it hides some text, by setting
-" :set conceallevel=2
+set conceallevel=0
 autocmd FileType markdown let g:indentLine_enabled=0
 
 " configure indentline
