@@ -166,6 +166,9 @@ Plug 'liuchengxu/space-vim-dark'
 Plug 'ayu-theme/ayu-vim'
 Plug 'tyrannicaltoucan/vim-deep-space'
 
+" base16 themes - contains many themes..
+" Plug 'chriskempson/base16-vim'
+
 " done installing plugins
 call plug#end()
 
@@ -177,6 +180,9 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+
+" Access colors present in 256 colorspace
+" let base16colorspace=256
 
 " the configuration options should be placed before `colorscheme sonokai`
 let g:sonokai_style = 'andromeda'
@@ -213,6 +219,7 @@ colorscheme one
 " colorscheme space-vim-dark
 " colorscheme ayu
 " colorscheme deep-space
+" colorscheme base16-tomorrow-night
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme = 'deus'
