@@ -174,6 +174,12 @@ call plug#end()
 
 " ===== Colorscheme // UI =====
 
+" enable syntax highlightinh
+syntax on
+
+" use dark background
+set background=dark
+
 " use 24bit color if available
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -228,14 +234,20 @@ colorscheme one
 " transparent background
 " au ColorScheme * hi Normal ctermbg=none guibg=none
 
-" use dark background
-set background=dark
-
 " return to terminal's own cursor setting on exit, by not changing cursor settings at all..
 " set guicursor=
 
-" enable syntax highlightinh
-syntax on
+" customize startify
+" TODO cleanup
+let g:startify_custom_header =
+      \ map(split(system('figlet -f big NeoVim'), '\n'), '"   ". v:val') +
+      \ ['','   Words of the day:', ''] +
+      \ map(split(system('fortune computers definitions disclaimer linux science wisdom'), '\n'), '"   ". v:val') +
+      \ ['',
+      \  '   ------------------------------------------------------------------',
+      \  '   Zanders customized NeoVim ~ gihub.com/zanderhavgaard/neovim-config','','   Happy Hacking!','','']
+" no indenline guides for startify
+autocmd User Startified IndentLinesToggle
 
 " make vertical splits look nicer
 set fillchars=vert:┃ " for vsplits
