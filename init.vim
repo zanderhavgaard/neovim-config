@@ -155,7 +155,9 @@ Plug 'liuchengxu/vista.vim'
 
 " ===== colorschemes =====
 Plug 'rakr/vim-one'
-Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
+" Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'dracula/vim'
 Plug 'sainnhe/sonokai'
 Plug 'sainnhe/gruvbox-material'
@@ -165,9 +167,18 @@ Plug 'mhartington/oceanic-next'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'ayu-theme/ayu-vim'
 Plug 'tyrannicaltoucan/vim-deep-space'
+Plug 'cocopon/iceberg.vim'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'srcery-colors/srcery-vim'
+Plug 'yorickpeterse/happy_hacking.vim'
+Plug 'desmap/slick'
+Plug 'flrnd/plastic.vim'
+Plug 'junegunn/seoul256.vim'
 
 " base16 themes - contains many themes..
-" Plug 'chriskempson/base16-vim'
+Plug 'chriskempson/base16-vim'
 
 " done installing plugins
 call plug#end()
@@ -188,7 +199,7 @@ if exists('+termguicolors')
 endif
 
 " Access colors present in 256 colorspace
-" let base16colorspace=256
+let base16colorspace=256
 
 " the configuration options should be placed before `colorscheme sonokai`
 let g:sonokai_style = 'andromeda'
@@ -213,11 +224,11 @@ let ayucolor="mirage"
 " let ayucolor="dark"
 
 " set colorscheme, only use one (duh)
-colorscheme one
+" colorscheme one
+" colorscheme onedark
 " colorscheme gruvbox
 " colorscheme dracula
 " colorscheme sonokai
-" colorscheme seoul256
 " colorscheme gruvbox-material
 " colorscheme paramount
 " colorscheme challenger_deep
@@ -225,7 +236,16 @@ colorscheme one
 " colorscheme space-vim-dark
 " colorscheme ayu
 " colorscheme deep-space
-" colorscheme base16-tomorrow-night
+colorscheme base16-tomorrow-night
+" colorscheme iceberg
+" colorscheme palenight
+" colorscheme nord
+" colorscheme purify
+" colorscheme srcery
+" colorscheme happy_hacking
+" colorscheme slick
+" colorscheme plastic
+
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme = 'deus'
