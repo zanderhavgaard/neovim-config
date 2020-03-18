@@ -239,9 +239,24 @@ colorscheme one
 
 " customize startify
 " TODO cleanup
-let g:startify_custom_header =
-      \ map(split(system('figlet -f big NeoVim'), '\n'), '"   ". v:val') +
-      \ ['','   Words of the day:', ''] +
+let g:startify_custom_header = [
+      \ '         .            .      ',
+      \ '       .,;.           :,.    ',
+      \ '     .,;;;,,.         ccc;.  ',
+      \ '   .;c::::,,,.        ccccc: ',
+      \ '   .::cc::,,,,,.      cccccc.',
+      \ '   .cccccc;;;;;;.     llllll.   _   _        __      ___',
+      \ '   .cccccc.,;;;;;;.   llllll.  | \ | |       \ \    / (_)',
+      \ '   .cccccc  .;;;;;;.  oooooo.  |  \| | ___  __\ \  / / _ _ __ ___',
+      \ '   .lllllc   .;;;;;;;.oooooo.  | . ` |/ _ \/ _ \ \/ / | | |_ ` _ \',
+      \ '   .lllllc     ,::::::looooo.  | |\  |  __/ (_) \  /  | | | | | | |',
+      \ '   .llllll      .:::::lloddd.  |_| \_|\___|\___/ \/   |_|_| |_| |_|',
+      \ '   .looool       .;::coooodo.',
+      \ '     .cool         .ccoooc.  ',
+      \ '       .co          .:o:.    ',
+      \ '         .           ..      ',
+      \ ] +
+      \ ['','','   QOTD:', ''] +
       \ map(split(system('fortune computers definitions disclaimer linux science wisdom'), '\n'), '"   ". v:val') +
       \ ['',
       \  '   ------------------------------------------------------------------',
