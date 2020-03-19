@@ -179,6 +179,8 @@ Plug 'junegunn/seoul256.vim'
 
 " base16 themes - contains many themes..
 Plug 'chriskempson/base16-vim'
+" Access colors present in 256 colorspace
+let base16colorspace=256
 
 " done installing plugins
 call plug#end()
@@ -197,9 +199,6 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-
-" Access colors present in 256 colorspace
-let base16colorspace=256
 
 " the configuration options should be placed before `colorscheme sonokai`
 let g:sonokai_style = 'andromeda'
@@ -224,7 +223,7 @@ let ayucolor="mirage"
 " let ayucolor="dark"
 
 " set colorscheme, only use one (duh)
-" colorscheme one
+colorscheme one
 " colorscheme onedark
 " colorscheme gruvbox
 " colorscheme dracula
@@ -236,7 +235,7 @@ let ayucolor="mirage"
 " colorscheme space-vim-dark
 " colorscheme ayu
 " colorscheme deep-space
-colorscheme base16-tomorrow-night
+" colorscheme base16-tomorrow-night
 " colorscheme iceberg
 " colorscheme palenight
 " colorscheme nord
