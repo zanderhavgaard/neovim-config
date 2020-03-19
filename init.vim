@@ -307,6 +307,7 @@ set relativenumber
 
 " no linenumbers in terminal buffers
 au TermOpen * setlocal nonumber norelativenumber
+au TermOpen * IndentLinesToggle
 
 " always center the currnet line in the buffer
 set scrolloff=999
