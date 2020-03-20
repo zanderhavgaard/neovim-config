@@ -39,8 +39,6 @@ Plug 'tpope/vim-sensible'
 Plug 'preservim/nerdtree'
 " git integration for nerd tree
 Plug 'Xuyuanp/nerdtree-git-plugin'
-" vimfiler like navigation
-Plug 'flw-cn/vim-nerdtree-l-open-h-close'
 " more colors in nerdtree
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
@@ -305,7 +303,7 @@ set number
 set relativenumber
 
 " no linenumbers in terminal buffers
-au TermOpen * setlocal nonumber norelativenumber
+au TermOpen * setlocal nonumber norelativenumber scrolloff=0
 au TermOpen * IndentLinesToggle
 
 " always center the currnet line in the buffer
