@@ -486,6 +486,11 @@ highlight link javaScopeDecl Statement
 highlight link javaType Type
 highlight link javaDocTags PreProc
 
+" ===== Custom commands =====
+
+" generate recursive list of todo comments
+command Todo noautocmd vimgrep /TODO\|FIXME\|HACK/j ** | cw
+
 " ===== Custom Keybindings =====
 
 " neovim terminal
