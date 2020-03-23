@@ -139,7 +139,7 @@ Plug 'yuki-ycino/fzf-preview.vim'
 Plug 'voldikss/vim-floaterm'
 
 " dim inactive windows
-Plug 'blueyed/vim-diminactive'
+" Plug 'blueyed/vim-diminactive'
 
 " jump to definition
 Plug 'pechorin/any-jump.nvim'
