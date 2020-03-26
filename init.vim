@@ -488,6 +488,9 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
+" ignore folders
+let NERDTreeIgnore=['\.git$', '\.terraform$', '__pycache__$']
+
 " ===== try to improve java syntax highlighting =====
 let java_highlight_functions = 1
 let java_highlight_all = 1
