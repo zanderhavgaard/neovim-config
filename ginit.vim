@@ -6,7 +6,11 @@
 "
 
 " set font for gui
-Guifont Hack Nerd Font:h11
+" Guifont Hack Nerd Font Mono:h10.5
+" Guifont FantasqueSansMono Nerd Font Mono
+" Guifont Iosevka Term:h11
+Guifont VictorMono Nerd Font Mono
+
 
 " disable gui tabline
 GuiTabline 0
