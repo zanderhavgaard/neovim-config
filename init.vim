@@ -540,6 +540,10 @@ nnoremap <silent> <C-A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 nmap <silent> <Tab> :tabnext<CR>
 nmap <silent> <S-Tab> :tabprevious<CR>
 
+" saner goto end start/end of line
+nnoremap H ^
+nnoremap L $
+
 " set the <Leader> var
 let mapleader = "\<Space>"
 let maplocalleader = ","
