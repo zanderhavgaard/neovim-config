@@ -421,6 +421,8 @@ let g:indentLine_showFirstIndentLevel = 1
 
 " enable rainbow parentheses
 let g:rainbow_active = 1
+" disable for html/xml files
+autocmd FileType html,xml RainbowToggleOff
 
 " ALE settings
 let g:ale_linters = {
