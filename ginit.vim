@@ -6,4 +6,7 @@
 "
 
 " set font for gui
-Guifont Hack Nerd Font:h12
+Guifont Hack Nerd Font:h11
+
+" disable gui tabline
+GuiTabline 0
