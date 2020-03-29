@@ -385,6 +385,10 @@ set updatetime=100
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
+" startify autoload sessions
+let g:startify_session_autoload = 1
+let g:startify_session_persistence = 1
+
 " airline configuartion
 " let g:airline_left_sep=''
 " let g:airline_left_sep=' '
