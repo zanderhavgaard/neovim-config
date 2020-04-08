@@ -138,14 +138,17 @@ Plug 'yuki-ycino/fzf-preview.vim'
 " floating terminal window
 Plug 'voldikss/vim-floaterm'
 
-" dim inactive windows
-" Plug 'blueyed/vim-diminactive'
-
 " jump to definition
 Plug 'pechorin/any-jump.nvim'
 
 " view ctags in sidebar
 Plug 'liuchengxu/vista.vim'
+
+" golang integration
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" dim inactive windows
+" Plug 'blueyed/vim-diminactive'
 
 " animate and dynamically resize windows
 " Plug 'camspiers/animate.vim'
@@ -381,6 +384,14 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 " decrease update time such git gutter works faster
 set updatetime=100
 
+" draw indent guides for tab-indented code
+set listchars=tab:\|\
+set list
+
+" more natural split opening
+set splitbelow
+set splitright
+
 " activate limelight when entering goyo
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
@@ -428,6 +439,36 @@ let g:rainbow_active = 1
 " disable for html/xml files
 autocmd FileType html,xml RainbowToggleOff
 
+" nerdcommenter config
+filetype plugin on
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" better python highlighting, enable all features
+let python_highlight_all = 1
+
+" configure golang integration
+" enable syntax highlighting features
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+" enable highlight same ids in code
+let g:go_auto_sameids = 1
+" auto import packages
+" let g:go_fmt_command = "goimports"
+" show types in statusbar when hovering over variables
+let g:go_auto_type_info = 1
+" use language server
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+
 " ALE settings
 let g:ale_linters = {
   \ 'python':['pylint', 'flake8'],
@@ -446,32 +487,16 @@ let g:ale_fixers = {
 
 let g:ale_fix_on_save = 1
 
-" syntastic flake8 for python configuartion:
-" ignore these error codes:
-" let g:syntastic_python_flake8_post_args='--ignore=E501,E402,E303,E302,E301,E231,E225,E123,F401,W391'
-" TODO adapt for ALE
+" Error and warning signs.
+let g:ale_sign_error = '⤫'
+let g:ale_sign_warning = '⚠'
 
-" draw indent guides for tab-indented code
-set listchars=tab:\|\
-set list
+" Enable integration with airline.
+let g:airline#extensions#ale#enabled = 1
 
 " Use deoplete.
 " more options :help deoplete-options
 let g:deoplete#enable_at_startup = 1
-
-" more natural split opening
-set splitbelow
-set splitright
-
-" nerdcommenter config
-filetype plugin on
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-
-" better python highlighting, enable all features
-let python_highlight_all = 1
 
 " ===== NerdTree Settings =====
 
