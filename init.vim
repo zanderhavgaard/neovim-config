@@ -399,6 +399,8 @@ autocmd! User GoyoLeave Limelight!
 " startify autoload sessions
 let g:startify_session_autoload = 1
 let g:startify_session_persistence = 1
+" where to save vim sessions
+let g:startify_session_dir = '/home/zander/.vim/session'
 
 " airline configuartion
 " let g:airline_left_sep=''
