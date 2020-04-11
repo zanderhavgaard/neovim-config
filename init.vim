@@ -410,6 +410,9 @@ let g:startify_session_persistence = 1
 " where to save vim sessions
 let g:startify_session_dir = '/home/zander/.vim/session'
 
+" enable quickscope when pressing one of the following keys
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
 " airline configuartion
 " let g:airline_left_sep=''
 " let g:airline_left_sep=' '
