@@ -78,12 +78,20 @@ Plug 'tpope/vim-sleuth'
 " multiple cursor support
 Plug 'terryma/vim-multiple-cursors'
 
+" snippets engine
+Plug 'SirVer/ultisnips'
+" snippets
+Plug 'honza/vim-snippets'
+
 " provides autocompletion
 " more autocomple sources are available here:
 " https://github.com/Shougo/deoplete.nvim/wiki/Completion-Sources
 Plug 'Shougo/deoplete.nvim'
 " jedi integration for deoplete
 Plug 'deoplete-plugins/deoplete-jedi'
+
+" highlight unique characters in lines to allow quicj horizontal movement
+Plug 'unblevable/quick-scope'
 
 " adds file handling to vim command mode
 Plug 'tpope/vim-eunuch'
