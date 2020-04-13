@@ -1,4 +1,4 @@
-"    _       __   ___
+"  _  _       __   ___
 " | \| |___ __\ \ / (_)_ __
 " | .` / -_) _ \ V /| | '  \
 " |_|\_\___\___/\_/ |_|_|_|_|
@@ -213,6 +213,9 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+
+" italics for one dark
+let g:one_allow_italics = 1
 
 " the configuration options should be placed before `colorscheme sonokai`
 let g:sonokai_style = 'andromeda'
