@@ -71,6 +71,7 @@ Plug 'APZelos/blamer.nvim'
 
 " draws indent guides based on spaces
 Plug 'Yggdroot/indentLine'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " automatically set indent width
 Plug 'tpope/vim-sleuth'
