@@ -690,7 +690,7 @@ nnoremap <Leader>nn :Files <CR>
 " fzf project files --> not sure how this is different than FzfPerviewGitFiles
 nnoremap <Leader>np :FzfPreviewProjectFiles <CR>
 " fzf grep line in files
-nnoremap <Leader>nw :FzfPreviewProjectGrep <CR>
+nnoremap <Leader>nw :FzfPreviewProjectGrep
 " fzf open buffers
 nnoremap <Leader>nb :FzfPreviewBuffers <CR>
 " open floating fzf with preview for files in git repo
