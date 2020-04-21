@@ -1,6 +1,8 @@
 # NeoVim Configuration
 My personal neovim config.
 
+![screenshot](screenshot2.png)
+
 ## Setup
 Requires a powerline font, I use nerd-fonts: https://nerdfonts.com/
 
