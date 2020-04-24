@@ -686,8 +686,10 @@ command! -bang -nargs=? -complete=dir Files
 nnoremap <Leader>nn :Files <CR>
 " fzf project files --> not sure how this is different than FzfPerviewGitFiles
 nnoremap <Leader>np :FzfPreviewProjectFiles <CR>
-" fzf grep line in files
-nnoremap <Leader>nw :FzfPreviewProjectGrep
+" fzf grep line in files using keyword ar karet
+nnoremap <Leader>nw :FzfPreviewProjectGrep <C-r><C-w><CR>
+" fzf grep line in files using keyword ar karet
+nnoremap <Leader>nq :FzfPreviewProjectGrep 
 " fzf open buffers
 nnoremap <Leader>nb :FzfPreviewBuffers <CR>
 " open floating fzf with preview for files in git repo
