@@ -80,9 +80,9 @@ Plug 'tpope/vim-sleuth'
 Plug 'terryma/vim-multiple-cursors'
 
 " snippets engine
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 " snippets
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 
 " provides autocompletion
 " more autocomple sources are available here:
@@ -689,7 +689,7 @@ nnoremap <Leader>np :FzfPreviewProjectFiles <CR>
 " fzf grep line in files using keyword ar karet
 nnoremap <Leader>nw :FzfPreviewProjectGrep <C-r><C-w><CR>
 " fzf grep line in files using keyword ar karet
-nnoremap <Leader>nq :FzfPreviewProjectGrep 
+nnoremap <Leader>nq :FzfPreviewProjectGrep
 " fzf open buffers
 nnoremap <Leader>nb :FzfPreviewBuffers <CR>
 " open floating fzf with preview for files in git repo
