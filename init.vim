@@ -452,6 +452,11 @@ let g:indentLine_showFirstIndentLevel = 1
 let g:rainbow_active = 1
 " disable for html/xml files
 autocmd FileType html,xml RainbowToggleOff
+let g:rainbow_conf = {
+\	'separately': {
+\		'nerdtree': 0,
+\	}
+\}
 
 " nerdcommenter config
 filetype plugin on
