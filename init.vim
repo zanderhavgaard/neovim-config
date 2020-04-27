@@ -560,7 +560,7 @@ if has('nvim')
 endif
 
 " remove one tab character back in insert mode
-inoremap <silent> <S-Tab> <C-d>
+" inoremap <silent> <S-Tab> <C-d>
 
 " switch buffers
 nnoremap <C-J> <C-W><C-J>
