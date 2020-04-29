@@ -293,7 +293,7 @@ let g:startify_custom_header = [
       \ '         .           ..      ',
       \ ] +
       \ ['','','   QOTD:', ''] +
-      \ map(split(system('fortune computers definitions disclaimer linux science wisdom'), '\n'), '"   ". v:val') +
+      \ map(split(system('fortune computers definitions disclaimer linux linuxcookie science wisdom'), '\n'), '"   ". v:val') +
       \ ['',
       \  '   ------------------------------------------------------------------',
       \  '   Zanders customized NeoVim ~ gihub.com/zanderhavgaard/neovim-config','','   Happy Hacking!','','']
