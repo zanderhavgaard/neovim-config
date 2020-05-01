@@ -156,6 +156,9 @@ Plug 'liuchengxu/vista.vim'
 " golang integration
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+" easily swap window positions
+Plug 'wesQ3/vim-windowswap'
+
 " dim inactive windows
 " Plug 'blueyed/vim-diminactive'
 
@@ -713,7 +716,11 @@ let g:which_key_map['n'] = {
 
 " close all buffers not open in a window
 nnoremap <Leader>w :Wipeout<CR>
-let g:which_key_map['w'] = {'name':'Delete hidden buffers'}
+let g:which_key_map['w'] = {
+      \ 'name':'+window',
+      \ 'i':'Delete hidden buffers',
+      \ 'w':'Swap window'
+      \}
 
 " close buffer but keep window
 nnoremap <Leader>q :Bdelete<CR>
