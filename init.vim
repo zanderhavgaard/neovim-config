@@ -140,9 +140,13 @@ Plug 'bogado/file-line'
 
 " use fzf in vim
 set rtp+=/usr/bin/fzf
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 " nice floating window fzf implementation
 Plug 'yuki-ycino/fzf-preview.vim'
+
+" menu for different fzf features
+Plug 'laher/fuzzymenu.vim'
 
 " floating terminal window
 Plug 'voldikss/vim-floaterm'
