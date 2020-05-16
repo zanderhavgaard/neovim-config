@@ -250,7 +250,7 @@ let ayucolor="mirage"
 " colorscheme wal
 
 " set colorscheme, only use one (duh)
-" colorscheme one
+colorscheme one
 " colorscheme onedark
 " colorscheme gruvbox
 " colorscheme dracula
@@ -271,7 +271,7 @@ let ayucolor="mirage"
 " colorscheme dogrun
 " colorscheme cosmic_latte
 " colorscheme aurora
-colorscheme molokai
+" colorscheme molokai
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 let g:airline_theme = 'onedark'
