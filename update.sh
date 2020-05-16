@@ -1,15 +1,15 @@
 #!/bin/bash
 
-echo -e "\nUpdating vim python integration ...\n"
+echo -e "Updating vim python integration ..."
 pip install --user --upgrade pynvim msgpack
 
-echo -e "\nUpgrading vim-plug ...\n"
+echo -e "Upgrading vim-plug ..."
 nvim +PlugUpgrade +qa
 
-echo -e "\nInstalling // updating plugins ...\n"
+echo -e "Installing && updating plugins ..."
 nvim +PlugUpdate +UpdateRemotePlugins +qa
 
-echo -e "\nCleaning unused packages ...\n"
+echo -e "Cleaning unused packages ..."
 nvim +PlugClean! +qa
 
-echo -e "\nDone updating."
+echo -e "Done updating!"
