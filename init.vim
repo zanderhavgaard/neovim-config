@@ -500,6 +500,12 @@ let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 
 " ALE settings
+let g:ale_use_global_executables = 1
+" let g:ale_python_pylint_options = ""
+let g:ale_python_flake8_options = "--ignore E501"
+" let g:ale_python_black_options = ""
+let g:ale_python_autopep8_options = "--ignore E501"
+
 let g:ale_linters = {
   \ 'python':['pylint', 'flake8'],
   \ 'python3':['pylint', 'flake8'],
