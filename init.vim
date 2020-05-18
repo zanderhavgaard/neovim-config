@@ -628,8 +628,8 @@ nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 
 " fuzzymenu
-nmap <Leader><Leader> <Plug>Fzm
-vmap <Leader><Leader> <Plug>FzmVisual
+nmap <LocalLeader><Leader> <Plug>Fzm
+vmap <LocalLeader><Leader> <Plug>FzmVisual
 
 " open a new tab
 nnoremap <silent> <Leader>tt :tabnew<CR>
@@ -665,8 +665,8 @@ let g:which_key_map['r'] = {
       \}
 
 " remove highlighting
-nnoremap <Leader>sc :let @/=""<CR>
-let g:which_key_map['sc'] = {'name':'Clear search highlight'}
+nnoremap <Leader><space> :let @/=""<CR>
+let g:which_key_map[' '] = {'name':'Clear search highlight'}
 
 " Colorize
 nnoremap <Leader>hh :ColorHighlight<CR>
