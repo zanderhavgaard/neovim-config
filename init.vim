@@ -77,7 +77,10 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'tpope/vim-sleuth'
 
 " multiple cursor support
-Plug 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors'
+
+" search and repalce across multiple files
+Plug 'brooth/far.vim'
 
 " snippets engine
 " Plug 'SirVer/ultisnips'
