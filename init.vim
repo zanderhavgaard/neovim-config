@@ -630,6 +630,10 @@ call which_key#register('<Space>', 'g:which_key_map')
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 
+" conveniently execute macro saved to q register
+nnoremap <Leader>q @q
+let g:which_key_map['q'] = {'name':'execute macro in q register'}
+
 " fuzzymenu
 nmap <LocalLeader><Leader> <Plug>Fzm
 vmap <LocalLeader><Leader> <Plug>FzmVisual
@@ -744,8 +748,8 @@ let g:which_key_map['w'] = {
       \}
 
 " close buffer but keep window
-nnoremap <Leader>q :Bdelete<CR>
-let g:which_key_map['q'] = {'name':'Delete buffer'}
+" nnoremap <Leader>q :Bdelete<CR>
+" let g:which_key_map['q'] = {'name':'Delete buffer'}
 
 " activate ineline git blame
 nnoremap <Leader>gb :BlamerToggle<CR>
