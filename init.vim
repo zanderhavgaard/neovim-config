@@ -797,3 +797,12 @@ let g:which_key_map['j'] = {
 " show ctags in sidebar
 nnoremap <Leader>x :Vista!!<CR>
 let g:which_key_map['x'] = {'name':'Vista'}
+
+" ===== autogrpoups =====
+
+" autogroup for thesis .tex files, that compile the document on writes
+augroup thesis
+  autocmd!
+  autocmd BufWrite *.tex :silent !bash /home/zander/Dropbox/ITU/Master/4_semester/thesis/Thesis/compile_tex.sh
+  autocmd BufWrite *.bib :silent !bash /home/zander/Dropbox/ITU/Master/4_semester/thesis/Thesis/compile_tex.sh
+augroup end
