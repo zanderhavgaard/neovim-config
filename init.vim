@@ -32,6 +32,9 @@ call plug#begin('~/.vim/plugged')
 " register vim-plug to get help files
 Plug 'junegunn/vim-plug'
 
+" execute commands asyncronously
+Plug 'skywind3000/asyncrun.vim'
+
 " sensible defaults for many vim settings
 Plug 'tpope/vim-sensible'
 
@@ -803,6 +806,6 @@ let g:which_key_map['x'] = {'name':'Vista'}
 " autogroup for thesis .tex files, that compile the document on writes
 augroup thesis
   autocmd!
-  autocmd BufWrite *.tex :silent !bash /home/zander/Dropbox/ITU/Master/4_semester/thesis/Thesis/compile_tex.sh
-  autocmd BufWrite *.bib :silent !bash /home/zander/Dropbox/ITU/Master/4_semester/thesis/Thesis/compile_tex.sh
+  autocmd BufWrite *.tex :AsyncRun bash /home/zander/Dropbox/ITU/Master/4_semester/thesis/Thesis/compile_tex.sh
+  autocmd BufWrite *.bib :AsyncRun bash /home/zander/Dropbox/ITU/Master/4_semester/thesis/Thesis/compile_tex.sh
 augroup end
