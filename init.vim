@@ -654,13 +654,15 @@ let g:which_key_map['t'] = {
 " focus current buffer
 nnoremap <silent> <Leader>ff <C-W>\|<C-W>_
 " enter goyo
-nnoremap <silent> <Leader>fg :Goyo<CR>
+nnoremap <silent> <Leader>fg :Goyo 50%x90%<CR>
+nnoremap <silent> <Leader>fh :Goyo <CR>
 " equal size all bufffers
 nmap <silent> <Leader>fe <C-w>=
 let g:which_key_map['f'] = {
       \ 'name':'+focus_buffers',
       \ 'f':'focus current buffer',
       \ 'g':'focus current buffer with goyo',
+      \ 'h':'toggle goyo',
       \ 'e':'equal size for all buffers',
       \}
 
