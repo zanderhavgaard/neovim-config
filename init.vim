@@ -807,6 +807,7 @@ let g:which_key_map['x'] = {'name':'Vista'}
 
 " autogroup for thesis .tex files, that compile the document on writes
 augroup thesis
+  set spell spelllang=en_us
   autocmd!
   autocmd BufWrite *.tex :AsyncRun bash /home/zander/Dropbox/ITU/Master/4_semester/thesis/Thesis/compile_tex.sh
   autocmd BufWrite *.bib :AsyncRun bash /home/zander/Dropbox/ITU/Master/4_semester/thesis/Thesis/compile_tex.sh
