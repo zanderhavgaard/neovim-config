@@ -814,8 +814,8 @@ let g:which_key_map['s'] = {
       \ 'n':'next error',
       \ 'p':'previous error',
       \ 'c':'correct error',
-      \ 'a':'add to dictionary'
-      \ 'm':'mark as error'
+      \ 'a':'add to dictionary',
+      \ 'm':'mark as error',
       \ }
 
 " ===== autogrpoups =====
