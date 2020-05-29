@@ -803,6 +803,17 @@ let g:which_key_map['j'] = {
 nnoremap <Leader>x :Vista!!<CR>
 let g:which_key_map['x'] = {'name':'Vista'}
 
+" errors/spellcheck
+nnoremap <Leader>sn ]s
+nnoremap <Leader>sp [s
+nnoremap <Leader>sc z=
+let g:which_key_map['s'] = {
+      \ 'name':'errors/spelling',
+      \ 'n':'next'
+      \ 'p':'previous'
+      \ 'c':'correct'
+      \ }
+
 " ===== autogrpoups =====
 
 " autogroup for thesis .tex files, that compile the document on writes
