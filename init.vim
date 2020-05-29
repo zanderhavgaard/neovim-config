@@ -807,11 +807,15 @@ let g:which_key_map['x'] = {'name':'Vista'}
 nnoremap <Leader>sn ]s
 nnoremap <Leader>sp [s
 nnoremap <Leader>sc z=
+nnoremap <Leader>sa zg
+nnoremap <Leader>si zw
 let g:which_key_map['s'] = {
       \ 'name':'errors/spelling',
-      \ 'n':'next'
-      \ 'p':'previous'
-      \ 'c':'correct'
+      \ 'n':'next error',
+      \ 'p':'previous error',
+      \ 'c':'correct error',
+      \ 'a':'add to dictionary'
+      \ 'm':'mark as error'
       \ }
 
 " ===== autogrpoups =====
