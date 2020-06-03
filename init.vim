@@ -55,6 +55,7 @@ Plug 'mhinz/vim-startify'
 Plug 'Raimondi/delimitMate'
 
 " support for many languages
+let g:polyglot_disabled = ['bash','sh','zsh']
 Plug 'sheerun/vim-polyglot'
 
 " clpse all buffers not open in a window
@@ -131,7 +132,7 @@ Plug 'numirias/semshi'
 Plug 'ekalinin/Dockerfile.vim'
 
 " add org-mode functionality
-Plug 'jceb/vim-orgmode'
+" Plug 'jceb/vim-orgmode'
 
 " smooth scrolling
 Plug 'psliwka/vim-smoothie'
@@ -164,7 +165,7 @@ Plug 'pechorin/any-jump.nvim'
 Plug 'liuchengxu/vista.vim'
 
 " golang integration
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " easily swap window positions
 Plug 'wesQ3/vim-windowswap'
@@ -821,9 +822,9 @@ let g:which_key_map['s'] = {
 " ===== autogrpoups =====
 
 " autogroup for thesis .tex files, that compile the document on writes
-augroup thesis
-  set spell spelllang=en_us
-  autocmd!
-  autocmd BufWrite *.tex :AsyncRun bash /home/zander/Dropbox/ITU/Master/4_semester/thesis/Thesis/compile_tex.sh
-  autocmd BufWrite *.bib :AsyncRun bash /home/zander/Dropbox/ITU/Master/4_semester/thesis/Thesis/compile_tex.sh
-augroup end
+" augroup thesis
+  " set spell spelllang=en_us
+  " autocmd!
+  " autocmd BufWrite *.tex :AsyncRun bash /home/zander/Dropbox/ITU/Master/4_semester/thesis/Thesis/compile_tex.sh
+  " autocmd BufWrite *.bib :AsyncRun bash /home/zander/Dropbox/ITU/Master/4_semester/thesis/Thesis/compile_tex.sh
+" augroup end
