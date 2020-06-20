@@ -54,6 +54,9 @@ Plug 'mhinz/vim-startify'
 " autocloses brackets and parentheses in insert mode
 Plug 'Raimondi/delimitMate'
 
+" autoclose html/xml style tags
+Plug 'alvan/vim-closetag'
+
 " support for many languages
 let g:polyglot_disabled = ['bash','sh','zsh']
 Plug 'sheerun/vim-polyglot'
