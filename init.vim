@@ -267,7 +267,7 @@ let g:tokyonight_disable_italics_comments = 1
 " colorscheme wal
 
 " set colorscheme, only use one (duh)
-" colorscheme one
+colorscheme one
 " colorscheme onedark
 " colorscheme gruvbox
 " colorscheme dracula
@@ -289,7 +289,7 @@ let g:tokyonight_disable_italics_comments = 1
 " colorscheme cosmic_latte
 " colorscheme aurora
 " colorscheme molokai
-colorscheme tokyonight
+" colorscheme tokyonight
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 let g:airline_theme = 'onedark'
