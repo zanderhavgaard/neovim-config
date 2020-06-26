@@ -325,7 +325,7 @@ let g:startify_custom_header = [
       \ map(split(system('fortune computers definitions disclaimer linux linuxcookie science wisdom'), '\n'), '"   ". v:val') +
       \ ['',
       \  '   ------------------------------------------------------------------',
-      \  '   Zanders customized NeoVim ~ gihub.com/zanderhavgaard/neovim-config','','   Happy Hacking!','','']
+      \  '   Zanders customized NeoVim ~ gihub.com/zanderhavgaard/neovim-config','','   ~ Happy Hacking! ~','','']
 " no indenline guides for startify
 autocmd User Startified IndentLinesToggle
 
