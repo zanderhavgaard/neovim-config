@@ -134,6 +134,9 @@ Plug 'numirias/semshi'
 " docker files syntax
 Plug 'ekalinin/Dockerfile.vim'
 
+" prebiew markdown files
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+
 " add org-mode functionality
 " Plug 'jceb/vim-orgmode'
 
@@ -551,6 +554,13 @@ let g:airline#extensions#ale#enabled = 1
 " Use deoplete.
 " more options :help deoplete-options
 let g:deoplete#enable_at_startup = 1
+
+" instant markdown plugin settings
+" let g:instant_markdown_slow = 1
+let g:instant_markdown_autostart = 0
+"let g:instant_markdown_autoscroll = 0
+"let g:instant_markdown_port = 8888
+let g:instant_markdown_python = 1
 
 " ===== NerdTree Settings =====
 

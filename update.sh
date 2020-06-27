@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo -e "Updating vim python integration ..."
-pip install --user --upgrade pynvim msgpack
+pip install --user --upgrade pynvim msgpack smdv
 
 echo -e "Upgrading vim-plug ..."
 nvim +PlugUpgrade +qa
