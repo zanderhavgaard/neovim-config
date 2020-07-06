@@ -434,7 +434,7 @@ set splitbelow
 set splitright
 
 " enable spellchecking for .md and .tex files
-autocmd FileType markdown,plaintex set spell
+autocmd FileType markdown,tex,latex,plaintex set spell
 
 " activate limelight when entering goyo
 autocmd! User GoyoEnter Limelight
