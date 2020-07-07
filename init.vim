@@ -842,3 +842,12 @@ let g:which_key_map['s'] = {
       \ 'a':'add to dictionary',
       \ 'm':'mark as error',
       \ }
+
+" ===== autogrpoups =====
+
+" autogroup for thesis .tex files, that compile the document on writes
+augroup thesis
+  autocmd!
+  autocmd BufWrite *.tex :AsyncRun bash /home/zander/Dropbox/ITU/Master/4_semester/thesis/Thesis/compile_tex.sh
+  autocmd BufWrite *.bib :AsyncRun bash /home/zander/Dropbox/ITU/Master/4_semester/thesis/Thesis/compile_tex.sh
+augroup END
