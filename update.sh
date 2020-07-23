@@ -14,7 +14,6 @@ echo -e "Installing && updating plugins ..."
 nvim +PlugUpdate +UpdateRemotePlugins +qa
 
 echo -e "Cleaning unused packages ..."
-# TODO figure out why this freezes..
-# nvim +PlugClean! +qa
+nvim +PlugClean! +qa
 
 echo -e "Done updating!"
