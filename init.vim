@@ -180,6 +180,12 @@ Plug 'liuchengxu/vista.vim'
 " easily swap window positions
 Plug 'wesQ3/vim-windowswap'
 
+" for creating colorschmes
+Plug 'lifepillar/vim-colortemplate'
+
+" cheatsheet for vim
+Plug 'lifepillar/vim-cheat40'
+
 " dim inactive windows
 " Plug 'blueyed/vim-diminactive'
 
@@ -219,9 +225,9 @@ Plug 'franbach/miramare'
 " Plug 'dylanaraps/wal.vim'
 
 " base16 themes - contains many themes..
-Plug 'chriskempson/base16-vim'
+" Plug 'chriskempson/base16-vim'
 " Access colors present in 256 colorspace
-let base16colorspace=256
+" let base16colorspace=256
 
 " done installing plugins
 call plug#end()
@@ -274,7 +280,7 @@ let g:miramare_disable_italic_comment = 1
 " colorscheme wal
 
 " set colorscheme, only use one (duh)
-colorscheme one
+" colorscheme one
 " colorscheme onedark
 " colorscheme gruvbox
 " colorscheme dracula
@@ -299,9 +305,10 @@ colorscheme one
 " colorscheme embark
 " colorscheme flatwhite
 " colorscheme miramare
+colorscheme nostromo
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
-let g:airline_theme = 'onedark'
+" let g:airline_theme = 'onedark'
 " let g:airline_theme = 'deus'
 " let g:airline_theme = 'material'
 
@@ -848,6 +855,11 @@ let g:which_key_map['s'] = {
       \ 'a':'add to dictionary',
       \ 'm':'mark as error',
       \ }
+
+" cheatsheet
+nnoremap <Leader>? :Cheat40<CR>
+" TODO fix name not displaying
+let g:which_key_map['?'] = {'name':'cheat sheet'}
 
 " ===== autogrpoups =====
 
