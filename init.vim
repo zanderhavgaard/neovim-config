@@ -280,7 +280,7 @@ let g:miramare_disable_italic_comment = 1
 " colorscheme wal
 
 " set colorscheme, only use one (duh)
-" colorscheme one
+colorscheme one
 " colorscheme onedark
 " colorscheme gruvbox
 " colorscheme dracula
@@ -305,7 +305,7 @@ let g:miramare_disable_italic_comment = 1
 " colorscheme embark
 " colorscheme flatwhite
 " colorscheme miramare
-colorscheme nostromo
+" colorscheme nostromo
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme = 'onedark'
