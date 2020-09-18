@@ -249,7 +249,7 @@ if exists('+termguicolors')
 endif
 
 " italics for one dark
-let g:one_allow_italics = 1
+" let g:one_allow_italics = 1
 
 " the configuration options should be placed before `colorscheme sonokai`
 let g:sonokai_style = 'andromeda'
