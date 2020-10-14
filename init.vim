@@ -542,7 +542,7 @@ let g:go_info_mode='gopls'
 let g:ale_use_global_executables = 1
 " let g:ale_python_pylint_options = ""
 let g:ale_python_flake8_options = "--ignore E501"
-" let g:ale_python_black_options = ""
+let g:ale_python_black_options = "--line-length 120"
 let g:ale_python_autopep8_options = "--ignore E501"
 
 let g:ale_linters = {
