@@ -5,7 +5,7 @@ RUN \
     pacman --quiet --noconfirm -Syyyuuuu && \
     # install zsh, neovim and runtimes for nvim plugins
     pacman --quiet --noconfirm -S \
-        base-devel git zsh neovim python python-pip nodejs npm yarn libnotify && \
+        base-devel git zsh neovim python python-pip nodejs npm yarn ctags libnotify && \
     # install misc. cli tools
     pacman --quiet --noconfirm -S \
         bat exa prettyping fzf \
