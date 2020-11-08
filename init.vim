@@ -244,7 +244,11 @@ syntax on
 " you can set dark/light theme using environment variables
 if ($NVIM_BACKGROUND != "")
     silent let bg = $NVIM_BACKGROUND
-    silent set background = bg
+    if (bg == "dark")
+        set background=dark
+    elseif (bg == "light")
+        set background=light
+    endif
 else
     set background=dark
 endif
