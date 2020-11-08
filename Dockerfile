@@ -11,7 +11,8 @@ RUN \
         bat exa prettyping fzf \
         fd ncdu tldr ripgrep ranger tmux \
         jq figlet zip unzip moreutils \
-        shellcheck yamllint && \
+        shellcheck yamllint \
+        fortune-mod && \
     # clean pacman cache
     pacman --quiet --noconfirm -Scc && \
     # install nvim node binding
@@ -28,6 +29,7 @@ RUN \
     chsh -s /bin/zsh zenv
 
 COPY init.vim /home/zenv/.config/nvim/init.vim
+COPY docker_entrypoint.sh /home/zenv/docker_entrypoint.sh
 
 RUN chown -R zenv:zenv /home/zenv
 
@@ -61,4 +63,4 @@ RUN \
 
 WORKDIR /home/zenv/mount
 
-CMD figlet "zenv" && echo -e "\nzsh + nvim in an Arch environment, ready to use.\n" && zsh
+CMD ["bash","/home/zenv/docker_entrypoint.sh"]
