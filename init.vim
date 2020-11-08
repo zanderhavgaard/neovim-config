@@ -239,7 +239,15 @@ call plug#end()
 syntax on
 
 " use dark background
-set background=dark
+" set background=dark
+
+" you can set dark/light theme using environment variables
+if ($NVIM_BACKGROUND != "")
+    silent let bg = $NVIM_BACKGROUND
+    silent set background = bg
+else
+    set background=dark
+endif
 
 " use 24bit color if available
 if exists('+termguicolors')
