@@ -1,5 +1,18 @@
-figlet "zenv"
+# bring ascii banner
+echo
+figlet "zcli"
 
-echo -e "\nzsh + nvim in an Arch environment, ready to use.\n"
+echo
+echo -e "+----------------------------------------+"
+echo -e "|                                        |"
+echo -e "|  zsh + neovim in an Arch environment.  |"
+echo -e "|                                        |"
+echo -e "|      @ github.com/zanderhavgaard       |"
+echo -e "|                                        |"
+echo -e "|          ~ Happy Hacking! ~            |"
+echo -e "|                                        |"
+echo -e "+----------------------------------------+"
+echo
 
+# start the interactive zsh
 zsh

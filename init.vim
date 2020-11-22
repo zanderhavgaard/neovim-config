@@ -151,19 +151,9 @@ Plug 'junegunn/limelight.vim'
 " open file at specific line
 Plug 'bogado/file-line'
 
-" use fzf in vim
-set rtp+=/usr/bin/fzf
-Plug 'junegunn/fzf'
+" fzf for vim
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" nice floating window fzf implementation
-" TODO inegrate the node dependencies ...
-" you might need to run
-" npm install -g neovim
-" :FzfPreviewInstall
-Plug 'yuki-ycino/fzf-preview.vim', { 'do': ':FzfPreviewInstall' }
-
-" menu for different fzf features
-Plug 'laher/fuzzymenu.vim'
 
 " floating terminal window
 Plug 'voldikss/vim-floaterm'
@@ -592,6 +582,17 @@ let g:instant_markdown_autostart = 0
 "let g:instant_markdown_port = 8888
 let g:instant_markdown_python = 1
 
+" ===== FZF Settings =====
+
+" Always enable preview window on the right with 60% width
+let g:fzf_preview_window = 'right:80%'
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
+" [[B]Commits] Customize the options used by 'git log':
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+" [Tags] Command to generate tags file
+let g:fzf_tags_command = 'ctags -R'
+
 " ===== NerdTree Settings =====
 
 " show hidden files
@@ -689,10 +690,6 @@ nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 nnoremap <Leader>q @q
 let g:which_key_map['q'] = {'name':'execute macro in q register'}
 
-" fuzzymenu
-nmap <LocalLeader><Leader> <Plug>Fzm
-vmap <LocalLeader><Leader> <Plug>FzmVisual
-
 " open a new tab
 nnoremap <silent> <Leader>tt :tabnew<CR>
 " open current buffer in new tab
@@ -763,34 +760,27 @@ let g:which_key_map['v'] = {'name':'Vertical split'}
 nnoremap <silent> <Leader>b :sp <CR>
 let g:which_key_map['b'] = {'name':'Horizontal split'}
 
-
 " open a new spilt and select file using fzf
-" nnoremap <silent> <Leader>vn :vsp <bar> :Files <CR>
-" nnoremap <silent> <Leader>bn :sp  <bar> :Files <CR>
-
-" change fzf :Files to use preview
-command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+nnoremap <silent> <Leader>vn :vsp <bar> :Files <CR>
+nnoremap <silent> <Leader>bn :sp  <bar> :Files <CR>
 
 " fzf on current dir and all subdirs
 nnoremap <Leader>nn :Files <CR>
-" fzf project files --> not sure how this is different than FzfPerviewGitFiles
-nnoremap <Leader>np :FzfPreviewProjectFiles <CR>
-" fzf grep line in files using keyword ar karet
-nnoremap <Leader>nw :FzfPreviewProjectGrep <C-r><C-w><CR>
-" fzf grep line in files using keyword ar karet
-nnoremap <Leader>nq :FzfPreviewProjectGrep
+" fzf grep line in files using keyword at karet
+nnoremap <Leader>nw :Rg <C-r><C-w><CR>
+" fzf grep line in files using keyword
+nnoremap <Leader>nq :Rg <CR>
 " fzf open buffers
-nnoremap <Leader>nb :FzfPreviewBuffers <CR>
+nnoremap <Leader>nb :Buffers <CR>
 " open floating fzf with preview for files in git repo
-nnoremap <Leader>ng :FzfPreviewGitFiles <CR>
+nnoremap <Leader>ng :GFiles <CR>
 " fzf git staus
-nnoremap <Leader>ns :FzfPreviewGitStatus <CR>
+nnoremap <Leader>ns :GFiles?<CR>
 let g:which_key_map['n'] = {
       \ 'name':'+Fzf',
       \ 'n':'Fzf all child files',
-      \ 'p':'Fzf Project files',
-      \ 'w':'Fzf Project grep word',
+      \ 'w':'Fzf Project grep current word',
+      \ 'q':'Fzf Project grep',
       \ 'b':'Fzf buffers',
       \ 'g':'Fzf git prjoct files',
       \ 's':'Fzf git project status',
@@ -874,12 +864,3 @@ let g:which_key_map['s'] = {
 nnoremap <Leader>? :Cheat40<CR>
 " TODO fix name not displaying
 let g:which_key_map['?'] = {'name':'cheat sheet'}
-
-" ===== autogrpoups =====
-
-" autogroup for thesis .tex files, that compile the document on writes
-augroup thesis
-  autocmd!
-  autocmd BufWrite *.tex :AsyncRun bash /home/zander/Dropbox/ITU/Master/4_semester/thesis/Thesis/compile_tex.sh
-  autocmd BufWrite *.bib :AsyncRun bash /home/zander/Dropbox/ITU/Master/4_semester/thesis/Thesis/compile_tex.sh
-augroup END
