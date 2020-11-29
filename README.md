@@ -1,7 +1,7 @@
 # NeoVim Configuration
 My personal neovim config.
 
-![screenshot](screenshot2.png)
+![Banner screenshot](images/welcome_screenshot.png)
 
 ## Setup
 Requires a powerline font, I use nerd-fonts: https://nerdfonts.com/
@@ -12,5 +12,4 @@ The startify start page uses figlet and fortune, you should install those as wel
 
 Run the install script `nvim_setup.sh` to create the initial installation, then whenever you want to update the installation run the update script `update.sh`.
 
-# Screenshot:
-![Screenshot](screenshot.png)
+![Editor Screenshot](images/editor_screenshot.png)

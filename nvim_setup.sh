@@ -1,7 +1,11 @@
 #!/bin/bash
+
+# exit script if anything fails
 set -e
 
-echo -e 'Make sure that NeoVim and git is installed ... \n'
+stmsg "Setting up NeoVim ..."
+
+pmsg 'Make sure that NeoVim and git is installed ...'
 
 nvim --version | grep 'NVIM v'
 git --version
