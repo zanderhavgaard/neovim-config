@@ -138,7 +138,7 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 
 " add org-mode functionality
-Plug 'jceb/vim-orgmode'
+" Plug 'jceb/vim-orgmode'
 
 " smooth scrolling
 Plug 'psliwka/vim-smoothie'
