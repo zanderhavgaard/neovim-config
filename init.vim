@@ -57,7 +57,9 @@ Plug 'Raimondi/delimitMate'
 " autoclose html/xml style tags
 Plug 'alvan/vim-closetag'
 
-" support for many languages
+" synyax support for many languages
+" disable polyglot syntax highlighting for shell languages,
+" must be set before loading the plugin
 let g:polyglot_disabled = ['bash','sh','zsh']
 Plug 'sheerun/vim-polyglot'
 
@@ -87,7 +89,7 @@ Plug 'tpope/vim-sleuth'
 " Plug 'terryma/vim-multiple-cursors'
 
 " search and repalce across multiple files
-Plug 'brooth/far.vim'
+" Plug 'brooth/far.vim'
 
 " snippets engine
 " Plug 'SirVer/ultisnips'
@@ -101,7 +103,7 @@ Plug 'Shougo/deoplete.nvim'
 " jedi integration for deoplete
 Plug 'deoplete-plugins/deoplete-jedi'
 
-" highlight unique characters in lines to allow quicj horizontal movement
+" highlight unique characters in lines to allow quick horizontal movement
 Plug 'unblevable/quick-scope'
 
 " adds file handling to vim command mode
@@ -159,10 +161,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'voldikss/vim-floaterm'
 
 " jump to definition
-Plug 'pechorin/any-jump.nvim'
+" Plug 'pechorin/any-jump.nvim'
 
 " view ctags in sidebar
-Plug 'liuchengxu/vista.vim'
+" Plug 'liuchengxu/vista.vim'
 
 " golang integration
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -171,7 +173,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'wesQ3/vim-windowswap'
 
 " for creating colorschmes
-Plug 'lifepillar/vim-colortemplate'
+" Plug 'lifepillar/vim-colortemplate'
 
 " cheatsheet for vim
 Plug 'lifepillar/vim-cheat40'
