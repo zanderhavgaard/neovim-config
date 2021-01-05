@@ -96,12 +96,13 @@ Plug 'tpope/vim-sleuth'
 " snippets
 " Plug 'honza/vim-snippets'
 
+" TODO fix/replace with some other plugin
 " provides autocompletion
 " more autocomple sources are available here:
 " https://github.com/Shougo/deoplete.nvim/wiki/Completion-Sources
-Plug 'Shougo/deoplete.nvim'
+" Plug 'Shougo/deoplete.nvim'
 " jedi integration for deoplete
-Plug 'deoplete-plugins/deoplete-jedi'
+" Plug 'deoplete-plugins/deoplete-jedi'
 
 " highlight unique characters in lines to allow quick horizontal movement
 Plug 'unblevable/quick-scope'
