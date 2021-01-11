@@ -42,8 +42,6 @@ Plug 'tpope/vim-sensible'
 Plug 'preservim/nerdtree'
 " git integration for nerd tree
 Plug 'Xuyuanp/nerdtree-git-plugin'
-" more colors in nerdtree
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " add icons to stuff
 Plug 'ryanoasis/vim-devicons'
