@@ -8,12 +8,9 @@ RUN \
         base-devel git zsh neovim python python-pip ctags libnotify && \
     # install misc. cli tools
     pacman --quiet --noconfirm -S \
-        bat exa prettyping fzf \
-        fd ncdu tldr ripgrep ranger tmux \
-        the_silver_searcher \
-        jq figlet zip unzip moreutils \
-        shellcheck yamllint \
-        fortune-mod && \
+        bat exa prettyping fzf fd ncdu tldr ripgrep ranger tmux the_silver_searcher \
+        ansible ansible-lint hub github-cli nmap arp-scan speedtest-cli \
+        jq figlet zip unzip moreutils shellcheck yamllint tree neofetch cowsay lolcat fortune-mod && \
     # clean pacman cache
     pacman --quiet --noconfirm -Scc && \
     # get vim-plug plugin manager
