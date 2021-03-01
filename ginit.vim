@@ -6,7 +6,7 @@
 "
 
 " set font for gui
-Guifont Mononoki Nerd Font
+Guifont Mononoki Nerd Font:16
 
 " disable gui tabline
 GuiTabline 0

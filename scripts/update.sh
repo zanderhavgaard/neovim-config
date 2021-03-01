@@ -12,6 +12,10 @@ pmsg "Updating python dependencies ..."
 pip install --user --upgrade pynvim neovim-remote msgpack smdv
 pmsg "Done updating python dependencies."
 
+pmsg "Updating python linters/stylers/utils ..."
+pip install --user --upgrade pylint flake8 autopep8 black jedi
+pmsg "Done updating python stuff."
+
 pmsg "Upgrading vim-plug ..."
 nvim --headless +PlugUpgrade +qa
 echo

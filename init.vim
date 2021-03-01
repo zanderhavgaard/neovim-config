@@ -1,12 +1,21 @@
-"  _  _       __   ___
-" | \| |___ __\ \ / (_)_ __
-" | .` / -_) _ \ V /| | '  \
-" |_|\_\___\___/\_/ |_|_|_|_|
-"   ___           __ _
-"  / __|___ _ _  / _(_)__ _
-" | (__/ _ \ ' \|  _| / _` |
-"  \___\___/_||_|_| |_\__, |
-"                     |___/
+"  __  __                 __  __
+" /\ \/\ \               /\ \/\ \  __
+" \ \ `\\ \     __    ___\ \ \ \ \/\_\    ___ ___
+"  \ \ , ` \  /'__`\ / __`\ \ \ \ \/\ \ /' __` __`\
+"   \ \ \`\ \/\  __//\ \L\ \ \ \_/ \ \ \/\ \/\ \/\ \
+"    \ \_\ \_\ \____\ \____/\ `\___/\ \_\ \_\ \_\ \_\
+"     \/_/\/_/\/____/\/___/  `\/__/  \/_/\/_/\/_/\/_/
+"  ____                       ___
+" /\  _`\                   /'___\ __
+" \ \ \/\_\    ___     ___ /\ \__//\_\     __
+"  \ \ \/_/_  / __`\ /' _ `\ \ ,__\/\ \  /'_ `\
+"   \ \ \L\ \/\ \L\ \/\ \/\ \ \ \_/\ \ \/\ \L\ \
+"    \ \____/\ \____/\ \_\ \_\ \_\  \ \_\ \____ \
+"     \/___/  \/___/  \/_/\/_/\/_/   \/_/\/___L\ \
+"                                          /\____/
+"                                          \_/__/
+"
+" by @zanderhavgaard ~ github.com/zanderhavgaard/neovim-config
 
 " ===== Providers ======
 
@@ -15,7 +24,7 @@
 " disable ruby integration
 let g:loaded_ruby_provider = 0
 " disable node.js integration
-" let g:loaded_node_provider = 0
+let g:loaded_node_provider = 0
 " disable python2 integration
 let g:loaded_python_provider = 0
 
@@ -153,11 +162,16 @@ Plug 'junegunn/limelight.vim'
 Plug 'bogado/file-line'
 
 " fzf for vim
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
+
+" fzf like fuzzy searching
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " floating terminal window
-Plug 'voldikss/vim-floaterm'
+" Plug 'voldikss/vim-floaterm'
 
 " jump to definition
 " Plug 'pechorin/any-jump.nvim'
@@ -324,29 +338,38 @@ colorscheme one
 " set guicursor=
 
 " customize startify
-" TODO cleanup
 let g:startify_custom_header = [
-      \ '         .            .      ',
-      \ '       .,;.           :,.    ',
-      \ '     .,;;;,,.         ccc;.  ',
-      \ '   .;c::::,,,.        ccccc: ',
-      \ '   .::cc::,,,,,.      cccccc.     _   _        __      ___',
-      \ '   .cccccc;;;;;;.     llllll.    | \ | |       \ \    / (_)',
-      \ '   .cccccc.,;;;;;;.   llllll.    |  \| | ___  __\ \  / / _ _ __ ___',
-      \ '   .cccccc  .;;;;;;.  oooooo.    | . ` |/ _ \/ _ \ \/ / | | |_ ` _ \',
-      \ '   .lllllc   .;;;;;;;.oooooo.    | |\  |  __/ (_) \  /  | | | | | | |',
-      \ '   .lllllc     ,::::::looooo.    |_| \_|\___|\___/ \/   |_|_| |_| |_|',
-      \ '   .llllll      .:::::lloddd.',
-      \ '   .looool       .;::coooodo.',
-      \ '     .cool         .ccoooc.  ',
-      \ '       .co          .:o:.    ',
-      \ '         .           ..      ',
-      \ ] +
-      \ ['','','   QOTD:', ''] +
-      \ map(split(system('fortune computers definitions disclaimer linux linuxcookie science wisdom'), '\n'), '"   ". v:val') +
-      \ ['',
-      \  '   ------------------------------------------------------------------',
-      \  '   Zanders customized NeoVim ~ gihub.com/zanderhavgaard/neovim-config','','   ~ Happy Hacking! ~','','']
+    \ '         .            .      ',
+    \ '       .,;.           :,.    ',
+    \ '     .,;;;,,.         ccc;.  ',
+    \ '   .;c::::,,,.        ccccc: ',
+    \ '   .::cc::,,,,,.      cccccc.     _   _        __      ___',
+    \ '   .cccccc;;;;;;.     llllll.    | \ | |       \ \    / (_)',
+    \ '   .cccccc.,;;;;;;.   llllll.    |  \| | ___  __\ \  / / _ _ __ ___',
+    \ '   .cccccc  .;;;;;;.  oooooo.    | . ` |/ _ \/ _ \ \/ / | | |_ ` _ \',
+    \ '   .lllllc   .;;;;;;;.oooooo.    | |\  |  __/ (_) \  /  | | | | | | |',
+    \ '   .lllllc     ,::::::looooo.    |_| \_|\___|\___/ \/   |_|_| |_| |_|',
+    \ '   .llllll      .:::::lloddd.',
+    \ '   .looool       .;::coooodo.',
+    \ '     .cool         .ccoooc.  ',
+    \ '       .co          .:o:.    ',
+    \ '         .           ..      ',
+    \ ] +
+    \ ['',''] +
+    \ map(split(system('nvim --version | head -n 1'), '\n'), '"   ". v:val') +
+    \ ['',
+    \ '',
+    \ '   QOTD:',
+    \ ''] +
+    \ map(split(system('fortune computers definitions disclaimer linux linuxcookie science wisdom'), '\n'), '"   ". v:val') +
+    \ ['',
+    \ '   ------------------------------------------------------------------',
+    \ '   Zanders customized NeoVim ~ gihub.com/zanderhavgaard/neovim-config',
+    \ '',
+    \ '   ~ Happy Hacking! ~',
+    \ '']
+
+
 " no indenline guides for startify
 autocmd User Startified IndentLinesToggle
 
@@ -485,10 +508,10 @@ let g:airline_powerline_fonts = 1
 set encoding=utf-8
 
 " set default floaterm position
-let g:floaterm_position = "center"
+" let g:floaterm_position = "center"
 " set size of the floaterm
-let g:floaterm_width = 0.8
-let g:floaterm_height = 0.8
+" let g:floaterm_width = 0.8
+" let g:floaterm_height = 0.8
 
 " do not start indenLine for .md files, since it hides some text, by setting
 set conceallevel=0
@@ -591,13 +614,13 @@ let g:instant_markdown_python = 0
 " ===== FZF Settings =====
 
 " Always enable preview window on the right with 60% width
-let g:fzf_preview_window = 'right:80%'
+" let g:fzf_preview_window = 'right:80%'
 " [Buffers] Jump to the existing window if possible
-let g:fzf_buffers_jump = 1
+" let g:fzf_buffers_jump = 1
 " [[B]Commits] Customize the options used by 'git log':
-let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+" let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 " [Tags] Command to generate tags file
-let g:fzf_tags_command = 'ctags -R'
+" let g:fzf_tags_command = 'ctags -R'
 
 " ===== NerdTree Settings =====
 
@@ -770,27 +793,45 @@ let g:which_key_map['b'] = {'name':'Horizontal split'}
 nnoremap <silent> <Leader>vn :vsp <bar> :Files <CR>
 nnoremap <silent> <Leader>bn :sp  <bar> :Files <CR>
 
+" telescope fuzzy searching
+" recursively search files
+nnoremap <leader>nn <cmd>Telescope find_files<cr>
+" search files in git repo
+nnoremap <leader>ng <cmd>Telescope git_files<cr>
+" grep string under cursor
+nnoremap <leader>nj <cmd>Telescope grep_string<cr>
+" interactively grep
+nnoremap <leader>nf <cmd>Telescope live_grep<cr>
+" select buffer
+nnoremap <leader>nb <cmd>Telescope buffers<cr>
+" search help tags
+nnoremap <leader>nh <cmd>Telescope help_tags<cr>
+" search man pages
+nnoremap <leader>nm <cmd>Telescope man_pages<cr>
+" search registers
+nnoremap <leader>nr <cmd>Telescope registers<cr>
+
 " fzf on current dir and all subdirs
-nnoremap <Leader>nn :Files <CR>
+" nnoremap <Leader>nn :Files <CR>
 " fzf grep line in files using keyword at karet
-nnoremap <Leader>nw :Rg <C-r><C-w><CR>
+" nnoremap <Leader>nw :Rg <C-r><C-w><CR>
 " fzf grep line in files using keyword
-nnoremap <Leader>nq :Rg <CR>
+" nnoremap <Leader>nq :Rg <CR>
 " fzf open buffers
-nnoremap <Leader>nb :Buffers <CR>
+" nnoremap <Leader>nb :Buffers <CR>
 " open floating fzf with preview for files in git repo
-nnoremap <Leader>ng :GFiles <CR>
+" nnoremap <Leader>ng :GFiles <CR>
 " fzf git staus
-nnoremap <Leader>ns :GFiles?<CR>
-let g:which_key_map['n'] = {
-      \ 'name':'+Fzf',
-      \ 'n':'Fzf all child files',
-      \ 'w':'Fzf Project grep current word',
-      \ 'q':'Fzf Project grep',
-      \ 'b':'Fzf buffers',
-      \ 'g':'Fzf git prjoct files',
-      \ 's':'Fzf git project status',
-      \}
+" nnoremap <Leader>ns :GFiles?<CR>
+" let g:which_key_map['n'] = {
+      " \ 'name':'+Fzf',
+      " \ 'n':'Fzf all child files',
+      " \ 'w':'Fzf Project grep current word',
+      " \ 'q':'Fzf Project grep',
+      " \ 'b':'Fzf buffers',
+      " \ 'g':'Fzf git prjoct files',
+      " \ 's':'Fzf git project status',
+      " \}
 
 " close all buffers not open in a window
 nnoremap <Leader>w :Wipeout<CR>
@@ -812,19 +853,19 @@ let g:which_key_map['g'] = {
       \}
 
 " floating terminal window
-nnoremap <Leader>, :FloatermToggle<CR>
-let g:which_key_map[','] = {'name':'Floaterm toggle'}
-nnoremap <Leader>.. :FloatermNew<CR>
-nnoremap <Leader>.n :FloatermNext<CR>
-nnoremap <Leader>.p :FloatermPrev<CR>
-nnoremap <Leader>.s :FloatermSend<CR>
-let g:which_key_map['.'] = {
-      \ 'name':'+Floaterm',
-      \ '.':'Floaterm new',
-      \ 'n':'Floaterm next',
-      \ 'p':'Floaterm previous',
-      \ 's':'Floaterm send to term',
-      \}
+" nnoremap <Leader>, :FloatermToggle<CR>
+" let g:which_key_map[','] = {'name':'Floaterm toggle'}
+" nnoremap <Leader>.. :FloatermNew<CR>
+" nnoremap <Leader>.n :FloatermNext<CR>
+" nnoremap <Leader>.p :FloatermPrev<CR>
+" nnoremap <Leader>.s :FloatermSend<CR>
+" let g:which_key_map['.'] = {
+      " \ 'name':'+Floaterm',
+      " \ '.':'Floaterm new',
+      " \ 'n':'Floaterm next',
+      " \ 'p':'Floaterm previous',
+      " \ 's':'Floaterm send to term',
+      " \}
 
 " dynamic resize windows with animations
 nnoremap <Leader>ae :let g:lens#disabled = 0<CR>
