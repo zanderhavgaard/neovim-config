@@ -27,6 +27,8 @@ let g:loaded_ruby_provider = 0
 let g:loaded_node_provider = 0
 " disable python2 integration
 let g:loaded_python_provider = 0
+" disable perl provider
+let g:loaded_perl_provider = 0
 
 " setup to use system python3
 let g:python3_host_prog = '/usr/bin/python'
@@ -323,8 +325,6 @@ colorscheme one
 " colorscheme embark
 " colorscheme flatwhite
 " colorscheme miramare
-" colorscheme salvation
-" colorscheme nostromo
 
 " choose an airline theme, or comment all out to use one from colorscheme if available
 " let g:airline_theme = 'onedark'
