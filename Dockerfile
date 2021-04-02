@@ -22,7 +22,10 @@ RUN \
     # add non-root user
     useradd -m zcli && \
     # set the correct shell
-    chsh -s /bin/zsh zcli
+    chsh -s /bin/zsh zcli && \
+    # setup directory to work on files
+    mkdir /mount && \
+    chmod -R 1000:1000 /mount
 
 COPY init.vim /home/zcli/.config/nvim/init.vim
 COPY docker_entrypoint.sh /home/zcli/docker_entrypoint.sh

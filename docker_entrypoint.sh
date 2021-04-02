@@ -1,7 +1,3 @@
-# bring ascii banner
-echo
-figlet "zcli"
-
 echo
 echo -e "╭────────────────────────────────────────╮"
 echo -e "│                                        │"
