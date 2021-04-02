@@ -19,13 +19,14 @@ RUN \
     # get the antigen plugin manager script
     mkdir -p /usr/share/zsh/share && \
     curl -L git.io/antigen > /usr/share/zsh/share/antigen.zsh && \
-    # add non-root user
-    useradd -m zcli && \
+    # add a non-root user and group, with specific group and user id 1000:1000
+    addgroup -S zcli -g 1000 && \
+    adduser -S zcli -G zcli -u 1000 && \
     # set the correct shell
     chsh -s /bin/zsh zcli && \
     # setup directory to work on files
     mkdir /mount && \
-    chmod -R 1000:1000 /mount
+    chown -R 1000:1000 /mount
 
 COPY init.vim /home/zcli/.config/nvim/init.vim
 COPY docker_entrypoint.sh /home/zcli/docker_entrypoint.sh
