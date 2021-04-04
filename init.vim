@@ -604,15 +604,13 @@ command Todo noautocmd vimgrep /TODO\|FIXME\|HACK/j ** | cw
 " ===== Custom Keybindings =====
 
 " neovim terminal
-if has('nvim')
-  " exit terminal insert mode
-  tnoremap <Esc> <C-\><C-n>
-  " move buffers
-  tnoremap <M-h> <c-\><c-n><c-w>h
-  tnoremap <M-j> <c-\><c-n><c-w>j
-  tnoremap <M-k> <c-\><c-n><c-w>k
-  tnoremap <M-l> <c-\><c-n><c-w>l
-endif
+" exit terminal insert mode
+tnoremap <Esc> <C-\><C-n>
+" move buffers
+tnoremap <M-h> <c-\><c-n><c-w>h
+tnoremap <M-j> <c-\><c-n><c-w>j
+tnoremap <M-k> <c-\><c-n><c-w>k
+tnoremap <M-l> <c-\><c-n><c-w>l
 
 " remove one tab character back in insert mode
 " inoremap <silent> <S-Tab> <C-d>
