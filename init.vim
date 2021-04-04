@@ -277,38 +277,43 @@ colorscheme one
 " return to terminal's own cursor setting on exit, by not changing cursor settings at all..
 " set guicursor=
 
-" customize startify
-let g:startify_custom_header = [
-    \ '         .            .      ',
-    \ '       .,;.           :,.    ',
-    \ '     .,;;;,,.         ccc;.  ',
-    \ '   .;c::::,,,.        ccccc: ',
-    \ '   .::cc::,,,,,.      cccccc.     _   _        __      ___',
-    \ '   .cccccc;;;;;;.     llllll.    | \ | |       \ \    / (_)',
-    \ '   .cccccc.,;;;;;;.   llllll.    |  \| | ___  __\ \  / / _ _ __ ___',
-    \ '   .cccccc  .;;;;;;.  oooooo.    | . ` |/ _ \/ _ \ \/ / | | |_ ` _ \',
-    \ '   .lllllc   .;;;;;;;.oooooo.    | |\  |  __/ (_) \  /  | | | | | | |',
-    \ '   .lllllc     ,::::::looooo.    |_| \_|\___|\___/ \/   |_|_| |_| |_|',
-    \ '   .llllll      .:::::lloddd.',
-    \ '   .looool       .;::coooodo.',
-    \ '     .cool         .ccoooc.  ',
-    \ '       .co          .:o:.    ',
-    \ '         .           ..      ',
-    \ ] +
-    \ ['',''] +
-    \ map(split(system('nvim --version | head -n 1'), '\n'), '"   ". v:val') +
-    \ ['',
-    \ '',
-    \ '   QOTD:',
-    \ ''] +
-    \ map(split(system('fortune computers definitions disclaimer linux linuxcookie science wisdom'), '\n'), '"   ". v:val') +
-    \ ['',
-    \ '   ------------------------------------------------------------------',
-    \ '   Zanders customized NeoVim ~ gihub.com/zanderhavgaard/neovim-config',
-    \ '',
-    \ '   ~ Happy Hacking! ~',
-    \ '']
+" use unicode chars in the header
+let g:startify_fortune_use_unicode = 1
 
+let g:ascii_header = [
+    \ '      .            .      ',
+    \ '    .,;.           :,.    ',
+    \ '  .,;;;,,.         ccc;.  ',
+    \ '.;c::::,,,.        ccccc: ',
+    \ '.::cc::,,,,,.      cccccc.     _   _        __      ___',
+    \ '.cccccc;;;;;;.     llllll.    | \ | |       \ \    / (_)',
+    \ '.cccccc.,;;;;;;.   llllll.    |  \| | ___  __\ \  / / _ _ __ ___',
+    \ '.cccccc  .;;;;;;.  oooooo.    | . ` |/ _ \/ _ \ \/ / | | |_ ` _ \',
+    \ '.lllllc   .;;;;;;;.oooooo.    | |\  |  __/ (_) \  /  | | | | | | |',
+    \ '.lllllc     ,::::::looooo.    |_| \_|\___|\___/ \/   |_|_| |_| |_|',
+    \ '.llllll      .:::::lloddd.',
+    \ '.looool       .;::coooodo.',
+    \ '  .cool         .ccoooc.  ',
+    \ '    .co          .:o:.    ',
+    \ '      .           ..      ',
+    \ ]
+
+let g:header_line = [
+    \ '───────────────────────────────────────────────────────────────────',
+    \ ]
+
+let g:post_header = [
+    \ 'Zanders customized NeoVim | github.com/zanderhavgaard/neovim-config',
+    \ '',
+    \ '~ Happy Hacking! ~',
+    \ '',
+    \ ]
+
+let g:header_version = [
+    \ 'Version: ' . system('nvim --version | head -n 1')
+    \ ]
+
+let g:startify_custom_header = startify#pad(startify#fortune#cowsay() + g:header_line + g:post_header + g:header_version)
 
 " no indenline guides for startify
 autocmd User Startified IndentLinesToggle
