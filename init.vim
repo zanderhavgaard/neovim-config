@@ -323,6 +323,11 @@ set fillchars=vert:┃ " for vsplits
 set fillchars+=fold:· " for folds
 hi VertSplit guifg=#2C323C
 
+" ===== GUI ======
+
+" set font for gui
+set guifont=Mononoki\ Nerd\ Font:h16
+
 " ===== Clipboard =====
 
 " automatically use system clipboard for all yanking and pasting
