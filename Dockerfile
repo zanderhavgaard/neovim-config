@@ -1,6 +1,4 @@
-# TODO change back to newer version once pacman error is resolved
-# FROM archlinux:latest
-FROM archlinux:base-devel-20210131.0.14634
+FROM archlinux:latest
 
 RUN \
     # update repositories and install packages
@@ -12,8 +10,7 @@ RUN \
         jq figlet zip unzip moreutils shellcheck yamllint tree neofetch \
         cowsay lolcat fortune-mod && \
     # clean pacman cache
-    # TODO uncomment
-    # pacman --quiet --noconfirm -Scc
+    pacman --quiet --noconfirm -Scc && \
     # get vim-plug plugin manager
     curl -fLo /home/zcli/.local/share/nvim/site/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
