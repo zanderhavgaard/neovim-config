@@ -528,7 +528,9 @@ let g:ale_linters = {
   \ 'scala':['scalac', 'sbtserver'],
   \ 'yaml':['yamllint'],
   \ 'sh':['shellcheck'],
-  \ 'cpp':['gcc']}
+  \ 'dockerfile':['hadolint'],
+  \ 'cpp':['gcc']
+  \ }
 
 let g:ale_fixers = {
   \ '*':['remove_trailing_lines', 'trim_whitespace'],
