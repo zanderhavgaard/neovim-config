@@ -7,8 +7,6 @@ Requires a powerline font, I use nerd-fonts: https://nerdfonts.com/ (font in the
 
 Some of the plugins rely on python 3, so in order to run the setup script you must have python 3 installed on your path as `python`, same with a pip installation that points to that python interpreter on the path as `pip`.
 
-The startify start page uses figlet and fortune, you should install those as well, or just delete lines that specify `startify_custom_header`.
-
 Run the install script `scripts/nvim_setup.sh` to create the initial installation, then run the `scripts/update.sh` to install/update plugins and python dependencies, then whenever you want to update the installation in-place, run the update script `scripts/update.sh`.
 
 ## Run in Docker / zcli

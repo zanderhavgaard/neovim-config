@@ -528,12 +528,16 @@ let g:ale_linters = {
   \ 'scala':['scalac', 'sbtserver'],
   \ 'yaml':['yamllint'],
   \ 'sh':['shellcheck'],
-  \ 'cpp':['gcc']}
+  \ 'dockerfile':['hadolint'],
+  \ 'terraform':['tflint'],
+  \ 'cpp':['gcc'],
+  \ }
 
 let g:ale_fixers = {
   \ '*':['remove_trailing_lines', 'trim_whitespace'],
   \ 'python':['black', 'autopep8'],
   \ 'python3':['black', 'autopep8'],
+  \ 'terraform':['terraform'],
   \}
 
 let g:ale_fix_on_save = 1
