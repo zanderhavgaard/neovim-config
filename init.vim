@@ -182,7 +182,7 @@ Plug 'nvim-telescope/telescope.nvim'
 " Plug 'liuchengxu/vista.vim'
 
 " golang integration
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " easily swap window positions
 Plug 'wesQ3/vim-windowswap'
