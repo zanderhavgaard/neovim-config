@@ -137,7 +137,8 @@ Plug 'luochen1990/rainbow'
 
 " help finding Keybindings
 " Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
-Plug 'liuchengxu/vim-which-key'
+" Plug 'liuchengxu/vim-which-key'
+" TODO fix
 
 " better python syntax highlighting
 " Plug 'kh3phr3n/python-syntax'
