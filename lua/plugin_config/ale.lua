@@ -1,0 +1,31 @@
+-- TODO port this file from vimscript
+--
+-- vim.g.ale_use_global_executables = 1
+-- vim.g.ale_python_pylint_options = ""
+-- vim.g.ale_python_flake8_options = "--ignore E501"
+-- vim.g.ale_python_black_options = "--line-length 120"
+-- vim.g.ale_python_autopep8_options = "--ignore E501"
+-- vim.g.ale_fix_on_save = 1
+-- Error and warning signs.
+-- vim.g.ale_sign_error = "⤫"
+-- vim.g.im.g.ign_warning = "⚠"
+-- TODO find a way to port this lua
+-- let g:ale_linters = {
+-- \ 'python':['pylint', 'flake8'],
+-- \ 'python3':['pylint', 'flake8'],
+-- \ 'java':['javac'],
+-- \ 'scala':['scalac', 'sbtserver'],
+-- \ 'yaml':['yamllint'],
+-- \ 'sh':['shellcheck'],
+-- \ 'dockerfile':['hadolint'],
+-- \ 'terraform':['tflint'],
+-- \ 'cpp':['gcc'],
+-- \ 'lua':['luac','luacheck'],
+-- \ }
+-- let g:ale_fixers = {
+-- \ '*':['remove_trailing_lines', 'trim_whitespace'],
+-- \ 'python':['black', 'autopep8'],
+-- \ 'python3':['black', 'autopep8'],
+-- \ 'terraform':['terraform'],
+-- \ 'lua':['luafmt'],
+-- \}

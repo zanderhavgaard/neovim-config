@@ -22,17 +22,20 @@ else
     mkdir -pv /home/$USER/.config/nvim
 fi
 
-pmsg "Creating symlink for init.vim ..."
-ln -sv /home/$USER/neovim-config/init.vim /home/$USER/.config/nvim/init.vim
+pmsg "Creating symlink for init.lua ..."
+ln -sv /home/$USER/neovim-config/init.lua /home/$USER/.config/nvim/init.lua
 
-pmsg "Creating symlink for ginit.vim"
-ln -sv /home/$USER/neovim-config/ginit.vim /home/$USER/.config/nvim/ginit.vim
+pmsg "Creating symlink for lua directory ..."
+ln -sv /home/$USER/neovim-config/lua /home/$USER/.config/nvim/lua
 
-pmsg "Getting vim-plug package manager ..."
-curl -fLo /home/$USER/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+pmsg "Creating symlink for vimscript directory ..."
+ln -sv /home/$USER/neovim-config/vimscript /home/$USER/.config/nvim/vimscript
 
-pmsg "Installing plugins uisng vim-plug ... (Press enter if prompted)"
-nvim +PlugUpdate +UpdateRemotePlugins +qa
+pmsg "Installing packer package manager ..."
+git clone https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+pmsg "Installing plugins using packer ... "
+nvim +PackerCompile +PackerSync
 
 smsg "Done configuring NeoVim!"
