@@ -33,14 +33,9 @@ nvim +PackerCompile +PackerClean +PackerInstall +PackerUpdate
 echo
 smsg "Done running packer."
 
-pmsg "Installing && updating plug plugins ..."
-nvim --headless +PlugUpdate +UpdateRemotePlugins +qa
+pmsg "Update remote plugins ..."
+nvim --headless +UpdateRemotePlugins +qa
 echo
-smsg "Done installing/updating plugins."
-
-pmsg "Cleaning unused plug packages ..."
-nvim --headless +PlugClean! +qa
-echo
-smsg "Done cleaning packages."
+smsg "Done updating remote plugins."
 
 smsg "Done updating!"
