@@ -24,7 +24,8 @@ vim.o.fileencoding = "utf-8"
 
 -- enable spellcheck when opening specific file types
 -- TODO convert to lua
-vim.cmd("autocmd FileType markdown,tex,latex,plaintex set spell")
+vim.cmd("autocmd FileType markdown,tex,latex, setlocal spell")
+vim.cmd("autocmd BufRead,BufNewFile *.txt setlocal spell")
 
 -- more intuitive split directorion
 vim.o.splitbelow = true
