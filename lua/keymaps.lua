@@ -1,3 +1,4 @@
+local vim = vim
 -- keymaps vim.api.nvim_set_keymap('<mode>', '<keybind>', '<command>', {<config>})
 -- <mode> is one of 'n' = normal, 'i' = input, 't' = terminal
 -- <keybind> the keybinding to press

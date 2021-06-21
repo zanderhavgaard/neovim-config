@@ -1,3 +1,4 @@
+local vim = vim
 ---- Providers
 -- disable providers that are not used
 vim.g.loaded_ruby_provider = 0

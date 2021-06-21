@@ -1,10 +1,11 @@
+local vim = vim
 -- TODO change to native lua way of setting colorscheme,
 -- once this is implemented in nvim ...
-function set_colorscheme(colorscheme)
+local function set_colorscheme(colorscheme)
     vim.cmd("colorscheme " .. colorscheme)
 end
 
-local colorscheme = "one"
+local colorscheme = "onedark"
 -- local colorscheme = "gruvbox"
 -- local colorscheme = "dracula"
 -- local colorscheme = "tokyonight"

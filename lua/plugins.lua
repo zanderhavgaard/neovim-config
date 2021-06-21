@@ -43,16 +43,17 @@ return packer.startup(
         -- config = [[require('plugin_config.whick-key')]]
         -- }
 
-        -- TODO configure
         -- statusline
-        -- use {
-        -- 'glepnir/galaxyline.nvim',
-        -- branch = 'main',
-        -- -- your statusline
-        -- -- config = function() require'my_statusline' end,
-        -- -- some optional icons
-        -- requires = {'kyazdani42/nvim-web-devicons', opt = true}
-        -- }
+        use {
+            "glepnir/galaxyline.nvim",
+            branch = "main",
+            -- your statusline
+            config = function()
+                require "plugin_config.galaxyline"
+            end,
+            -- some optional icons
+            requires = {"kyazdani42/nvim-web-devicons", opt = true}
+        }
 
         -- tree file browser
         use "kyazdani42/nvim-tree.lua"
@@ -130,7 +131,8 @@ return packer.startup(
         -- DSL for colorschemes
         use "rktjmp/lush.nvim"
 
-        use "rakr/vim-one"
+        -- use "rakr/vim-one"
+        use "joshdick/onedark.vim"
         use "gruvbox-community/gruvbox"
         use "dracula/vim"
         use "folke/tokyonight.nvim"
