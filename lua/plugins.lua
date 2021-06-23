@@ -1,3 +1,4 @@
+local vim = vim
 -- properly import packer to avoid linter errors
 local packer = require("packer")
 local use = packer.use
@@ -47,12 +48,21 @@ return packer.startup(
         use {
             "glepnir/galaxyline.nvim",
             branch = "main",
-            -- your statusline
+            -- loac custom config
             config = function()
                 require "plugin_config.galaxyline"
             end,
             -- some optional icons
-            requires = {"kyazdani42/nvim-web-devicons", opt = true}
+            requires = {
+                "kyazdani42/nvim-web-devicons",
+                opt = true
+            }
+        }
+
+        -- nicer tab/bufferline
+        use {
+            "akinsho/nvim-bufferline.lua",
+            requires = "kyazdani42/nvim-web-devicons"
         }
 
         -- tree file browser
@@ -63,7 +73,10 @@ return packer.startup(
 
         -- draw indent guides
         -- TODO change to master branch once Neovim 0.5 is released
-        use {"lukas-reineke/indent-blankline.nvim", branch = "lua"}
+        use {
+            "lukas-reineke/indent-blankline.nvim",
+            branch = "lua"
+        }
 
         -- smooth scrolling
         use "psliwka/vim-smoothie"
@@ -83,17 +96,14 @@ return packer.startup(
         -- fuzzy finder and more
         use {
             "nvim-telescope/telescope.nvim",
-            requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}
+            requires = {
+                {"nvim-lua/popup.nvim"},
+                {"nvim-lua/plenary.nvim"}
+            }
         }
-
-        -- Dockerfile syntax and formatter
-        use "ekalinin/Dockerfile.vim"
 
         -- preview markdown files in a browser window
         use "suan/vim-instant-markdown"
-
-        -- color match brackets
-        use "luochen1990/rainbow"
 
         -- show colorcodes as background on strings
         use "chrisbra/Colorizer"
@@ -111,8 +121,8 @@ return packer.startup(
         use "unblevable/quick-scope"
 
         -- TODO use treesitter instead?
-        vim.g.polyglot_disabled = {"bash", "sh", "zsh"}
-        use "sheerun/vim-polyglot"
+        -- vim.g.polyglot_disabled = {"bash", "sh", "zsh"}
+        -- use "sheerun/vim-polyglot"
 
         -- autocompletion
         use "Shougo/deoplete.nvim"
@@ -124,7 +134,24 @@ return packer.startup(
         use "dense-analysis/ale"
 
         -- golang integration
-        use {"fatih/vim-go", run = ":GoUpdateBinaries"}
+        use {
+            "fatih/vim-go",
+            run = ":GoUpdateBinaries"
+        }
+
+        -- better syntax highlighting and more
+        use {
+            "nvim-treesitter/nvim-treesitter",
+            run = ":TSUpdate"
+        }
+
+        -- color brackets by scope
+        use {
+            "p00f/nvim-ts-rainbow",
+            requires = {
+                "nvim-treesitter/nvim-treesitter"
+            }
+        }
 
         -- ===== colorschemes =====
 
