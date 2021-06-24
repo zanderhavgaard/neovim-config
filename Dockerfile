@@ -23,31 +23,43 @@ USER zcli
 
 WORKDIR /home/zcli
 
-COPY init.vim /home/zcli/.config/nvim/init.vim
-COPY docker_entrypoint.sh /home/zcli/docker_entrypoint.sh
-
+# build paru aur helper
 RUN \
-    # build paru aur helper
     git clone https://aur.archlinux.org/paru.git && \
     cd paru && \
     makepkg --noconfirm --needed --syncdeps --rmdeps --clean --install && \
-    # use paru to install AUR packages
+    # cleanup
+    sudo pacman --noconfirm -Scc && \
+    sudo rm -rf /home/zcli/paru /home/zcli/.cargo /home/zcli/.cache/* /var/cache/pacman
+
+# use paru to install AUR packages
+RUN \
     paru --noconfirm --needed --removemake --cleanafter -S pfetch antigen neovim-git && \
     # cleanup
     sudo pacman --noconfirm -Scc && \
     sudo rm -rf /home/zcli/paru /home/zcli/.cargo /home/zcli/.cache/* /var/cache/pacman
 
 RUN \
-    # get vim-plug plugin manager
-    curl -fLo /home/zcli/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
-    # install python nvim binding and dependencies
-    pip install --user --upgrade pynvim neovim-remote msgpack && \
-    # install nvim plugins
-    nvim --headless +PlugUpdate +UpdateRemotePlugins +qa
+    git clone https://github.com/wbthomason/packer.nvim\
+     /home/zcli/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 RUN \
-    # get some env config files
+    pip install --user --upgrade pynvim neovim-remote msgpack
+
+copy --chown=zcli:zcli init.lua  /home/zcli/.config/nvim/init.lua
+copy --chown=zcli:zcli lua       /home/zcli/.config/nvim/lua
+copy --chown=zcli:zcli vimscript /home/zcli/.config/nvim/vimscript
+COPY --chown=zcli:zcli docker_entrypoint.sh /home/zcli/docker_entrypoint.sh
+
+# install plugins and compile treesitter modules, both are asynchrounous
+# so sleep is HACK to give them time to run
+# TODO do this in a better way...
+RUN \
+    nvim --headless +PackerSync +sleep30 +UpdateRemotePlugins +qa && \
+    nvim --headless +sleep30 +qa
+
+# get some env config files
+RUN \
     git clone https://github.com/zanderhavgaard/dotfiles && \
     cp dotfiles/.zshrc . && \
     cp dotfiles/.aliases . && \
