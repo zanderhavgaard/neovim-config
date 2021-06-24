@@ -44,7 +44,7 @@ RUN \
      /home/zcli/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 RUN \
-    pip install --user --upgrade pynvim neovim-remote msgpack
+    pip install --user --upgrade pynvim neovim-remote msgpack yamlfix
 
 copy --chown=zcli:zcli init.lua  /home/zcli/.config/nvim/init.lua
 copy --chown=zcli:zcli lua       /home/zcli/.config/nvim/lua

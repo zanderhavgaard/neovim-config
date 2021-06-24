@@ -18,6 +18,10 @@ pmsg "Updating python dependencies ..."
 pip install --user --upgrade --use-deprecated=legacy-resolver pynvim neovim-remote msgpack smdv
 smsg "Done updating python dependencies."
 
+pmsg "Updating misc python packages ..."
+pip install --user --upgrade --use-deprecated=legacy-resolver yamlfix
+smsg "Done updating python dependencies."
+
 pmsg "Updating python linters/stylers/utils ..."
 pip install --user --upgrade --use-deprecated=legacy-resolver pylint flake8 autopep8 black jedi
 smsg "Done updating python stuff."

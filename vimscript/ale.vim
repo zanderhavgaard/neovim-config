@@ -24,6 +24,7 @@ let g:ale_fixers = {
   \ 'terraform':['terraform'],
   \ 'lua':['luafmt'],
   \ 'sh':['shfmt'],
+  \ 'yaml':['yamlfix'],
   \}
 
 let g:ale_fix_on_save = 1
