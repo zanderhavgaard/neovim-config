@@ -23,6 +23,7 @@ let g:ale_fixers = {
   \ 'python3':['black', 'autopep8'],
   \ 'terraform':['terraform'],
   \ 'lua':['luafmt'],
+  \ 'sh':['shfmt'],
   \}
 
 let g:ale_fix_on_save = 1

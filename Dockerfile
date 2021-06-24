@@ -9,7 +9,7 @@ RUN \
         docker docker-compose \
         bat exa prettyping fzf fd ncdu tldr ripgrep ranger tmux \
         ansible-lint hub github-cli  \
-        jq zip unzip moreutils shellcheck yamllint tree  \
+        jq zip unzip moreutils shellcheck yamllint tree shfmt \
         neofetch figlet && \
     pacman --noconfirm -Scc && \
     rm -rf /var/cache/pacman && \
