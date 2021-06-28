@@ -25,6 +25,7 @@ let g:ale_fixers = {
   \ 'lua':['luafmt'],
   \ 'sh':['shfmt'],
   \ 'yaml':['yamlfix'],
+  \ 'markdown':['prettier'],
   \}
 
 let g:ale_fix_on_save = 1
