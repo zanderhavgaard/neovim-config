@@ -5,7 +5,8 @@ local function set_colorscheme(colorscheme)
     vim.cmd("colorscheme " .. colorscheme)
 end
 
-local colorscheme = "onedark"
+local colorscheme = "one"
+-- local colorscheme = "onedark"
 -- local colorscheme = "gruvbox"
 -- local colorscheme = "dracula"
 -- local colorscheme = "tokyonight"

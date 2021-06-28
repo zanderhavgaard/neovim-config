@@ -153,12 +153,15 @@ return packer.startup(
             }
         }
 
+        use "hashivim/vim-terraform"
+
         -- ===== colorschemes =====
 
         -- DSL for colorschemes
         use "rktjmp/lush.nvim"
 
         -- use "rakr/vim-one"
+        use "rakr/vim-one"
         use "joshdick/onedark.vim"
         use "gruvbox-community/gruvbox"
         use "dracula/vim"
