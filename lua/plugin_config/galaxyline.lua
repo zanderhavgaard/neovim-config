@@ -128,7 +128,17 @@ gls.right[4] = {
         highlight = {colors.blue, colors.bg}
     }
 }
+
 gls.right[5] = {
+    FileTypeName = {
+        provider = "FileTypeName",
+        -- separator = " ",
+        condition = condition.buffer_not_empty,
+        highlight = {colors.orange, colors.bg, "bold"}
+    }
+}
+
+gls.right[6] = {
     FileEncode = {
         provider = "FileEncode",
         condition = condition.hide_in_width,
@@ -138,7 +148,7 @@ gls.right[5] = {
     }
 }
 
-gls.right[6] = {
+gls.right[7] = {
     FileFormat = {
         provider = "FileFormat",
         condition = condition.hide_in_width,
@@ -148,7 +158,7 @@ gls.right[6] = {
     }
 }
 
-gls.right[7] = {
+gls.right[8] = {
     GitIcon = {
         separator = " ",
         provider = function()
@@ -160,7 +170,7 @@ gls.right[7] = {
     }
 }
 
-gls.right[8] = {
+gls.right[9] = {
     GitBranch = {
         separator = " ",
         provider = "GitBranch",
@@ -169,7 +179,7 @@ gls.right[8] = {
     }
 }
 
-gls.right[9] = {
+gls.right[10] = {
     DiffAdd = {
         separator = " ",
         provider = "DiffAdd",
@@ -178,7 +188,7 @@ gls.right[9] = {
         highlight = {colors.green, colors.bg}
     }
 }
-gls.right[10] = {
+gls.right[11] = {
     DiffModified = {
         separator = " ",
         provider = "DiffModified",
@@ -187,7 +197,7 @@ gls.right[10] = {
         highlight = {colors.orange, colors.bg}
     }
 }
-gls.right[11] = {
+gls.right[12] = {
     DiffRemove = {
         separator = " ",
         provider = "DiffRemove",
