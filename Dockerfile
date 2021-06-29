@@ -34,7 +34,8 @@ RUN \
 
 # use paru to install AUR packages
 RUN \
-    paru --noconfirm --needed --removemake --cleanafter -S pfetch antigen neovim-git && \
+    paru --noconfirm --needed --removemake --cleanafter -S pfetch antigen tree-sitter-git && \
+    paru --noconfirm --needed --removemake --cleanafter -S neovim-git && \
     # cleanup
     sudo pacman --noconfirm -Scc && \
     sudo rm -rf /home/zcli/paru /home/zcli/.cargo /home/zcli/.cache/* /var/cache/pacman
