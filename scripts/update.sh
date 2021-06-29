@@ -26,11 +26,6 @@ pmsg "Updating python linters/stylers/utils ..."
 pip install --user --upgrade --use-deprecated=legacy-resolver pylint flake8 autopep8 black jedi
 smsg "Done updating python stuff."
 
-pmsg "Upgrading vim-plug ..."
-nvim --headless +PlugUpgrade +qa
-echo
-smsg "Done upgrading vim-plug."
-
 pmsg "Installing/Updating/Cleaning packer plugings ..."
 # TODO figure out how to run packer headless
 nvim +PackerCompile +PackerClean +PackerInstall +PackerUpdate
