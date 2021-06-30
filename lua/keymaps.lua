@@ -81,9 +81,9 @@ map("t", "<M-l>", "<c-\\><c-n><c-w>l", {})
 ---- buffers
 -- cycle through buffers
 -- map("n", "<Tab>", ":bnext<CR>", {})
-map("n", "<Tab>", ":BufferLineCycleNext<CR>", {})
--- map("n", "<C-Tab>", ":bprevious<CR>", {})
-map("n", "<C-Tab>", ":BufferLineCyclePrev<CR>", {})
+-- map("n", "<Tab>", ":BufferLineCycleNext<CR>", {})
+-- map("n", "<S-Tab>", ":bprevious<CR>", {})
+-- map("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", {})
 
 ---- tabs
 -- create a new tab
@@ -91,10 +91,10 @@ map("n", "<Leader>tt", ":tabnew<CR>", {})
 -- open current window in new tab
 map("n", "<Leader>tc", "<C-w>T", {})
 -- go to next tab
--- map("n", "<Tab>", ":tabnext<CR>", {})
+map("n", "<Tab>", ":tabnext<CR>", {})
 map("n", "<Leader>tn", ":tabnext<CR>", {})
 -- go to previous tab
--- map("n", "<C-Tab>", ":tabprevious<CR>", {})
+map("n", "<S-Tab>", ":tabprevious<CR>", {})
 map("n", "<Leader>tp", ":tabprevious<CR>", {})
 -- move tab left in tabline
 map("n", "<C-A-Left>", ":execute 'silent! tabmove ' . (tabpagenr()-2)<CR>", {})
