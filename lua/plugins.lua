@@ -59,11 +59,13 @@ return packer.startup(
             }
         }
 
+        use "zefei/vim-wintabs"
+
         -- nicer tab/bufferline
-        use {
-            "akinsho/nvim-bufferline.lua",
-            requires = "kyazdani42/nvim-web-devicons"
-        }
+        -- use {
+        -- "akinsho/nvim-bufferline.lua",
+        -- requires = "kyazdani42/nvim-web-devicons"
+        -- }
 
         -- tree file browser
         use "kyazdani42/nvim-tree.lua"
