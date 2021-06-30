@@ -6,7 +6,7 @@ vim.g.loaded_node_provider = 0
 vim.g.loaded_python_provider = 0
 vim.g.loaded_perl_provider = 0
 -- use system python3
-vim.python3_host_prog = "/usr/bin/python"
+vim.g.python3_host_prog = "/usr/bin/python"
 
 -- generate list of todo comments
 vim.cmd([[command Todo noautocmd vimgrep /TODO\|FIXME\|HACK/j ** | cw]])
