@@ -9,6 +9,7 @@ require("bufferline").setup {
         -- offset bufferline left of file browser
         offsets = {{filetype = "NvimTree", text = "", highlight = "Directory", text_align = "left", padding = 1}},
         -- show tab numbers on the right, also highlight buffers that are in the same tab
-        show_tab_indicators = true
+        show_tab_indicators = true,
+        sort_by = "directory"
     }
 }
