@@ -72,11 +72,7 @@ return packer.startup(
         use "tpope/vim-sleuth"
 
         -- draw indent guides
-        -- TODO change to master branch once Neovim 0.5 is released
-        use {
-            "lukas-reineke/indent-blankline.nvim",
-            branch = "lua"
-        }
+        use "lukas-reineke/indent-blankline.nvim"
 
         -- smooth scrolling
         use "psliwka/vim-smoothie"
