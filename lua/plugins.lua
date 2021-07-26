@@ -158,7 +158,7 @@ return packer.startup(
 
         -- use "rakr/vim-one"
         use "rakr/vim-one"
-        use "joshdick/onedark.vim"
+        -- use "joshdick/onedark.vim"
         use "gruvbox-community/gruvbox"
         use "dracula/vim"
         use "folke/tokyonight.nvim"
