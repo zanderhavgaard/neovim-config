@@ -26,6 +26,7 @@ let g:ale_fixers = {
   \ 'sh':['shfmt'],
   \ 'yaml':['yamlfix'],
   \ 'markdown':['prettier'],
+  \ 'json': ['jq', 'prettier'],
   \}
 
 let g:ale_fix_on_save = 1
