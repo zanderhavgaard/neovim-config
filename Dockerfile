@@ -47,9 +47,9 @@ RUN \
 RUN \
     pip install --user --upgrade pynvim neovim-remote msgpack yamlfix
 
-copy --chown=zcli:zcli init.lua  /home/zcli/.config/nvim/init.lua
-copy --chown=zcli:zcli lua       /home/zcli/.config/nvim/lua
-copy --chown=zcli:zcli vimscript /home/zcli/.config/nvim/vimscript
+COPY --chown=zcli:zcli init.lua  /home/zcli/.config/nvim/init.lua
+COPY --chown=zcli:zcli lua       /home/zcli/.config/nvim/lua
+COPY --chown=zcli:zcli vimscript /home/zcli/.config/nvim/vimscript
 COPY --chown=zcli:zcli docker_entrypoint.sh /home/zcli/docker_entrypoint.sh
 
 # install plugins and compile treesitter modules, both are asynchrounous

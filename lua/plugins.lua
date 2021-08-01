@@ -149,7 +149,11 @@ return packer.startup(
             }
         }
 
+        -- unofficial support for terraform in vim
         use "hashivim/vim-terraform"
+
+        -- suggestions and tab completion for ':' commands
+        use "gelguy/wilder.nvim"
 
         -- ===== colorschemes =====
 
