@@ -87,7 +87,10 @@ return packer.startup(
         use "lifepillar/vim-cheat40"
 
         -- swap windows with <Leader>ww
-        use "wesQ3/vim-windowswap"
+        -- use "wesQ3/vim-windowswap"
+
+        -- swap buffers in windows using directions
+        use "caenrique/swap-buffers.nvim"
 
         -- fuzzy finder and more
         use {

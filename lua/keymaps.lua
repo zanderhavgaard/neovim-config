@@ -1,3 +1,4 @@
+local sb = require("swap-buffers")
 local vim = vim
 -- keymaps vim.api.nvim_set_keymap('<mode>', '<keybind>', '<command>', {<config>})
 -- <mode> is one of 'n' = normal, 'i' = input, 't' = terminal
@@ -62,6 +63,12 @@ map("n", "<C-A-h>", ":vertical resize -5<cr>", {})
 map("n", "<C-A-j>", ":resize +5<CR>", {})
 map("n", "<C-A-k>", ":resize -5<CR>", {})
 map("n", "<C-A-l>", ":vertical resize +5<cr>", {})
+
+-- swap
+map("n", "<Leader>wh", "<Cmd>lua require('swap-buffers').swap_buffers('h')<CR>")
+map("n", "<Leader>wj", "<Cmd>lua require('swap-buffers').swap_buffers('j')<CR>")
+map("n", "<Leader>wk", "<Cmd>lua require('swap-buffers').swap_buffers('k')<CR>")
+map("n", "<Leader>wl", "<Cmd>lua require('swap-buffers').swap_buffers('l')<CR>")
 
 ---- switch focus between windows
 map("n", "<C-J>", "<C-W><C-J>", {})
