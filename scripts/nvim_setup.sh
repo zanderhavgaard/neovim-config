@@ -32,8 +32,7 @@ pmsg "Creating symlink for vimscript directory ..."
 ln -sv /home/$USER/neovim-config/vimscript /home/$USER/.config/nvim/vimscript
 
 pmsg "Installing packer package manager ..."
-git clone https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 pmsg "Installing plugins using packer ... "
 nvim +PackerCompile +PackerSync
