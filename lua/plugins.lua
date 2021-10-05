@@ -66,7 +66,13 @@ return packer.startup(
         }
 
         -- tree file browser
-        use "kyazdani42/nvim-tree.lua"
+        use {
+            "kyazdani42/nvim-tree.lua",
+            requires = "kyazdani42/nvim-tree.lua",
+            config = function()
+                require "plugin_config.nvim-tree"
+            end
+        }
 
         -- automatically set indent width
         use "tpope/vim-sleuth"
