@@ -1,8 +1,12 @@
 -- settings for indent-blankline plugin
-vim.g.indentline_enabled = 1
-vim.g.indentLine_char = "▏"
-vim.g.indentLine_first_char = "▏"
-vim.g.indent_blankline_filetype_exclude = {"help", "terminal", "startify", "dashboard", "packer"}
-vim.g.indent_blankline_buftype_exclude = {"terminal"}
-vim.g.indent_blankline_show_trailing_blankline_indent = false
-vim.g.indent_blankline_show_first_indent_level = true
+require("indent_blankline").setup {
+    char = "▏",
+    first_char = "▏",
+    filetype_exclude = {"help", "terminal", "startify", "dashboard", "packer"},
+    buftype_exclude = {"terminal"},
+    show_trailing_blankline_indent = true,
+    show_first_indent_level = true,
+    space_char_blankline = " "
+    -- use treesitter to highlight the current function scope
+    -- show_current_context = true
+}
