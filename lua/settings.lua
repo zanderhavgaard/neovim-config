@@ -31,10 +31,6 @@ vim.cmd("autocmd BufRead,BufNewFile *.txt setlocal spell")
 vim.o.splitbelow = true
 vim.o.splitright = true
 
--- draw indent guides for tab-indented code
-vim.cmd([[set listchars=tab:\|\]])
-vim.cmd([[set list]])
-
 -- decrease update time, makes git gutter work faster
 vim.o.updatetime = 100
 
