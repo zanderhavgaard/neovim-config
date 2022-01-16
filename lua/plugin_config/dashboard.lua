@@ -8,6 +8,34 @@
 -- get the current version of nvim
 local nvim_version = "nvim is: " .. io.popen("nvim --version | head -n 1"):read()
 
+local alt_header = {
+    [[              `..-:/++++/:-..`                ]],
+    [[           `.:+syyyysssssyyyyyss/.`           ]],
+    [[         .:+o+//:--..```...--:+ooso/.         ]],
+    [[      `:++/:-.`  `...--...```  `.:++o+:`      ]],
+    [[     :yo/-.      :ssssssssss+.     .:+sy:     ]],
+    [[   `sy/:` .      ``````````.-`       `/+ys`   ]],
+    [[  `h+/. .s/`  ```...+++//-..```    :/. ./+y`  ]],
+    [[ `y/:. -s- ..``....-------.....`.`  ./- `:/o` ]],
+    [[ //:. `+` ./+-..----:://::---..---`   .  `:/: ]],
+    [[./-.  ``  `...---::::/++/::::--...``      -::`]],
+    [[-:-`     ``...--//////++/////:--...`      `::.]],
+    [[-:-      ``..--::///+ooo+////::--..``      ::.]],
+    [[.:-      ``..--::///+syyo+///::--..``      -:.]],
+    [[`:-      ``..--::///++oo+////::--..``      ::`]],
+    [[`-:`     ``..---:://////////::--..``      `::`]],
+    [[ .:-      ``...--::://///:::---...``      -:. ]],
+    [[ `::.      ``...----:::::----....``      .::` ]],
+    [[  `:/.      ```....-------.....``       .//`  ]],
+    [[   `/+:       ````.........````        /yo.   ]],
+    [[    `/yo.         `````````          `ods`    ]],
+    [[      -++:.                        `:++-      ]],
+    [[       `.://-`                  `.:/:.`       ]],
+    [[          `-///:-....```...--:://:-`          ]],
+    [[             `.:/+oyyyhhhhhys/:.`             ]],
+    [[                 ``.------..`                 ]]
+}
+
 -- build string list to be used as header
 -- [[ ]] is a literal string and does not need to escape characters
 local header = {
@@ -36,7 +64,7 @@ local header = {
 }
 
 -- set the custom header
-vim.g.dashboard_custom_header = header
+vim.g.dashboard_custom_header = alt_header
 
 -- what fuzzy finder to use
 vim.g.dashboard_default_executive = "telescope"
