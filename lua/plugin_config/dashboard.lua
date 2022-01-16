@@ -6,7 +6,32 @@
 -- vim.g.dashboard_preview_file_width = 67
 
 -- get the current version of nvim
-local nvim_version = "nvim is: " .. io.popen("nvim --version | head -n 1"):read()
+local nvim_version = "NeoVim is: " .. io.popen("nvim --version | head -n 1"):read()
+
+local alt2_header = {
+    [[                             .-::::-.        ]],
+    [[                         `.://::::::/+/-`    ]],
+    [[                       `//-`` -///::``.:+/`  ]],
+    [[                      `+:-:```.-::..`  -.:+` ]],
+    [[                      /-`-`:..--::--..``. -: ]],
+    [[                     `:`  `.-://++//--.`  `:`]],
+    [[                     `-   `.-:/+ss//:-.`   :`]],
+    [[                      -`  `.--:////:--.`  `: ]],
+    [[                      .-   `..--::--..`   -. ]],
+    [[                       ./.   ``....``   `+-  ]],
+    [[                        .:-``         `-:.   ]],
+    [[                          `----::://:-.`     ]],
+    [[                              `.---.         ]],
+    [[]],
+    [[            "I'm sorry Dave, I'm afraid I can't do that."]],
+    [[]],
+    [[───────────────────────────────────────────────────────────────────]],
+    [[Zanders customized NeoVim | github.com/zanderhavgaard/neovim-config]],
+    [[]],
+    [[                         ~ Happy Hacking! ~]],
+    [[]],
+    nvim_version
+}
 
 local alt_header = {
     [[              `..-:/++++/:-..`                ]],
@@ -64,7 +89,7 @@ local header = {
 }
 
 -- set the custom header
-vim.g.dashboard_custom_header = alt_header
+vim.g.dashboard_custom_header = alt2_header
 
 -- what fuzzy finder to use
 vim.g.dashboard_default_executive = "telescope"
