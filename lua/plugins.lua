@@ -92,9 +92,6 @@ return packer.startup(
         -- keymap cheatsheet
         use "lifepillar/vim-cheat40"
 
-        -- swap windows with <Leader>ww
-        -- use "wesQ3/vim-windowswap"
-
         -- swap buffers in windows using directions
         use "caenrique/swap-buffers.nvim"
 
@@ -124,10 +121,6 @@ return packer.startup(
 
         -- highlight unique characters when jumping on same line
         use "unblevable/quick-scope"
-
-        -- TODO use treesitter instead?
-        -- vim.g.polyglot_disabled = {"bash", "sh", "zsh"}
-        -- use "sheerun/vim-polyglot"
 
         -- autocompletion
         use "Shougo/deoplete.nvim"
@@ -164,12 +157,14 @@ return packer.startup(
         -- suggestions and tab completion for ':' commands
         use "gelguy/wilder.nvim"
 
+        -- create ascii tables in vim
+        use "dhruvasagar/vim-table-mode"
+
         -- ===== colorschemes =====
 
         -- DSL for colorschemes
         use "rktjmp/lush.nvim"
 
-        -- use "rakr/vim-one"
         use "rakr/vim-one"
         -- use "joshdick/onedark.vim"
         use "gruvbox-community/gruvbox"
