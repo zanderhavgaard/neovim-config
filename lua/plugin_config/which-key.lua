@@ -1,11 +1,8 @@
 -- config for which-key
-config = {
+require("which-key").setup {
     plugins = {
         spelling = {
-            enabled = true,
-            suggestions = 10,
-        },
+            enabled = true
+        }
     }
 }
-
-return config

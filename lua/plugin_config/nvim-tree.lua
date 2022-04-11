@@ -1,6 +1,6 @@
+local vim = vim
+
 require "nvim-tree".setup {
-    -- closes neovim automatically when the tree is the last **WINDOW** in the view
-    auto_close = true,
     -- opens the tree when changing/opening a new tab if the tree wasn't previously opened
     open_on_tab = true,
     -- hijack the cursor in the tree to put it at the start of the filename
@@ -8,3 +8,6 @@ require "nvim-tree".setup {
     -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
     update_cwd = true
 }
+
+-- close tab/nvim if nvim-tree is the last buffer in tab
+vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif")

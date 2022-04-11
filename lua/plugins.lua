@@ -36,13 +36,13 @@ return packer.startup(
         -- view git blame for lines in visual mode
         use "APZelos/blamer.nvim"
 
-        -- TODO configure
         -- which-key implemented in lua
-        use "folke/which-key.nvim"
-        -- use {
-        -- 'folke/which-key.nvim',
-        -- config = [[require('plugin_config.whick-key')]]
-        -- }
+        use {
+            "folke/which-key.nvim",
+            config = function()
+                require("plugin_config.which-key")
+            end
+        }
 
         -- statusline
         use {
