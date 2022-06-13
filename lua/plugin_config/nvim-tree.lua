@@ -6,7 +6,14 @@ require "nvim-tree".setup {
     -- hijack the cursor in the tree to put it at the start of the filename
     hijack_cursor = true,
     -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
-    update_cwd = true
+    update_cwd = true,
+    disable_netrw = true,
+    hijack_netrw = true,
+    view = {
+        side = "left",
+        width = 25,
+        hide_root_folder = true
+    }
 }
 
 -- close tab/nvim if nvim-tree is the last buffer in tab

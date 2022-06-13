@@ -87,7 +87,13 @@ return packer.startup(
         -- use "mhinz/vim-startify"
 
         -- dashboard inspired by DOOM emacs
-        use "glepnir/dashboard-nvim"
+        -- use "glepnir/dashboard-nvim"
+        use {
+            "glepnir/dashboard-nvim",
+            config = function()
+                require "plugin_config.dashboard"
+            end
+        }
 
         -- keymap cheatsheet
         use "lifepillar/vim-cheat40"
