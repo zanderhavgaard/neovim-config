@@ -176,5 +176,11 @@ return packer.startup(
         use "gruvbox-community/gruvbox"
         use "dracula/vim"
         use "folke/tokyonight.nvim"
+        use(
+            {
+                "catppuccin/nvim",
+                as = "catppuccin"
+            }
+        )
     end
 )
