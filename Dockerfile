@@ -10,7 +10,7 @@ RUN \
         bat exa prettyping fzf fd ncdu tldr ripgrep ranger tmux \
         ansible-lint hub github-cli  \
         jq zip unzip moreutils shellcheck yamllint tree shfmt \
-        neofetch figlet && \
+        neofetch figlet zoxide && \
     pacman --noconfirm -Scc && \
     rm -rf /var/cache/pacman && \
     groupadd -g 1000 zcli && \
@@ -34,7 +34,7 @@ RUN \
 
 # use paru to install AUR packages
 RUN \
-    paru --noconfirm --needed --removemake --cleanafter -S pfetch antigen tree-sitter-git && \
+    paru --noconfirm --needed --removemake --cleanafter -S pfetch antigen tree-sitter-git logo-ls && \
     paru --noconfirm --needed --removemake --cleanafter -S neovim-git && \
     # cleanup
     sudo pacman --noconfirm -Scc && \
@@ -56,8 +56,8 @@ COPY --chown=zcli:zcli docker_entrypoint.sh /home/zcli/docker_entrypoint.sh
 # so sleep is HACK to give them time to run
 # TODO do this in a better way...
 RUN \
-    nvim --headless +PackerSync +sleep30 +UpdateRemotePlugins +qa && \
-    nvim --headless +sleep30 +qa
+    nvim --headless +PackerSync +sleep60 +UpdateRemotePlugins +qa && \
+    nvim --headless +sleep60 +qa
 
 # get some env config files
 RUN \
