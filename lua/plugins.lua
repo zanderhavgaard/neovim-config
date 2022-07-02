@@ -171,16 +171,11 @@ return packer.startup(
         -- DSL for colorschemes
         use "rktjmp/lush.nvim"
 
-        use "rakr/vim-one"
-        -- use "joshdick/onedark.vim"
+        use "ful1e5/onedark.nvim"
+        -- use "navarasu/onedark.nvim"
         use "gruvbox-community/gruvbox"
         use "dracula/vim"
         use "folke/tokyonight.nvim"
-        use(
-            {
-                "catppuccin/nvim",
-                as = "catppuccin"
-            }
-        )
+        use({"catppuccin/nvim", as = "catppuccin"})
     end
 )
