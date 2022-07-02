@@ -158,6 +158,9 @@ return packer.startup(
             }
         }
 
+        -- integrate native spellchecker with treesitter
+        use "lewis6991/spellsitter.nvim"
+
         -- unofficial support for terraform in vim
         use "hashivim/vim-terraform"
 
