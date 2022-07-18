@@ -52,6 +52,8 @@ map("n", "<Leader>ss", "/<C-r><C-w><CR>", {})
 map("n", "<Leader>rs", ":%s//gc<left><left><left>", {})
 -- search and replace, using word at caret
 map("n", "<Leader>rr", ":%s/<C-r><C-w>//gc<Left><Left><Left>", {})
+-- render \n into newlines and \t into tabs
+map("n", "<leader>rn", ":%s/\\\\n/\\r/g<CR>:%s/\\\\t/  /g<CR>", {})
 
 ---- window management
 -- fill screen with current window, making other windows as small as possible
