@@ -129,41 +129,20 @@ return packer.startup(
         -- highlight unique characters when jumping on same line
         use "unblevable/quick-scope"
 
+        -- autocompletion
+        use "Shougo/deoplete.nvim"
+        -- use python jedi with deoplete
+        use "deoplete-plugins/deoplete-jedi"
+        vim.cmd("let g:deoplete#enable_at_startup = 1")
+
         -- asynchronous lint engine
         use "dense-analysis/ale"
 
-        -- setup LSP
-        -- external dependencies: git, curl or wget, unzip, tar, gzip
-        use {
-            "VonHeikemen/lsp-zero.nvim",
-            requires = {
-                -- LSP Support
-                {"neovim/nvim-lspconfig"},
-                {"williamboman/nvim-lsp-installer"},
-                -- Autocompletion
-                {"hrsh7th/nvim-cmp"},
-                {"hrsh7th/cmp-buffer"},
-                {"hrsh7th/cmp-path"},
-                {"saadparwaiz1/cmp_luasnip"},
-                {"hrsh7th/cmp-nvim-lsp"},
-                {"hrsh7th/cmp-nvim-lua"},
-                -- Snippets
-                {"L3MON4D3/LuaSnip"},
-                {"rafamadriz/friendly-snippets"}
-            }
-        }
-
-        -- autocompletion
-        -- use "Shougo/deoplete.nvim"
-        -- use python jedi with deoplete
-        -- use "deoplete-plugins/deoplete-jedi"
-        -- vim.cmd("let g:deoplete#enable_at_startup = 1")
-
         -- golang integration
-        -- use {
-        -- "fatih/vim-go",
-        -- run = ":GoUpdateBinaries"
-        -- }
+        use {
+            "fatih/vim-go",
+            run = ":GoUpdateBinaries"
+        }
 
         -- better syntax highlighting and more
         use {
