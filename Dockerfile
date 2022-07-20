@@ -34,7 +34,7 @@ RUN \
 
 # use paru to install AUR packages
 RUN \
-    paru --noconfirm --needed --removemake --cleanafter -S pfetch antigen tree-sitter-git logo-ls && \
+    paru --noconfirm --needed --removemake --cleanafter -S pfetch antigen tree-sitter-git logo-ls nitch && \
     paru --noconfirm --needed --removemake --cleanafter -S neovim-git && \
     # cleanup
     sudo pacman --noconfirm -Scc && \
