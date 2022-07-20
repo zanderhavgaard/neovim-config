@@ -66,6 +66,7 @@ RUN \
     cp dotfiles/.aliases . && \
     cp dotfiles/.gitconfig . && \
     touch .env && \
+    echo "export LANG='en_US.UTF-8'" >> .env && \
     echo "export EDITOR='nvim'" >> .env && \
     echo "export PATH=\"$PATH:/home/zcli/.local/bin\"" >> .env && \
     rm -rf dotfiles && \
