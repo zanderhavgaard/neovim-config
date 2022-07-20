@@ -139,10 +139,10 @@ return packer.startup(
         use "dense-analysis/ale"
 
         -- golang integration
-        use {
-            "fatih/vim-go",
-            run = ":GoUpdateBinaries"
-        }
+        -- use {
+            -- "fatih/vim-go",
+            -- run = ":GoUpdateBinaries"
+        -- }
 
         -- better syntax highlighting and more
         use {
