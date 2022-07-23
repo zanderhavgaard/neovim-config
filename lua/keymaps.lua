@@ -121,7 +121,7 @@ map("n", "<Leader>hh", ":ColorHighlight<CR>", {})
 map("n", "<Leader>hc", ":ColorClear<CR>", {})
 
 -- toggle nvim-tree
-map("n", "<leader>m", ":NvimTreeToggle<CR>", {})
+map("n", "<leader>m", ":CHADopen<CR>", {})
 
 -- show vim cheat sheet
 map("n", "<Leader>?", ":Cheat40<CR>", {})

@@ -69,12 +69,12 @@ return packer.startup(
 
             -- tree file browser
             use {
-                "kyazdani42/nvim-tree.lua",
-                requires = "kyazdani42/nvim-tree.lua",
-                config = function()
-                    require "plugin_config.nvim-tree"
-                end
+                "ms-jpq/chadtree",
+                branch = "chad",
+                run = "python -m chadtree deps"
             }
+            -- after installing run :CHADdeps
+            -- to install dependencies
 
             -- automatically set indent width
             use "tpope/vim-sleuth"
@@ -139,7 +139,8 @@ return packer.startup(
             -- completion engine and plugins
             use {
                 "ms-jpq/coq_nvim",
-                branch = "coq"
+                branch = "coq",
+                run = ":COQdeps"
             }
             -- snippets for coq
             use {
