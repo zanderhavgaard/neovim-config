@@ -130,18 +130,35 @@ return packer.startup(
         use "unblevable/quick-scope"
 
         -- autocompletion
-        use "Shougo/deoplete.nvim"
+        -- use "Shougo/deoplete.nvim"
         -- use python jedi with deoplete
-        use "deoplete-plugins/deoplete-jedi"
-        vim.cmd("let g:deoplete#enable_at_startup = 1")
+        -- use "deoplete-plugins/deoplete-jedi"
+        -- vim.cmd("let g:deoplete#enable_at_startup = 1")
+
+        -- completion engine and plugins
+        use {
+            "ms-jpq/coq_nvim",
+            branch = "coq"
+        }
+        -- snippets for coq
+        use {
+            "ms-jpq/coq.artifacts",
+            branch = "artifacts"
+        }
+        -- 3rd party integrations
+        -- TODO needs config
+        -- use {
+        -- "ms-jpq/coq.thirdparty",
+        -- branch = "3p"
+        -- }
 
         -- asynchronous lint engine
         use "dense-analysis/ale"
 
         -- golang integration
         -- use {
-            -- "fatih/vim-go",
-            -- run = ":GoUpdateBinaries"
+        -- "fatih/vim-go",
+        -- run = ":GoUpdateBinaries"
         -- }
 
         -- better syntax highlighting and more
