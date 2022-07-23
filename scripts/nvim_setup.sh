@@ -35,6 +35,6 @@ pmsg "Installing packer package manager ..."
 git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 pmsg "Installing plugins using packer ... "
-nvim +PackerCompile +PackerSync
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 smsg "Done configuring NeoVim!"

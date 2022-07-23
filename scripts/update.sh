@@ -26,9 +26,8 @@ pmsg "Updating python linters/stylers/utils ..."
 pip install --user --upgrade --use-deprecated=legacy-resolver pylint flake8 autopep8 black jedi
 smsg "Done updating python stuff."
 
-pmsg "Installing/Updating/Cleaning packer plugings ..."
-# TODO figure out how to run packer headless
-nvim +PackerCompile +PackerClean +PackerInstall +PackerUpdate
+pmsg "Running packer sync ..."
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 echo
 smsg "Done running packer."
 
