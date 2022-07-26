@@ -11,8 +11,12 @@ stmsg "==============="
 echo
 
 pmsg "Updating npm packages ..."
-sudo npm install -g --upgrade instant-markdown-d@latest lua-fmt@latest
+sudo npm install -g --upgrade lua-fmt@latest
 smsg "Done updating npm packages."
+
+pmsg "Updating markdown live preview ..."
+pip install --user --upgrade --use-deprecated=legacy-resolver markdown_live_preview
+smsg "Done updating markdown live preview."
 
 pmsg "Updating python dependencies ..."
 pip install --user --upgrade --use-deprecated=legacy-resolver pynvim neovim-remote msgpack smdv
@@ -30,6 +34,11 @@ pmsg "Running packer sync ..."
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 echo
 smsg "Done running packer."
+
+# pmsg "Running coq and chadtree dependency updates ..."
+# nvim --headless -c 'COQdeps'
+# nvim --headless +CHADdeps 
+# smsg "Done running coq and chadtree dependency updates."
 
 pmsg "Update remote plugins ..."
 nvim --headless +UpdateRemotePlugins +qa
