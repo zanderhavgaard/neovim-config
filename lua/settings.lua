@@ -113,7 +113,7 @@ vim.o.termguicolors = true
 
 -- enable syntax highlighting
 -- TODO convert to lua
-vim.cmd("syntax on")
+vim.cmd("syntax off")
 
 -- enable darwing the signcolumn
 vim.opt.signcolumn = "auto:9"
