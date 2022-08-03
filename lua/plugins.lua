@@ -194,8 +194,8 @@ return packer.startup(
             -- DSL for colorschemes
             use "rktjmp/lush.nvim"
 
-            use "olimorris/onedarkpro.nvim"
-            -- use "ful1e5/onedark.nvim"
+            -- use "olimorris/onedarkpro.nvim"
+            use "ful1e5/onedark.nvim"
             -- use "navarasu/onedark.nvim"
             use "gruvbox-community/gruvbox"
             use "dracula/vim"
