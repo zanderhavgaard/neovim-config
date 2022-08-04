@@ -130,6 +130,11 @@ return packer.startup(
             -- highlight unique characters when jumping on same line
             use "unblevable/quick-scope"
 
+            -- lsp plugins
+            use "williamboman/mason.nvim"
+            use "williamboman/mason-lspconfig.nvim"
+            use "neovim/nvim-lspconfig"
+
             -- autocompletion
             -- use "Shougo/deoplete.nvim"
             -- use python jedi with deoplete
