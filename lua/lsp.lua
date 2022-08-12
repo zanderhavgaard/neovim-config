@@ -2,6 +2,14 @@ local vim = vim
 -- integrate lsp with coq
 local coq = require("coq")
 
+-- TODO fix
+-- disable virutal text
+vim.diagnostic.config(
+    {
+        virtual_text = false
+    }
+)
+
 -- initialize mason
 require("mason").setup()
 -- initialize lspconfig
