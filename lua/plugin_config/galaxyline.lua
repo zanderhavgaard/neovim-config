@@ -130,15 +130,30 @@ gls.right[4] = {
 }
 
 gls.right[5] = {
+    ShowLspClient = {
+        provider = "GetLspClient",
+        condition = function()
+            local tbl = {["dashboard"] = true, [""] = true}
+            if tbl[vim.bo.filetype] then
+                return false
+            end
+            return true
+        end,
+        icon = "  LSP:",
+        highlight = {colors.cyan, colors.bg, "bold"}
+    }
+}
+
+gls.right[6] = {
     FileTypeName = {
         provider = "FileTypeName",
-        -- separator = " ",
+        separator = " ",
         condition = condition.buffer_not_empty,
         highlight = {colors.orange, colors.bg, "bold"}
     }
 }
 
-gls.right[6] = {
+gls.right[7] = {
     FileEncode = {
         provider = "FileEncode",
         condition = condition.hide_in_width,
@@ -148,7 +163,7 @@ gls.right[6] = {
     }
 }
 
-gls.right[7] = {
+gls.right[8] = {
     FileFormat = {
         provider = "FileFormat",
         condition = condition.hide_in_width,
@@ -158,7 +173,7 @@ gls.right[7] = {
     }
 }
 
-gls.right[8] = {
+gls.right[9] = {
     GitIcon = {
         separator = " ",
         provider = function()
@@ -170,7 +185,7 @@ gls.right[8] = {
     }
 }
 
-gls.right[9] = {
+gls.right[10] = {
     GitBranch = {
         separator = " ",
         provider = "GitBranch",
@@ -179,7 +194,7 @@ gls.right[9] = {
     }
 }
 
-gls.right[10] = {
+gls.right[11] = {
     DiffAdd = {
         separator = " ",
         provider = "DiffAdd",
@@ -188,7 +203,7 @@ gls.right[10] = {
         highlight = {colors.green, colors.bg}
     }
 }
-gls.right[11] = {
+gls.right[12] = {
     DiffModified = {
         separator = " ",
         provider = "DiffModified",
@@ -197,7 +212,7 @@ gls.right[11] = {
         highlight = {colors.orange, colors.bg}
     }
 }
-gls.right[12] = {
+gls.right[13] = {
     DiffRemove = {
         separator = " ",
         provider = "DiffRemove",

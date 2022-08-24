@@ -1,3 +1,4 @@
+local vim = vim
 -- start coq and mute welcome message
 local coq_settings = {
     auto_start = "shut-up"
@@ -10,6 +11,7 @@ require("keymaps")
 require("plugin_config")
 require("theme")
 require("gui")
+require("lsp")
 -- load ale config from vimscript file
 vim.cmd("source ~/.config/nvim/vimscript/ale.vim")
 vim.cmd("source ~/.config/nvim/vimscript/wilder.vim")
