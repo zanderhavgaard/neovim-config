@@ -37,12 +37,17 @@ smsg "Done running packer."
 
 # pmsg "Running coq and chadtree dependency updates ..."
 # nvim --headless -c 'COQdeps'
-# nvim --headless +CHADdeps 
+# nvim --headless +CHADdeps
 # smsg "Done running coq and chadtree dependency updates."
 
 pmsg "Update remote plugins ..."
 nvim --headless +UpdateRemotePlugins +qa
 echo
 smsg "Done updating remote plugins."
+
+pmsg "Syncing Treesitter Parsers ..."
+nvim --headless +TSUpdateSync +qa
+echo
+smsg "Done syncing treesitter parsers."
 
 smsg "Done updating!"
