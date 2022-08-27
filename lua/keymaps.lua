@@ -149,3 +149,11 @@ map("n", "<Leader>nh", "<Cmd>Telescope help_tags<CR>", {})
 map("n", "<Leader>nm", "<Cmd>Telescope man_pagesCR>", {})
 -- search registers
 map("n", "<Leader>nr", "<Cmd>Telescope registers<CR>", {})
+
+---- gitsigns
+map("n", "<Leader>gg", ":Gitsigns preview_hunk<CR>", {})
+map("n", "<Leader>gu", ":Gitsigns reset_hunk<CR>", {})
+map("n", "<Leader>ga", ":Gitsigns stage_hunk<CR>", {})
+map("n", "<Leader>gA", ":Gitsigns undo_stage_hunk<CR>", {})
+map("n", "<Leader>gn", ":Gitsigns next_hunk<CR>", {})
+map("n", "<Leader>gp", ":Gitsigns prev_hunk<CR>", {})

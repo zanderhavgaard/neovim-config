@@ -29,7 +29,6 @@ return packer.startup(
             use "artnez/vim-wipeout"
 
             -- show git status in left editor gutter
-            -- use "airblade/vim-gitgutter"
             use "lewis6991/gitsigns.nvim"
 
             -- git integration
