@@ -69,7 +69,6 @@ require("lspconfig")["sumneko_lua"].setup {
         }
     )
 }
-
 require("lspconfig")["pyright"].setup {
     coq.lsp_ensure_capabilities(
         {
@@ -78,8 +77,15 @@ require("lspconfig")["pyright"].setup {
         }
     )
 }
-
 require("lspconfig")["terraformls"].setup {
+    coq.lsp_ensure_capabilities(
+        {
+            on_attach = on_attach,
+            flags = lsp_flags
+        }
+    )
+}
+require("lspconfig")["bashls"].setup {
     coq.lsp_ensure_capabilities(
         {
             on_attach = on_attach,
