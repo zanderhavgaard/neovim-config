@@ -68,12 +68,12 @@ return packer.startup(
 
             -- tree file browser
             use {
-                "ms-jpq/chadtree",
-                branch = "chad",
-                run = "python -m chadtree deps"
+                "kyazdani42/nvim-tree.lua",
+                requires = {
+                    "kyazdani42/nvim-web-devicons" -- optional, for file icons
+                },
+                tag = "nightly" -- optional, updated every week. (see issue #1193)
             }
-            -- after installing run :CHADdeps
-            -- to install dependencies
 
             -- automatically set indent width
             use "tpope/vim-sleuth"
