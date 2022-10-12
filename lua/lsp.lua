@@ -2,16 +2,14 @@ local vim = vim
 
 -- TODO fix
 -- disable virutal text
-vim.diagnostic.config(
-    {
-        virtual_text = false
-    }
-)
+-- vim.diagnostic.config({virtual_text = false})
 
 -- initialize mason
 require("mason").setup()
 -- initialize lspconfig
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+    ensure_installed = {"sumneko_lua", "pyright", "terraformls", "bashls"}
+})
 
 -- default config from https://github.com/neovim/nvim-lspconfig
 --
@@ -38,15 +36,11 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
     vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
-    vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
-    vim.keymap.set(
-        "n",
-        "<space>wl",
-        function()
-            print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-        end,
-        bufopts
-    )
+    vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder,
+                   bufopts)
+    vim.keymap.set("n", "<space>wl", function()
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, bufopts)
     vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts)
     vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
@@ -54,7 +48,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<space>f", vim.lsp.buf.formatting, bufopts)
 end
 
-local lsp_flags = {
-    -- This is the default in Nvim 0.7+
-    debounce_text_changes = 150
-}
+require("lspconfig")["sumneko_lua"].setup {}
+require("lspconfig")["pyright"].setup {}
+require("lspconfig")["terraformls"].setup {}
+require("lspconfig")["bashls"].setup {}

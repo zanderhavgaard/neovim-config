@@ -61,7 +61,8 @@ gls.left[1] = {
                 ["!"] = colors.red,
                 t = colors.red
             }
-            vim.api.nvim_command("hi GalaxyViMode guibg=" .. mode_color[vim.fn.mode()])
+            vim.api.nvim_command("hi GalaxyViMode guibg=" ..
+                                     mode_color[vim.fn.mode()])
             local vi_mode = vim.fn.mode()
             return "  " .. vi_modes[vi_mode] .. " "
         end,
@@ -83,7 +84,10 @@ gls.left[3] = {
     FileIcon = {
         provider = "FileIcon",
         condition = condition.buffer_not_empty,
-        highlight = {require("galaxyline.provider_fileinfo").get_file_icon_color, colors.bg}
+        highlight = {
+            require("galaxyline.provider_fileinfo").get_file_icon_color,
+            colors.bg
+        }
     }
 }
 
@@ -134,9 +138,7 @@ gls.right[5] = {
         provider = "GetLspClient",
         condition = function()
             local tbl = {["dashboard"] = true, [""] = true}
-            if tbl[vim.bo.filetype] then
-                return false
-            end
+            if tbl[vim.bo.filetype] then return false end
             return true
         end,
         icon = "  LSP:",
@@ -176,9 +178,7 @@ gls.right[8] = {
 gls.right[9] = {
     GitIcon = {
         separator = " ",
-        provider = function()
-            return ""
-        end,
+        provider = function() return "" end,
         condition = condition.check_git_workspace,
         separator_highlight = {"NONE", colors.bg},
         highlight = {colors.red, colors.bg, "bold"}
@@ -225,10 +225,7 @@ gls.right[13] = {
 -- short_line
 
 gls.short_line_left[1] = {
-    BufferIcon = {
-        provider = "BufferIcon",
-        highlight = {colors.fg, colors.bg}
-    }
+    BufferIcon = {provider = "BufferIcon", highlight = {colors.fg, colors.bg}}
 }
 gls.short_line_left[2] = {
     BufferType = {
