@@ -1,6 +1,4 @@
 local vim = vim
--- integrate lsp with coq
-local coq = require("coq")
 
 -- TODO fix
 -- disable virutal text
@@ -59,37 +57,4 @@ end
 local lsp_flags = {
     -- This is the default in Nvim 0.7+
     debounce_text_changes = 150
-}
-
-require("lspconfig")["sumneko_lua"].setup {
-    coq.lsp_ensure_capabilities(
-        {
-            on_attach = on_attach,
-            flags = lsp_flags
-        }
-    )
-}
-require("lspconfig")["pyright"].setup {
-    coq.lsp_ensure_capabilities(
-        {
-            on_attach = on_attach,
-            flags = lsp_flags
-        }
-    )
-}
-require("lspconfig")["terraformls"].setup {
-    coq.lsp_ensure_capabilities(
-        {
-            on_attach = on_attach,
-            flags = lsp_flags
-        }
-    )
-}
-require("lspconfig")["bashls"].setup {
-    coq.lsp_ensure_capabilities(
-        {
-            on_attach = on_attach,
-            flags = lsp_flags
-        }
-    )
 }
