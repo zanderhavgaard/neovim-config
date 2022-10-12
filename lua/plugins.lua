@@ -84,9 +84,6 @@ return packer.startup(
             -- smooth scrolling
             use "psliwka/vim-smoothie"
 
-            -- startify splash screen
-            -- use "mhinz/vim-startify"
-
             -- dashboard inspired by DOOM emacs
             -- use "glepnir/dashboard-nvim"
             use {
@@ -137,12 +134,6 @@ return packer.startup(
             -- asynchronous lint engine
             use "dense-analysis/ale"
 
-            -- golang integration
-            -- use {
-            -- "fatih/vim-go",
-            -- run = ":GoUpdateBinaries"
-            -- }
-
             -- better syntax highlighting and more
             use {
                 "nvim-treesitter/nvim-treesitter",
@@ -156,9 +147,6 @@ return packer.startup(
                     "nvim-treesitter/nvim-treesitter"
                 }
             }
-
-            -- integrate native spellchecker with treesitter
-            use "lewis6991/spellsitter.nvim"
 
             -- unofficial support for terraform in vim
             use "hashivim/vim-terraform"
