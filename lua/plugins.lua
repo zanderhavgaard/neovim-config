@@ -130,6 +130,9 @@ return packer.startup({
         -- create ascii tables in vim
         use "dhruvasagar/vim-table-mode"
 
+        -- preview markdown files
+        use({'toppair/peek.nvim', run = 'deno task --quiet build:fast'})
+
         -- lsp plugins
         use "williamboman/mason.nvim"
         use "williamboman/mason-lspconfig.nvim"
