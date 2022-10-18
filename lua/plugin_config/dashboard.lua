@@ -1,30 +1,19 @@
 -- get the current version of nvim
-local nvim_version = "NeoVim is: " .. io.popen("nvim --version | head -n 1"):read()
+local nvim_version = "NeoVim is: " ..
+                         io.popen("nvim --version | head -n 1"):read()
 
 local alt2_header = {
-    [[        .-::::-.        ]],
-    [[    `.://::::::/+/-`    ]],
-    [[  `//-`` -///::``.:+/`  ]],
-    [[ `+:-:```.-::..`  -.:+` ]],
-    [[ /-`-`:..--::--..``. -: ]],
-    [[`:`  `.-://++//--.`  `:`]],
-    [[`-   `.-:/+ss//:-.`   :`]],
-    [[ -`  `.--:////:--.`  `: ]],
-    [[ .-   `..--::--..`   -. ]],
-    [[  ./.   ``....``   `+-  ]],
-    [[   .:-``         `-:.   ]],
-    [[     `----::://:-.`     ]],
-    [[         `.---.         ]],
-    [[]],
-    [["I'm sorry Dave, I'm afraid I can't do that."]],
-    [[]],
+    [[        .-::::-.        ]], [[    `.://::::::/+/-`    ]],
+    [[  `//-`` -///::``.:+/`  ]], [[ `+:-:```.-::..`  -.:+` ]],
+    [[ /-`-`:..--::--..``. -: ]], [[`:`  `.-://++//--.`  `:`]],
+    [[`-   `.-:/+ss//:-.`   :`]], [[ -`  `.--:////:--.`  `: ]],
+    [[ .-   `..--::--..`   -. ]], [[  ./.   ``....``   `+-  ]],
+    [[   .:-``         `-:.   ]], [[     `----::://:-.`     ]],
+    [[         `.---.         ]], [[]],
+    [["I'm sorry Dave, I'm afraid I can't do that."]], [[]],
     [[───────────────────────────────────────────────────────────────────]],
     [[Zanders customized NeoVim | github.com/zanderhavgaard/neovim-config]],
-    [[]],
-    [[~ Happy Hacking! ~]],
-    [[]],
-    nvim_version,
-    [[]]
+    [[]], [[~ Happy Hacking! ~]], [[]], nvim_version, [[]]
 }
 
 local alt_header = {
@@ -76,11 +65,7 @@ local header = {
     [[]],
     [[───────────────────────────────────────────────────────────────────]],
     [[Zanders customized NeoVim | github.com/zanderhavgaard/neovim-config]],
-    [[]],
-    [[~ Happy Hacking! ~]],
-    [[]],
-    nvim_version,
-    [[]]
+    [[]], [[~ Happy Hacking! ~]], [[]], nvim_version, [[]]
 }
 
 local home = os.getenv("HOME")
@@ -92,8 +77,7 @@ db.custom_center = {
         desc = "New file                                ",
         action = "new",
         shortcut = "SPC f n"
-    },
-    {
+    }, {
         icon = "  ",
         desc = "Telescope                               ",
         action = "Telescope find_files find_command=rg,--hidden,--files",

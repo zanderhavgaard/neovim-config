@@ -14,9 +14,7 @@ vim.g.maplocalleader = ","
 local function map(mode, lhs, rhs, opts)
     -- add default options to keymap
     local options = {noremap = true}
-    if opts then
-        options = vim.tbl_extend("force", options, opts)
-    end
+    if opts then options = vim.tbl_extend("force", options, opts) end
     -- set the actual keymap
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
@@ -46,7 +44,7 @@ map("n", "<Leader>b", ":sp<CR>", {})
 map("n", "<Leader><space>", ':let @/=""<CR>', {})
 
 ---- search and replace
---search word at caret
+-- search word at caret
 map("n", "<Leader>ss", "/<C-r><C-w><CR>", {})
 -- search and replace
 map("n", "<Leader>rs", ":%s//gc<left><left><left>", {})

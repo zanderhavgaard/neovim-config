@@ -1,9 +1,4 @@
 local vim = vim
--- start coq and mute welcome message
-local coq_settings = {
-    auto_start = "shut-up"
-}
-vim.api.nvim_set_var("coq_settings", coq_settings)
 
 -- disable integrated netrw file browser, advised for nvim-tree
 vim.g.loaded = 1
