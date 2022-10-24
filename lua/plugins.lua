@@ -107,7 +107,11 @@ return packer.startup({
         use "scrooloose/nerdcommenter"
 
         -- highlight unique characters when jumping on same line
+        -- TODO still needed with leap?
         use "unblevable/quick-scope"
+
+        -- jump around the visible area of the screen
+        use {"ggandor/leap.nvim", requires = {"tpope/vim-repeat"}}
 
         -- asynchronous lint engine
         use "dense-analysis/ale"
