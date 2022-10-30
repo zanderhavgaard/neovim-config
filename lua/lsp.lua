@@ -56,7 +56,10 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require("mason").setup()
 -- initialize lspconfig
 require("mason-lspconfig").setup({
-    ensure_installed = {"sumneko_lua", "pyright", "terraformls", "bashls"}
+    ensure_installed = {
+        "sumneko_lua", "pyright", "terraformls", "bashls",
+        "dockerfile-language-server", "yaml-language-server"
+    }
 })
 
 -- default config from https://github.com/neovim/nvim-lspconfig
@@ -101,3 +104,5 @@ require("lspconfig")["sumneko_lua"].setup {capabilities = capabilities}
 require("lspconfig")["pyright"].setup {capabilities = capabilities}
 require("lspconfig")["terraformls"].setup {capabilities = capabilities}
 require("lspconfig")["bashls"].setup {capabilities = capabilities}
+require("lspconfig")["docker-langserver"].setup {capabilities = capabilities}
+require("lspconfig")["yaml-language-server"].setup {capabilities = capabilities}
