@@ -10,7 +10,8 @@ RUN \
         bat exa prettyping fzf fd ncdu tldr ripgrep ranger tmux \
         ansible-lint hub github-cli  \
         jq zip unzip moreutils shellcheck yamllint tree shfmt \
-        neofetch figlet zoxide && \
+        neofetch figlet zoxide \
+        npm starship && \
     pacman --noconfirm -Scc && \
     rm -rf /var/cache/pacman && \
     groupadd -g 1000 zcli && \
@@ -23,6 +24,10 @@ USER zcli
 
 WORKDIR /home/zcli
 
+# install some pip packages
+RUN \
+    pip install --user --upgrade pynvim neovim-remote msgpack yamlfix
+
 # build paru aur helper
 RUN \
     git clone https://aur.archlinux.org/paru.git && \
@@ -34,7 +39,8 @@ RUN \
 
 # use paru to install AUR packages
 RUN \
-    paru --noconfirm --needed --removemake --cleanafter -S pfetch antigen tree-sitter-git logo-ls nitch && \
+    paru --noconfirm --needed --removemake --cleanafter -S pfetch antigen logo-ls nitch && \
+    paru --noconfirm --needed --removemake --cleanafter -S tree-sitter-git && \
     paru --noconfirm --needed --removemake --cleanafter -S neovim-git && \
     # cleanup
     sudo pacman --noconfirm -Scc && \
@@ -43,9 +49,6 @@ RUN \
 RUN \
     git clone https://github.com/wbthomason/packer.nvim\
      /home/zcli/.local/share/nvim/site/pack/packer/start/packer.nvim
-
-RUN \
-    pip install --user --upgrade pynvim neovim-remote msgpack yamlfix
 
 COPY --chown=zcli:zcli init.lua  /home/zcli/.config/nvim/init.lua
 COPY --chown=zcli:zcli lua       /home/zcli/.config/nvim/lua
@@ -56,8 +59,9 @@ COPY --chown=zcli:zcli docker_entrypoint.sh /home/zcli/docker_entrypoint.sh
 # so sleep is HACK to give them time to run
 # TODO do this in a better way...
 RUN \
-    nvim --headless +PackerSync +sleep60 +UpdateRemotePlugins +qa && \
-    nvim --headless +sleep60 +qa
+    nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' && \
+    nvim --headless +UpdateRemotePlugins +qa && \
+    nvim --headless +TSUpdateSync +qa
 
 # get some env config files
 RUN \
