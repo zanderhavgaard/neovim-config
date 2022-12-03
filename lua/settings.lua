@@ -99,7 +99,7 @@ vim.cmd("autocmd TermOpen * setlocal nonumber norelativenumber scrolloff=0")
 
 -- enable line numbers and relative line numbers
 vim.o.number = true
-vim.o.relativenumber = true
+vim.o.relativenumber = false
 
 -- highlight current line
 vim.o.cursorline = true

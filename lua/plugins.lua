@@ -114,7 +114,7 @@ return packer.startup({
         use "chrisbra/Colorizer"
 
         -- show relative line numbers on focues buffer, show absolute on all others
-        use "jeffkreeftmeijer/vim-numbertoggle"
+        -- use "jeffkreeftmeijer/vim-numbertoggle"
 
         -- file handling commands
         use "tpope/vim-eunuch"
