@@ -56,7 +56,10 @@ vim.diagnostic.config({virtual_text = false})
 require("mason").setup()
 -- initialize lspconfig
 require("mason-lspconfig").setup({
-    ensure_installed = {"sumneko_lua", "pyright", "terraformls", "bashls"}
+    ensure_installed = {
+        "sumneko_lua", "pyright", "terraformls", "bashls", "dockerls", "yamlls",
+        "gopls"
+    }
 })
 
 -- default config from https://github.com/neovim/nvim-lspconfig
@@ -103,3 +106,4 @@ require("lspconfig")["terraformls"].setup {capabilities = capabilities}
 require("lspconfig")["bashls"].setup {capabilities = capabilities}
 require("lspconfig")["dockerls"].setup {capabilities = capabilities}
 require("lspconfig")["yamlls"].setup {capabilities = capabilities}
+require("lspconfig")["gopls"].setup {capabilities = capabilities}
