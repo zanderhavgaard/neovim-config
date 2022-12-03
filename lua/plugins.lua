@@ -1,4 +1,3 @@
-local vim = vim
 -- properly import packer to avoid linter errors
 local packer = require("packer")
 local use = packer.use
@@ -11,6 +10,32 @@ return packer.startup({
 
         -- sensible default settings
         use "tpope/vim-sensible"
+
+        -- tree file browser
+        use {
+            'nvim-tree/nvim-tree.lua',
+            requires = {'nvim-tree/nvim-web-devicons'},
+            tag = 'nightly',
+            config = function() require('plugin_config.nvim-tree') end
+        }
+
+        -- TODO getting a weird error where gitsigns and lsp icons
+        -- are not shown in the gutter when a file is opened through neo-tree ...
+        -- tree file browser
+        -- use {
+        -- "nvim-neo-tree/neo-tree.nvim",
+        -- branch = "v2.x",
+        -- requires = {
+        -- "nvim-lua/plenary.nvim", "neo-tree/nvim-web-devicons",
+        -- "MunifTanjim/nui.nvim", {
+        -- 's1n7ax/nvim-window-picker',
+        -- tag = "v1.*",
+        -- config = function()
+        -- require "plugin_config.nvim-window-picker"
+        -- end
+        -- }
+        -- }
+        -- }
 
         -- use icons and glyphs
         use "kyazdani42/nvim-web-devicons"
@@ -28,7 +53,7 @@ return packer.startup({
         use "artnez/vim-wipeout"
 
         -- show git status in left editor gutter
-        use "lewis6991/gitsigns.nvim"
+        use {"lewis6991/gitsigns.nvim", tag = "release"}
 
         -- git integration
         use "tpope/vim-fugitive"
@@ -56,24 +81,6 @@ return packer.startup({
         use {
             "akinsho/nvim-bufferline.lua",
             requires = "kyazdani42/nvim-web-devicons"
-        }
-
-        -- tree file browser
-        vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]]) -- Unless you are still migrating, remove the deprecated commands from v1.x
-        use {
-            "nvim-neo-tree/neo-tree.nvim",
-            branch = "v2.x",
-            requires = {
-                "nvim-lua/plenary.nvim", "kyazdani42/nvim-web-devicons",
-                "MunifTanjim/nui.nvim", {
-                    -- only needed if you want to use the commands with "_with_window_picker" suffix
-                    's1n7ax/nvim-window-picker',
-                    tag = "v1.*",
-                    config = function()
-                        require "plugin_config.nvim-window-picker"
-                    end
-                }
-            }
         }
 
         -- automatically set indent width

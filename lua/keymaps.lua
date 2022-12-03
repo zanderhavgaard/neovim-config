@@ -1,4 +1,3 @@
-local sb = require("swap-buffers")
 local vim = vim
 -- keymaps vim.api.nvim_set_keymap('<mode>', '<keybind>', '<command>', {<config>})
 -- <mode> is one of 'n' = normal, 'i' = input, 't' = terminal
@@ -119,7 +118,8 @@ map("n", "<Leader>hh", ":ColorHighlight<CR>", {})
 map("n", "<Leader>hc", ":ColorClear<CR>", {})
 
 -- toggle nvim-tree
-map("n", "<leader>m", ":Neotree toggle<CR>", {})
+-- map("n", "<leader>m", ":Neotree toggle<CR>", {})
+map("n", "<leader>m", ":NvimTreeToggle<CR>", {})
 
 -- show vim cheat sheet
 map("n", "<Leader>?", ":Cheat40<CR>", {})
