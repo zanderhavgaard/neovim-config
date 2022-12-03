@@ -26,7 +26,7 @@ WORKDIR /home/zcli
 
 # install some pip packages
 RUN \
-    pip install --user --upgrade pynvim neovim-remote msgpack yamlfix
+    pip install --no-cache-dir --user --upgrade pynvim neovim-remote msgpack yamlfix
 
 # build paru aur helper
 RUN \

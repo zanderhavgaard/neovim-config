@@ -50,16 +50,13 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- TODO fix
 -- disable virutal text
--- vim.diagnostic.config({virtual_text = false})
+vim.diagnostic.config({virtual_text = false})
 
 -- initialize mason
 require("mason").setup()
 -- initialize lspconfig
 require("mason-lspconfig").setup({
-    ensure_installed = {
-        "sumneko_lua", "pyright", "terraformls", "bashls",
-        "dockerfile-language-server", "yaml-language-server"
-    }
+    ensure_installed = {"sumneko_lua", "pyright", "terraformls", "bashls"}
 })
 
 -- default config from https://github.com/neovim/nvim-lspconfig
@@ -104,5 +101,5 @@ require("lspconfig")["sumneko_lua"].setup {capabilities = capabilities}
 require("lspconfig")["pyright"].setup {capabilities = capabilities}
 require("lspconfig")["terraformls"].setup {capabilities = capabilities}
 require("lspconfig")["bashls"].setup {capabilities = capabilities}
-require("lspconfig")["docker-langserver"].setup {capabilities = capabilities}
-require("lspconfig")["yaml-language-server"].setup {capabilities = capabilities}
+require("lspconfig")["dockerls"].setup {capabilities = capabilities}
+require("lspconfig")["yamlls"].setup {capabilities = capabilities}
