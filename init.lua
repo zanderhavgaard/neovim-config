@@ -3,6 +3,8 @@ local vim = vim
 -- disable integrated netrw file browser, advised for nvim-tree
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
 
 require("plugins")
 require("settings")
