@@ -1,1 +1,1 @@
-require("swap-buffers").setup({ignore_filetypes = {"NvimTree"}})
+require("swap-buffers").setup({ ignore_filetypes = { "NvimTree" } })

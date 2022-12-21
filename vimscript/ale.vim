@@ -22,7 +22,7 @@ let g:ale_fixers = {
   \ 'python':['black', 'autopep8'],
   \ 'python3':['black', 'autopep8'],
   \ 'terraform':['terraform'],
-  \ 'lua':['lua-format'],
+  \ 'lua':['stylua'],
   \ 'sh':['shfmt'],
   \ 'yaml':['prettier'],
   \ 'markdown':['prettier'],

@@ -11,11 +11,13 @@ vim.g.maplocalleader = ","
 
 -- wrapper function to create keymaps
 local function map(mode, lhs, rhs, opts)
-    -- add default options to keymap
-    local options = {noremap = true}
-    if opts then options = vim.tbl_extend("force", options, opts) end
-    -- set the actual keymap
-    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+	-- add default options to keymap
+	local options = { noremap = true }
+	if opts then
+		options = vim.tbl_extend("force", options, opts)
+	end
+	-- set the actual keymap
+	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
 -- map("n", "", "", {})

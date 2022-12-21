@@ -2,7 +2,7 @@ local vim = vim
 -- TODO change to native lua way of setting colorscheme,
 -- once this is implemented in nvim ...
 local function set_colorscheme(colorscheme)
-    vim.cmd("colorscheme " .. colorscheme)
+	vim.cmd("colorscheme " .. colorscheme)
 end
 
 -- choose catppuccin variant -- latte, frappe, macchiato, mocha
