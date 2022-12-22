@@ -5,9 +5,13 @@ vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
-vim.g.mapleader = " " -- make sure to set `mapleader` before lazy so your mappings are correct
+-- make sure to set `mapleader` before lazy so your mappings are correct
+-- map leader and localleader
+vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 -- load plugins and configs
+require("lazy-bootstrap")
 require("plugins")
 require("settings")
 require("keymaps")

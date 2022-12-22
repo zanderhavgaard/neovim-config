@@ -9,14 +9,11 @@ vim.g.loaded_perl_provider = 0
 vim.g.python3_host_prog = "/usr/bin/python"
 
 -- generate list of todo comments
+-- TODO lua
 vim.cmd([[command Todo noautocmd vimgrep /TODO\|FIXME\|HACK/j ** | cw]])
 
 -- do not hide code
 vim.o.conceallevel = 0
-
--- use unicode
-vim.o.encoding = "utf-8"
-vim.o.fileencoding = "utf-8"
 
 -- enable spellcheck when opening specific file types
 vim.api.nvim_create_autocmd("FileType", {
@@ -50,6 +47,12 @@ vim.o.autowrite = true
 vim.api.nvim_create_autocmd("FocusLost,BufLeave", {
 	pattern = "*",
 	callback = function()
+		if vim.bo.filetype ~= "lazy,dashboard" then
+			return
+		elseif vim.bo.name == "[No Name]" then
+			return
+		end
+		-- TODO is there a lua native way to do this?
 		vim.cmd(":wa")
 	end,
 })
@@ -61,6 +64,11 @@ vim.api.nvim_create_autocmd("FocusLost,BufLeave", {
 vim.api.nvim_create_autocmd("CursorHold,CursorHoldI,FocusGained,BufEnter", {
 	pattern = "*",
 	callback = function()
+		if vim.bo.filetype ~= "lazy,dashboard" then
+			return
+		elseif vim.bo.name == "[No Name]" then
+			return
+		end
 		-- TODO is there a lua native way to do this?
 		vim.cmd("checktime")
 	end,
