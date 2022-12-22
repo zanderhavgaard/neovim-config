@@ -1,8 +1,8 @@
--- local vim = vim
+local vim = vim
 -- local mode = vim.fn.mode
 -- local galaxyline = require("galaxyline")
 -- galaxyline.short_line_list = {"NvimTree", "dashboard", "startify", "packer"}
-local colors = require("themes.onedark")
+-- local colors = require("themes.onedark")
 
 local vi_modes = {
 	n = "NORMAL",
@@ -20,7 +20,6 @@ local vi_modes = {
 	c = "COMMAND",
 	cv = "Ex",
 	ce = "Vim Ex",
-	r = "PROMPT",
 	r = "PROMPT",
 	["r?"] = "PROMPT",
 	["!"] = "SHELL",

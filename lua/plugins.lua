@@ -9,6 +9,7 @@ return packer.startup({
 		use("wbthomason/packer.nvim")
 
 		-- sensible default settings
+		-- TODO rewrite to lua
 		use("tpope/vim-sensible")
 
 		-- tree file browser
@@ -43,25 +44,20 @@ return packer.startup({
 		use("kyazdani42/nvim-web-devicons")
 
 		-- autoclose backets and other delimiters
+		-- TODO lua
 		use("Raimondi/delimitMate")
 
-		-- easily change delimiters
-		use("tpope/vim-surround")
-
-		-- autocluse html/xml style tags
-		use("alvan/vim-closetag")
-
 		-- easily close all buffers not open in a window
+		-- TODO lua
 		use("artnez/vim-wipeout")
 
 		-- show git status in left editor gutter
-		use({ "lewis6991/gitsigns.nvim", tag = "release" })
-
-		-- git integration
-		use("tpope/vim-fugitive")
-
-		-- view git blame for lines in visual mode
-		use("APZelos/blamer.nvim")
+		use({
+			"lewis6991/gitsigns.nvim",
+			config = function()
+				require("gitsigns").setup()
+			end,
+		})
 
 		-- which-key implemented in lua
 		use({
@@ -71,32 +67,61 @@ return packer.startup({
 			end,
 		})
 
-		-- statusline
+		-- nicer statusline
 		use({
-			"glepnir/galaxyline.nvim",
-			branch = "main",
-			-- loac custom config
-			config = function()
-				require("plugin_config.galaxyline")
-			end,
-			-- some optional icons
+			"nvim-lualine/lualine.nvim",
 			requires = { "kyazdani42/nvim-web-devicons", opt = true },
+			config = function()
+				require("plugin_config.lualine")
+			end,
 		})
+
+		-- statusline
+		-- use({
+		-- "glepnir/galaxyline.nvim",
+		-- branch = "main",
+		-- -- loac custom config
+		-- config = function()
+		-- require("plugin_config.galaxyline")
+		-- end,
+		-- -- some optional icons
+		-- requires = { "kyazdani42/nvim-web-devicons", opt = true },
+		-- })
 
 		-- nicer tab/bufferline
 		use({
 			"akinsho/nvim-bufferline.lua",
 			requires = "kyazdani42/nvim-web-devicons",
+			config = function()
+				require("plugin_config.bufferline")
+			end,
 		})
 
 		-- automatically set indent width
-		use("tpope/vim-sleuth")
+		-- TODO lua?
+		-- use("tpope/vim-sleuth")
+		use({
+			"nmac427/guess-indent.nvim",
+			config = function()
+				require("guess-indent").setup({})
+			end,
+		})
 
 		-- draw indent guides
-		use("lukas-reineke/indent-blankline.nvim")
+		use({
+			"lukas-reineke/indent-blankline.nvim",
+			config = function()
+				require("plugin_config.indentline")
+			end,
+		})
 
 		-- smooth scrolling
-		use("psliwka/vim-smoothie")
+		use({
+			"karb94/neoscroll.nvim",
+			config = function()
+				require("neoscroll").setup()
+			end,
+		})
 
 		-- dashboard inspired by DOOM emacs
 		use({
@@ -107,10 +132,16 @@ return packer.startup({
 		})
 
 		-- keymap cheatsheet
+		-- TODO lua?
 		use("lifepillar/vim-cheat40")
 
 		-- swap buffers in windows using directions
-		use("caenrique/swap-buffers.nvim")
+		use({
+			"caenrique/swap-buffers.nvim",
+			config = function()
+				require("plugin_config.swap-buffers")
+			end,
+		})
 
 		-- fuzzy finder and more
 		use({
@@ -119,29 +150,49 @@ return packer.startup({
 		})
 
 		-- show colorcodes as background on strings
+		-- TODO lua?
 		use("chrisbra/Colorizer")
 
-		-- show relative line numbers on focues buffer, show absolute on all others
-		-- use "jeffkreeftmeijer/vim-numbertoggle"
-
-		-- file handling commands
-		use("tpope/vim-eunuch")
-
 		-- toggle line comments
-		use("scrooloose/nerdcommenter")
+		-- TODO lua?
+		use({
+			"scrooloose/nerdcommenter",
+			config = function()
+				require("plugin_config.nerdcommenter")
+			end,
+		})
 
 		-- highlight unique characters when jumping on same line
 		-- TODO still needed with leap?
-		use("unblevable/quick-scope")
+		-- TODO lua
+		use({
+			"unblevable/quick-scope",
+			config = function()
+				require("plugin_config.quickscope")
+			end,
+		})
 
 		-- jump around the visible area of the screen
-		use({ "ggandor/leap.nvim", requires = { "tpope/vim-repeat" } })
+		-- TODO keep?
+		-- use({
+		-- "ggandor/leap.nvim",
+		-- requires = { "tpope/vim-repeat" },
+		-- config = function()
+		-- require("plugin_config.leap")
+		-- end,
+		-- })
 
 		-- asynchronous lint engine
+		-- TODO lua equivalent
 		use("dense-analysis/ale")
 
 		-- better syntax highlighting and more
-		use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+		use({
+			"nvim-treesitter/nvim-treesitter",
+			config = function()
+				require("plugin_config.treesitter")
+			end,
+		})
 
 		-- color brackets by scope
 		use({
@@ -149,17 +200,18 @@ return packer.startup({
 			requires = { "nvim-treesitter/nvim-treesitter" },
 		})
 
-		-- unofficial support for terraform in vim
-		use("hashivim/vim-terraform")
-
-		-- suggestions and tab completion for ':' commands
-		use("gelguy/wilder.nvim")
-
 		-- create ascii tables in vim
+		-- TODO lua
 		use("dhruvasagar/vim-table-mode")
 
 		-- preview markdown files
-		use({ "toppair/peek.nvim", run = "deno task --quiet build:fast" })
+		use({
+			"toppair/peek.nvim",
+			run = "deno task --quiet build:fast",
+			config = function()
+				require("plugin_config.peek")
+			end,
+		})
 
 		-- lsp plugins
 		use("williamboman/mason.nvim")
@@ -177,9 +229,6 @@ return packer.startup({
 		use("saadparwaiz1/cmp_luasnip")
 
 		-- ===== colorschemes =====
-
-		-- DSL for colorschemes
-		use("rktjmp/lush.nvim")
 
 		-- use "olimorris/onedarkpro.nvim"
 		use("ful1e5/onedark.nvim")

@@ -11,10 +11,6 @@ vim.g.python3_host_prog = "/usr/bin/python"
 -- generate list of todo comments
 vim.cmd([[command Todo noautocmd vimgrep /TODO\|FIXME\|HACK/j ** | cw]])
 
--- enable filetype plugin
--- TODO how to do in lua?
-vim.cmd("filetype plugin on")
-
 -- do not hide code
 vim.o.conceallevel = 0
 
@@ -23,9 +19,18 @@ vim.o.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
 
 -- enable spellcheck when opening specific file types
--- TODO convert to lua
-vim.cmd("autocmd FileType markdown,tex,latex, setlocal spell")
-vim.cmd("autocmd BufRead,BufNewFile *.txt setlocal spell")
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "markdown,tex,latex",
+	callback = function()
+		vim.o.spell = true
+	end,
+})
+vim.api.nvim_create_autocmd("BufRead,BufNewFile", {
+	pattern = "*.txt",
+	callback = function()
+		vim.o.spell = true
+	end,
+})
 
 -- more intuitive split directorion
 vim.o.splitbelow = true
@@ -42,15 +47,24 @@ vim.o.timeoutlen = 500
 vim.o.autowrite = true
 
 -- autosave when losing focus to terminal window
--- TODO rewrite for lua
-vim.cmd("autocmd FocusLost * :wa")
-vim.cmd("autocmd BufLeave * :wa")
+vim.api.nvim_create_autocmd("FocusLost,BufLeave", {
+	pattern = "*",
+	callback = function()
+		vim.cmd(":wa")
+	end,
+})
+-- vim.cmd("autocmd FocusLost * :wa")
+-- vim.cmd("autocmd BufLeave * :wa")
 
 -- trigger check if file was changed outside vim
 -- when then cursor stops moving
--- TODO rewrite for lua
-vim.cmd("autocmd CursorHold,CursorHoldI * :checktime")
-vim.cmd("autocmd FocusGained,BufEnter * :checktime")
+vim.api.nvim_create_autocmd("CursorHold,CursorHoldI,FocusGained,BufEnter", {
+	pattern = "*",
+	callback = function()
+		-- TODO is there a lua native way to do this?
+		vim.cmd("checktime")
+	end,
+})
 
 -- automactically reload file if changed
 -- outside vim and there are no unsaved edits
@@ -61,11 +75,6 @@ vim.o.incsearch = true
 
 -- ignore case while searching
 vim.o.ignorecase = true
-
--- enable bold and italic fonts
--- TODO fix
--- vim.o.enable_bold_font = true
--- vim.o.enable_italic_font = true
 
 -- automatically use same indentation on new line
 vim.o.autoindent = true
@@ -95,7 +104,13 @@ vim.o.scrolloff = 999
 
 -- no linenumbers in terminal buffers
 -- TODO convert to lua
-vim.cmd("autocmd TermOpen * setlocal nonumber norelativenumber scrolloff=0")
+vim.api.nvim_create_autocmd("TermOpen", {
+	pattern = "*",
+	callback = function()
+		-- TODO is there a lua native way to do this?
+		vim.cmd("setlocal nonumber norelativenumber scrolloff=0")
+	end,
+})
 
 -- enable line numbers and relative line numbers
 vim.o.number = true
@@ -105,15 +120,10 @@ vim.o.relativenumber = false
 vim.o.cursorline = true
 
 -- use system clipboard
--- TODO convert to lua
-vim.cmd("set clipboard+=unnamedplus")
+vim.opt.clipboard = "unnamedplus"
 
 -- use all colors in terminal
 vim.o.termguicolors = true
-
--- enable syntax highlighting
--- TODO convert to lua
-vim.cmd("syntax off")
 
 -- enable darwing the signcolumn
 vim.opt.signcolumn = "auto:9"

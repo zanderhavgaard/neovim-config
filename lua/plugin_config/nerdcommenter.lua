@@ -1,3 +1,4 @@
+local vim = vim
 -- add spaces after comment delimiters
 vim.g.NERDSpaceDelims = 1
 -- compact syntax for multiline comments
