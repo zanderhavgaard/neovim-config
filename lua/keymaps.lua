@@ -115,9 +115,7 @@ map("n", "<Leader>q", "@q", {})
 -- ===== PLUGINGS =====
 
 -- show colorscodes as background color on string
-map("n", "<Leader>hh", ":ColorHighlight<CR>", {})
--- clear color highlight
-map("n", "<Leader>hc", ":ColorClear<CR>", {})
+map("n", "<Leader>ht", ":ColorizerToggle<CR>", {})
 
 -- toggle nvim-tree
 -- map("n", "<leader>m", ":Neotree toggle<CR>", {})

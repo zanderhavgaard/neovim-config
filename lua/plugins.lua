@@ -3,22 +3,29 @@ local lazy = require("lazy")
 -- setup packages to be managed by packer
 lazy.setup({
 	-- sensible default settings
-	-- TODO rewrite to lua
-	{ "tpope/vim-sensible" },
+	-- TODO:: rewrite to lua
+	{
+		"tpope/vim-sensible",
+	},
 
 	-- glyphs
-	{ "nvim-tree/nvim-web-devicons" },
-
-	-- tree file browser
 	{
-		"nvim-tree/nvim-tree.lua",
-		tag = "nightly",
+		"nvim-tree/nvim-web-devicons",
 		config = function()
-			require("plugin_config.nvim-tree")
+			require("nvim-web-devicons").setup()
 		end,
 	},
 
-	-- TODO getting a weird error where gitsigns and lsp icons
+	-- better syntax highlighting and more
+	{
+		"nvim-treesitter/nvim-treesitter",
+		config = function()
+			require("plugin_config.treesitter")
+		end,
+		build = ":TSUpdate",
+	},
+
+	-- TODO: getting a weird error where gitsigns and lsp icons
 	-- are not shown in the gutter when a file is opened through neo-tree ...
 	-- tree file browser
 	-- use {
@@ -36,27 +43,11 @@ lazy.setup({
 	-- }
 	-- }
 
-	-- autoclose backets and other delimiters
-	-- TODO lua
-	{ "Raimondi/delimitMate" },
-
-	-- easily close all buffers not open in a window
-	-- TODO lua
-	{ "artnez/vim-wipeout" },
-
 	-- show git status in left editor gutter
 	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup()
-		end,
-	},
-
-	-- which-key implemented in lua
-	{
-		"folke/which-key.nvim",
-		config = function()
-			require("plugin_config.which-key")
 		end,
 	},
 
@@ -88,6 +79,14 @@ lazy.setup({
 		end,
 	},
 
+	-- draw indent guides
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		config = function()
+			require("plugin_config.indentline")
+		end,
+	},
+
 	-- automatically set indent width
 	{
 		"nmac427/guess-indent.nvim",
@@ -96,12 +95,10 @@ lazy.setup({
 		end,
 	},
 
-	-- draw indent guides
+	-- color brackets by scope
 	{
-		"lukas-reineke/indent-blankline.nvim",
-		config = function()
-			require("plugin_config.indentline")
-		end,
+		"p00f/nvim-ts-rainbow",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
 	},
 
 	-- smooth scrolling
@@ -120,9 +117,68 @@ lazy.setup({
 		end,
 	},
 
+	-- tree file browser
+	{
+		"nvim-tree/nvim-tree.lua",
+		tag = "nightly",
+		config = function()
+			require("plugin_config.nvim-tree")
+		end,
+	},
+
+	-- ui pane for navigating diagnostics for all files in repo
+	{
+		"folke/trouble.nvim",
+		config = function()
+			require("trouble").setup()
+		end,
+	},
+
+	-- highlight todos and other notes, interacts with trouble
+	-- use TODO/FIXME/HACK etc. followed by a colon
+	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("todo-comments").setup()
+		end,
+	},
+
+	-- which-key implemented in lua
+	{
+		"folke/which-key.nvim",
+		config = function()
+			require("plugin_config.which-key")
+		end,
+	},
+
+	-- autoclose backets and other delimiters
+	-- TODO: lua
+	{
+		"Raimondi/delimitMate",
+	},
+
+	-- easily close all buffers not open in a window
+	-- TODO: lua
+	{
+		"artnez/vim-wipeout",
+	},
+
+	-- toggle line comments
+	-- TODO: lua?
+	{
+		"scrooloose/nerdcommenter",
+		config = function()
+			require("plugin_config.nerdcommenter")
+		end,
+	},
+
 	-- keymap cheatsheet
-	-- TODO lua?
-	{ "lifepillar/vim-cheat40" },
+	-- TODO: lua?
+	{
+		"lifepillar/vim-cheat40",
+		lazy = true,
+	},
 
 	-- swap buffers in windows using directions
 	{
@@ -135,63 +191,45 @@ lazy.setup({
 	-- fuzzy finder and more
 	{
 		"nvim-telescope/telescope.nvim",
-		requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
+		dependencies = {
+			{ "nvim-lua/popup.nvim" },
+			{ "nvim-lua/plenary.nvim" },
+		},
 	},
 
 	-- show colorcodes as background on strings
-	{ "chrisbra/Colorizer" },
-
-	-- toggle line comments
-	-- TODO lua?
 	{
-		"scrooloose/nerdcommenter",
+		"norcalli/nvim-colorizer.lua",
 		config = function()
-			require("plugin_config.nerdcommenter")
+			require("colorizer").setup()
 		end,
-	},
-
-	-- highlight unique characters when jumping on same line
-	-- TODO still needed with leap?
-	-- TODO lua
-	{
-		"unblevable/quick-scope",
-		config = function()
-			require("plugin_config.quickscope")
-		end,
+		lazy = true,
+		enabled = true, -- no need to load when not using
 	},
 
 	-- jump around the visible area of the screen
-	-- TODO keep?
-	-- use({
-	-- "ggandor/leap.nvim",
-	-- requires = { "tpope/vim-repeat" },
-	-- config = function()
-	-- require("plugin_config.leap")
-	-- end,
-	-- })
-
-	-- asynchronous lint engine
-	-- TODO lua equivalent
-	{ "dense-analysis/ale" },
-
-	-- better syntax highlighting and more
 	{
-		"nvim-treesitter/nvim-treesitter",
+		"ggandor/leap.nvim",
+		dependencies = {
+			"tpope/vim-repeat",
+		},
 		config = function()
-			require("plugin_config.treesitter")
+			require("plugin_config.leap")
 		end,
 	},
 
-	-- color brackets by scope
+	-- asynchronous lint engine
+	-- TODO: lua equivalent
 	{
-		"p00f/nvim-ts-rainbow",
-		requires = { "nvim-treesitter/nvim-treesitter" },
+		"dense-analysis/ale",
 	},
 
 	-- create ascii tables in vim
-	{ "dhruvasagar/vim-table-mode" },
+	{
+		"dhruvasagar/vim-table-mode",
+	},
 
-	-- preview markdown files
+	-- preview markdown files in browser
 	{
 		"toppair/peek.nvim",
 		build = "deno task --quiet build:fast",
@@ -210,16 +248,15 @@ lazy.setup({
 	{ "hrsh7th/cmp-path" },
 	{ "hrsh7th/cmp-cmdline" },
 	{ "hrsh7th/nvim-cmp" },
-	-- luasnip users.
+	-- use luasnip with cmp
 	{ "L3MON4D3/LuaSnip" },
 	{ "saadparwaiz1/cmp_luasnip" },
 
 	-- ===== colorschemes =====
 
-	-- { "olimorris/onedarkpro.nvim" },
-	-- { "ful1e5/onedark.nvim" },
-	-- { "gruvbox-community/gruvbox" },
-	-- { "dracula/vim" },
+	{ "olimorris/onedarkpro.nvim" },
+	{ "gruvbox-community/gruvbox" },
+	{ "dracula/vim" },
 	{ "folke/tokyonight.nvim" },
-	-- { "catppuccin/nvim" },
+	{ "catppuccin/nvim" },
 })

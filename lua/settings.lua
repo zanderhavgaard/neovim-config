@@ -8,10 +8,6 @@ vim.g.loaded_perl_provider = 0
 -- use system python3
 vim.g.python3_host_prog = "/usr/bin/python"
 
--- generate list of todo comments
--- TODO lua
-vim.cmd([[command Todo noautocmd vimgrep /TODO\|FIXME\|HACK/j ** | cw]])
-
 -- do not hide code
 vim.o.conceallevel = 0
 
