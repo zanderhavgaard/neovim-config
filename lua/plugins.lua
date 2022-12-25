@@ -25,24 +25,6 @@ lazy.setup({
 		build = ":TSUpdate",
 	},
 
-	-- TODO: getting a weird error where gitsigns and lsp icons
-	-- are not shown in the gutter when a file is opened through neo-tree ...
-	-- tree file browser
-	-- use {
-	-- "nvim-neo-tree/neo-tree.nvim",
-	-- branch = "v2.x",
-	-- requires = {
-	-- "nvim-lua/plenary.nvim", "neo-tree/nvim-web-devicons",
-	-- "MunifTanjim/nui.nvim", {
-	-- 's1n7ax/nvim-window-picker',
-	-- tag = "v1.*",
-	-- config = function()
-	-- require "plugin_config.nvim-window-picker"
-	-- end
-	-- }
-	-- }
-	-- }
-
 	-- show git status in left editor gutter
 	{
 		"lewis6991/gitsigns.nvim",
