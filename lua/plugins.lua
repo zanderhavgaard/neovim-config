@@ -59,18 +59,6 @@ lazy.setup({
 		end,
 	},
 
-	-- statusline
-	-- use({
-	-- "glepnir/galaxyline.nvim",
-	-- branch = "main",
-	-- -- loac custom config
-	-- config = function()
-	-- require("plugin_config.galaxyline")
-	-- end,
-	-- -- some optional icons
-	-- requires = { "kyazdani42/nvim-web-devicons", opt = true },
-	-- })
-
 	-- nicer tab/bufferline
 	{
 		"akinsho/nvim-bufferline.lua",
