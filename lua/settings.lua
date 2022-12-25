@@ -1,4 +1,5 @@
 local vim = vim
+
 ---- Providers
 -- disable providers that are not used
 vim.g.loaded_ruby_provider = 0
@@ -39,21 +40,15 @@ vim.o.timeoutlen = 500
 -- autosave when switching buffers
 vim.o.autowrite = true
 
--- autosave when losing focus to terminal window
+-- save buffer when changing focus
 vim.api.nvim_create_autocmd("FocusLost,BufLeave", {
 	pattern = "*",
 	callback = function()
-		if vim.bo.filetype ~= "lazy,dashboard" then
-			return
-		elseif vim.bo.name == "[No Name]" then
-			return
+		if vim.bo.modified then
+			vim.cmd("silent! update")
 		end
-		-- TODO is there a lua native way to do this?
-		vim.cmd(":wa")
 	end,
 })
--- vim.cmd("autocmd FocusLost * :wa")
--- vim.cmd("autocmd BufLeave * :wa")
 
 -- trigger check if file was changed outside vim
 -- when then cursor stops moving

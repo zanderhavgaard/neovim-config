@@ -14,8 +14,8 @@ cmp.setup({
 		end,
 	},
 	window = {
-		-- completion = cmp.config.window.bordered(),
-		-- documentation = cmp.config.window.bordered(),
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
 	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -104,7 +104,26 @@ local on_attach = function(client, bufnr)
 end
 
 -- configure each lsp to use
-require("lspconfig")["sumneko_lua"].setup({ capabilities = capabilities })
+require("lspconfig")["sumneko_lua"].setup({
+	capabilities = capabilities,
+	settings = {
+		Lua = {
+			-- Version of Lua used
+			runtime = { version = "LuaJIT" },
+			-- Get the language server to recognize the `vim` global
+			diagnostics = { globals = { "vim" } },
+			-- Make the server aware of Neovim runtime files
+			workspace = {
+				library = {
+					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+					[vim.fn.stdpath("config") .. "/lua"] = true,
+				},
+			},
+			-- Do not send telemetry data containing a randomized but unique identifier
+			telemetry = { enable = false },
+		},
+	},
+})
 require("lspconfig")["pyright"].setup({ capabilities = capabilities })
 require("lspconfig")["terraformls"].setup({ capabilities = capabilities })
 require("lspconfig")["bashls"].setup({ capabilities = capabilities })

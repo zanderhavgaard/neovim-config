@@ -1,6 +1,11 @@
 require("nvim-tree").setup({
+	view = {
+		hide_root_folder = true,
+	},
 	renderer = {
-		indent_markers = { enable = true },
+		indent_markers = {
+			enable = true,
+		},
 		icons = {
 			show = {
 				file = true,
