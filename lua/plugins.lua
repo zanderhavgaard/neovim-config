@@ -144,6 +144,19 @@ lazy.setup({
 		end,
 	},
 
+	-- experimental plugin to replace some ui components
+	-- Packer
+	{
+		"folke/noice.nvim",
+		config = function()
+			require("noice").setup()
+		end,
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+	},
+
 	-- which-key implemented in lua
 	{
 		"folke/which-key.nvim",
