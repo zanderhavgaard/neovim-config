@@ -24,7 +24,7 @@ let g:ale_fixers = {
   \ 'terraform':['terraform'],
   \ 'lua':['stylua'],
   \ 'sh':['shfmt'],
-  \ 'yaml':['prettier'],
+  \ 'yaml':['yamlfix'],
   \ 'markdown':['prettier'],
   \ 'json': ['jq', 'prettier'],
   \ 'javascript': ['prettier'],
