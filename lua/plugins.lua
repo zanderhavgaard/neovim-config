@@ -142,6 +142,7 @@ lazy.setup({
 			"MunifTanjim/nui.nvim",
 			"rcarriga/nvim-notify",
 		},
+		enabled = false,
 	},
 
 	-- which-key implemented in lua
