@@ -1,4 +1,5 @@
 local vim = vim
+
 ---- Providers
 -- disable providers that are not used
 vim.g.loaded_ruby_provider = 0
@@ -8,15 +9,8 @@ vim.g.loaded_perl_provider = 0
 -- use system python3
 vim.g.python3_host_prog = "/usr/bin/python"
 
--- generate list of todo comments
-vim.cmd([[command Todo noautocmd vimgrep /TODO\|FIXME\|HACK/j ** | cw]])
-
 -- do not hide code
 vim.o.conceallevel = 0
-
--- use unicode
-vim.o.encoding = "utf-8"
-vim.o.fileencoding = "utf-8"
 
 -- enable spellcheck when opening specific file types
 vim.api.nvim_create_autocmd("FileType", {
@@ -46,21 +40,26 @@ vim.o.timeoutlen = 500
 -- autosave when switching buffers
 vim.o.autowrite = true
 
--- autosave when losing focus to terminal window
+-- save buffer when changing focus
 vim.api.nvim_create_autocmd("FocusLost,BufLeave", {
 	pattern = "*",
 	callback = function()
-		vim.cmd(":wa")
+		if vim.bo.modified then
+			vim.cmd("silent! update")
+		end
 	end,
 })
--- vim.cmd("autocmd FocusLost * :wa")
--- vim.cmd("autocmd BufLeave * :wa")
 
 -- trigger check if file was changed outside vim
 -- when then cursor stops moving
 vim.api.nvim_create_autocmd("CursorHold,CursorHoldI,FocusGained,BufEnter", {
 	pattern = "*",
 	callback = function()
+		if vim.bo.filetype ~= "lazy,dashboard" then
+			return
+		elseif vim.bo.name == "[No Name]" then
+			return
+		end
 		-- TODO is there a lua native way to do this?
 		vim.cmd("checktime")
 	end,

@@ -8,13 +8,14 @@ end
 -- choose catppuccin variant -- latte, frappe, macchiato, mocha
 vim.g.catppuccin_flavour = "frappe"
 
--- local colorscheme = "onedark"
+-- choose one ...
+local colorscheme = "onedark"
 -- local colorscheme = "onedarkpro"
 -- local colorscheme = "gruvbox"
 -- local colorscheme = "dracula"
 -- local colorscheme = "tokyonight"
 -- local colorscheme = "tokyonight-night"
-local colorscheme = "tokyonight-moon"
+-- local colorscheme = "tokyonight-moon"
 -- local colorscheme = "catppuccin"
 
 -- not needed for onedark
