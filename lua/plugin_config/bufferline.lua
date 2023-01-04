@@ -3,11 +3,13 @@ require("bufferline").setup({
 		-- remove close icons
 		show_buffer_close_icons = false,
 		show_close_icon = false,
+
 		-- show lsp diagnostics in bufferline
-		diagnostics = "nvim_lsp",
-		diagnostics_indicator = function(count, level, diagnostics_dict, context)
-			return "(" .. count .. ")"
-		end,
+		-- diagnostics = "nvim_lsp",
+		-- diagnostics_indicator = function(count, level, diagnostics_dict, context)
+		-- 	return "(" .. count .. ")"
+		-- end,
+
 		-- offset bufferline left of file browser
 		offsets = {
 			{ filetype = "NvimTree", text = "", text_align = "left", padding = 1 },
