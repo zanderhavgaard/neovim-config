@@ -115,7 +115,6 @@ lazy.setup({
 	},
 
 	-- experimental plugin to replace some ui components
-	-- Packer
 	{
 		"folke/noice.nvim",
 		config = function()
