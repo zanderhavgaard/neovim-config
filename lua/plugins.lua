@@ -66,6 +66,7 @@ lazy.setup({
 	},
 
 	-- color brackets by scope
+	-- TODO: this is no longer maintained, switch to something else ...
 	{
 		"p00f/nvim-ts-rainbow",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
@@ -94,6 +95,11 @@ lazy.setup({
 		config = function()
 			require("plugin_config.nvim-tree")
 		end,
+	},
+
+	-- visualize undo tree
+	{
+		"mbbill/undotree",
 	},
 
 	-- ui pane for navigating diagnostics for all files in repo
@@ -175,7 +181,6 @@ lazy.setup({
 	-- TODO: lua?
 	{
 		"lifepillar/vim-cheat40",
-		lazy = true,
 	},
 
 	-- swap buffers in windows using directions

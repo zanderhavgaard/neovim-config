@@ -155,3 +155,6 @@ map("n", "<Leader>ga", ":Gitsigns stage_hunk<CR>", {})
 map("n", "<Leader>gA", ":Gitsigns undo_stage_hunk<CR>", {})
 map("n", "<Leader>gn", ":Gitsigns next_hunk<CR>", {})
 map("n", "<Leader>gp", ":Gitsigns prev_hunk<CR>", {})
+
+---- undotree
+map("n", "<Leader>u", ":UndotreeToggle<CR>")
