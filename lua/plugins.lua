@@ -72,6 +72,20 @@ lazy.setup({
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 	},
 
+	-- library of small lua modules
+	-- TODO: use?
+	{
+		"echasnovski/mini.nvim",
+		branch = "main",
+		config = function()
+			-- alternative to neoscroll
+			-- require("mini.animate").setup()
+			-- alternative to comment plugin
+			-- require("mini.comment").setup()
+		end,
+		enabled = false,
+	},
+
 	-- smooth scrolling
 	{
 		"karb94/neoscroll.nvim",
@@ -170,6 +184,7 @@ lazy.setup({
 		"artnez/vim-wipeout",
 	},
 
+	-- comment using gcc and gbc
 	{
 		"numToStr/Comment.nvim",
 		config = function()
