@@ -12,6 +12,9 @@ vim.g.python3_host_prog = "/usr/bin/python"
 -- do not hide code
 vim.o.conceallevel = 0
 
+-- disable spellchecker by default
+vim.o.spell = false
+
 -- enable spellcheck when opening specific file types
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "markdown,tex,latex",
@@ -19,12 +22,14 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.o.spell = true
 	end,
 })
-vim.api.nvim_create_autocmd("BufRead,BufNewFile", {
-	pattern = "*.txt",
-	callback = function()
-		vim.o.spell = true
-	end,
-})
+
+-- TODO: this seems to catch other files than just .txt which is annoying ...
+-- vim.api.nvim_create_autocmd("BufRead,BufNewFile", {
+-- 	pattern = "*.txt",
+-- 	callback = function()
+-- 		vim.o.spell = true
+-- 	end,
+-- })
 
 -- more intuitive split directorion
 vim.o.splitbelow = true
