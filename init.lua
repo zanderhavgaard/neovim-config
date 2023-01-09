@@ -21,3 +21,8 @@ require("lsp")
 
 -- load ale config from vimscript file
 vim.cmd("source ~/.config/nvim/vimscript/ale.vim")
+
+-- not quite sure why, but colorscheme is not completely loaded
+-- if it is not called again at the end ...
+-- TODO: fix
+vim.cmd([[colorscheme onedark]])
