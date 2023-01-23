@@ -63,3 +63,11 @@ postgres
 hardcoded
 configMapKeyRef
 base64
+hadolint
+Dockerfile
+linters
+Sonarqube
+gradle
+snyk
+gitops
+argocd
