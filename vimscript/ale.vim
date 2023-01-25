@@ -24,14 +24,13 @@ let g:ale_fixers = {
   \ 'terraform':['terraform'],
   \ 'lua':['stylua'],
   \ 'sh':['shfmt'],
-  \ 'yaml':['yamlfix'],
+  \ 'yaml':['prettier'],
   \ 'markdown':['prettier'],
   \ 'json': ['jq', 'prettier'],
   \ 'javascript': ['prettier'],
   \ 'html': ['prettier'],
   \ 'css': ['prettier'],
   \}
-  " \ 'yaml':['yamlfix'],
 
 let g:ale_fix_on_save = 1
 

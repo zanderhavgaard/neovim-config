@@ -71,3 +71,14 @@ gradle
 snyk
 gitops
 argocd
+auth
+aws
+OIDC
+artifactory
+jdk
+readonly
+readwrite
+pcs
+pcs
+checkstyle
+creds
