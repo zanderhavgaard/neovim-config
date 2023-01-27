@@ -97,9 +97,11 @@ lazy.setup({
 	-- dashboard inspired by DOOM emacs
 	{
 		"glepnir/dashboard-nvim",
+		event = "VimEnter",
 		config = function()
 			require("plugin_config.dashboard")
 		end,
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 
 	-- tree file browser
