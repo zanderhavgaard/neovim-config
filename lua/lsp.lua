@@ -57,7 +57,7 @@ require("mason").setup()
 -- initialize lspconfig
 require("mason-lspconfig").setup({
 	ensure_installed = {
-		"sumneko_lua",
+		"lua_ls",
 		"pyright",
 		"terraformls",
 		"bashls",
@@ -104,7 +104,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- configure each lsp to use
-require("lspconfig")["sumneko_lua"].setup({
+require("lspconfig")["lua_ls"].setup({
 	capabilities = capabilities,
 	settings = {
 		Lua = {
