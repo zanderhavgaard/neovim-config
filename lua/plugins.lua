@@ -25,6 +25,12 @@ lazy.setup({
 		build = ":TSUpdate",
 	},
 
+	-- helm template support
+	-- helps avoid issues with yaml linters/formatters and helm templates
+	{
+		"towolf/vim-helm",
+	},
+
 	-- show git status in left editor gutter
 	{
 		"lewis6991/gitsigns.nvim",
