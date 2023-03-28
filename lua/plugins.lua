@@ -22,7 +22,7 @@ lazy.setup({
 		config = function()
 			require("plugin_config.treesitter")
 		end,
-		build = ":TSUpdate",
+		-- build = ":TSUpdate",
 	},
 
 	-- helm template support
