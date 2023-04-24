@@ -99,3 +99,7 @@ WASM
 KubeCon
 GitOpsCon
 ArgoCON
+wireguard
+traefik
+kubeconfig
+k3s
