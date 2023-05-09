@@ -108,7 +108,7 @@ lazy.setup({
 			require("plugin_config.dashboard")
 		end,
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		enabled = false,
+		enabled = true,
 	},
 
 	-- tree file browser
