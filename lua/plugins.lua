@@ -100,6 +100,15 @@ lazy.setup({
 		end,
 	},
 
+	-- dashbaord inspired by startify
+	{
+		"goolord/alpha-nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("plugin_config.alpha")
+		end,
+	},
+
 	-- dashboard inspired by DOOM emacs
 	{
 		"glepnir/dashboard-nvim",

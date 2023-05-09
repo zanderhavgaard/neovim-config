@@ -30,7 +30,7 @@ require("dashboard").setup({
 				key = "u",
 			},
 			{
-				desc = "ﳼ ",
+				desc = "󰟾 ",
 				group = "DiagnosticHint",
 				action = "Mason",
 				key = "m",
