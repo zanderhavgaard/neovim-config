@@ -16,5 +16,6 @@ local colorscheme = "onedark"
 -- local colorscheme = "catppuccin-mocha"
 -- local colorscheme = "catppuccin-frappe"
 -- local colorscheme = "catppuccin-machiato"
+-- local colorscheme = "github_dark"
 
 set_colorscheme(colorscheme)

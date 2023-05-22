@@ -296,4 +296,10 @@ lazy.setup({
 	{ "dracula/vim" },
 	{ "folke/tokyonight.nvim" },
 	{ "catppuccin/nvim" },
+	{
+		"projekt0n/github-nvim-theme",
+		config = function()
+			require("github-theme").setup()
+		end,
+	},
 })
