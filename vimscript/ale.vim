@@ -3,6 +3,7 @@ let g:ale_use_global_executables = 1
 let g:ale_python_flake8_options = "--ignore E501"
 let g:ale_python_black_options = "--line-length 120"
 let g:ale_python_autopep8_options = "--ignore E501"
+let g:ale_yaml_yamllint_options = "-d \"{extends: default, rules: {comments: disable, line-length: disable}}\""
 
 let g:ale_linters = {
   \ 'python':['pylint', 'flake8'],
