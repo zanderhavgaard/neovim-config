@@ -20,8 +20,8 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
   \ '*':['remove_trailing_lines', 'trim_whitespace'],
-  \ 'python':['black', 'autopep8'],
-  \ 'python3':['black', 'autopep8'],
+  \ 'python':['black'],
+  \ 'python3':['black'],
   \ 'terraform':['terraform'],
   \ 'lua':['stylua'],
   \ 'sh':['shfmt'],
