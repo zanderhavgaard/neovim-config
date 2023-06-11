@@ -134,6 +134,14 @@ lazy.setup({
 		"mbbill/undotree",
 	},
 
+	-- easily rename using LSP
+	{
+		"smjonas/inc-rename.nvim",
+		config = function()
+			require("inc_rename").setup()
+		end,
+	},
+
 	-- ui pane for navigating diagnostics for all files in repo
 	{
 		"folke/trouble.nvim",
@@ -191,9 +199,11 @@ lazy.setup({
 	},
 
 	-- autoclose backets and other delimiters
-	-- TODO: lua
 	{
-		"Raimondi/delimitMate",
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
 	},
 
 	-- easily close all buffers not open in a window
