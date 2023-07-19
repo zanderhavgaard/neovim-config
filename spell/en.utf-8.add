@@ -103,3 +103,4 @@ wireguard
 traefik
 kubeconfig
 k3s
+cli
