@@ -1,4 +1,11 @@
 local vim = vim
+
+-- draw whitespace
+-- TODO: not shure I love this, trying it out ...
+vim.opt.list = true
+vim.opt.listchars:append("space:⋅")
+vim.opt.listchars:append("eol:↴")
+
 local function set_colorscheme(colorscheme)
 	vim.cmd.colorscheme(colorscheme)
 end

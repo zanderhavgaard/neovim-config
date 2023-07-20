@@ -1,6 +1,6 @@
 local lazy = require("lazy")
 
--- setup packages to be managed by packer
+-- setup packages to be managed by lazy
 lazy.setup({
 	-- sensible default settings
 	-- TODO:: rewrite to lua
@@ -100,7 +100,7 @@ lazy.setup({
 		end,
 	},
 
-	-- dashbaord inspired by startify
+	-- dashboard inspired by startify
 	{
 		"goolord/alpha-nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
