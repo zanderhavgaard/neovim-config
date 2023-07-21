@@ -1,13 +1,9 @@
 local vim = vim
 
-vim.opt.list = true
-vim.opt.listchars:append("space:⋅")
-vim.opt.listchars:append("eol:↴")
-
 -- settings for indent-blankline plugin
 require("indent_blankline").setup({
-	-- char = "▏",
-	-- first_char = "▏",
+	char = "▏",
+	first_char = "▏",
 	filetype_exclude = {
 		"help",
 		"terminal",
