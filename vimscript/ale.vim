@@ -31,6 +31,7 @@ let g:ale_fixers = {
   \ 'javascript': ['prettier'],
   \ 'html': ['prettier'],
   \ 'css': ['prettier'],
+  \ 'go': ['gofmt'],
   \}
 
 let g:ale_fix_on_save = 1
