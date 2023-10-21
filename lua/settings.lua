@@ -23,14 +23,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
--- TODO: this seems to catch other files than just .txt which is annoying ...
--- vim.api.nvim_create_autocmd("BufRead,BufNewFile", {
--- 	pattern = "*.txt",
--- 	callback = function()
--- 		vim.o.spell = true
--- 	end,
--- })
-
 -- more intuitive split directorion
 vim.o.splitbelow = true
 vim.o.splitright = true
@@ -44,33 +36,6 @@ vim.o.timeoutlen = 500
 
 -- autosave when switching buffers
 vim.o.autowrite = true
-
--- TODO: fix
--- save buffer when changing focus
--- vim.api.nvim_create_autocmd("FocusLost,BufLeave", {
--- 	pattern = "*",
--- 	callback = function()
--- 		if vim.bo.modified then
--- 			vim.cmd("silent! update")
--- 		end
--- 	end,
--- })
-
--- TODO: fix
--- trigger check if file was changed outside vim
--- when then cursor stops moving
--- vim.api.nvim_create_autocmd("CursorHold,CursorHoldI,FocusGained,BufEnter", {
--- 	pattern = "*",
--- 	callback = function()
--- 		if vim.bo.filetype ~= "lazy,dashboard" then
--- 			return
--- 		elseif vim.bo.name == "[No Name]" then
--- 			return
--- 		end
--- 		-- TODO is there a lua native way to do this?
--- 		vim.cmd("checktime")
--- 	end,
--- })
 
 -- automactically reload file if changed
 -- outside vim and there are no unsaved edits

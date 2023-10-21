@@ -276,6 +276,14 @@ lazy.setup({
 		enabled = false,
 	},
 
+	-- automatically save buffer on certain events
+	{
+		"pocco81/auto-save.nvim",
+		conffig = function()
+			require("auto-save").setup({})
+		end,
+	},
+
 	-- preview markdown files in browser
 	{
 		"toppair/peek.nvim",
