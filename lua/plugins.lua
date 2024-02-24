@@ -123,7 +123,6 @@ lazy.setup({
 	-- tree file browser
 	{
 		"nvim-tree/nvim-tree.lua",
-		tag = "nightly",
 		config = function()
 			require("plugin_config.nvim-tree")
 		end,
