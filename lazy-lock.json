@@ -31,7 +31,7 @@
   "nvim-ts-rainbow": { "branch": "master", "commit": "ef95c15a935f97c65a80e48e12fe72d49aacf9b9" },
   "nvim-web-devicons": { "branch": "master", "commit": "75df79feb02d5e0ec114e447453775d4d291ea03" },
   "onedarkpro.nvim": { "branch": "main", "commit": "0059f3f9b21daf3540f1108c2bab3fa9e9082331" },
-  "peek.nvim": { "branch": "master", "commit": "a22092aa146668913705f6ff7944f37b01ea6552" },
+  "peek.nvim": { "branch": "master", "commit": "112320b42785aa2445175049f80f46d199ed0244" },
   "plenary.nvim": { "branch": "master", "commit": "f7adfc4b3f4f91aab6caebf42b3682945fbc35be" },
   "popup.nvim": { "branch": "master", "commit": "b7404d35d5d3548a82149238289fa71f7f6de4ac" },
   "swap-buffers.nvim": { "branch": "master", "commit": "eedf0b11abfb004f9e4fccd11aab5155c36c7eb3" },
