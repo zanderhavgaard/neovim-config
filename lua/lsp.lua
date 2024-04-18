@@ -57,14 +57,15 @@ require("mason").setup()
 -- initialize lspconfig
 require("mason-lspconfig").setup({
 	ensure_installed = {
+		"bashls",
 		"lua_ls",
 		"pyright",
-		"terraformls",
-		"bashls",
-		"dockerls",
-		"yamlls",
 		"gopls",
 		"rust_analyzer",
+		"dockerls",
+		"yamlls",
+		"terraformls",
+		"helm_ls",
 	},
 })
 
