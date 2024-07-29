@@ -314,7 +314,7 @@ lazy.setup({
 
 	-- toggle cmp autocompletion
 	{
-		"gitaarik/nvim-cmp-toggle"
+		"gitaarik/nvim-cmp-toggle",
 	},
 
 	-- ===== colorschemes =====
