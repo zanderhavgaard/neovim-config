@@ -71,7 +71,7 @@ vim.o.showcmd = true
 vim.o.lazyredraw = true
 
 -- always center the current line in the buffer
-vim.o.scrolloff = 999
+-- vim.o.scrolloff = 999
 
 -- no linenumbers in terminal buffers
 -- TODO convert to lua
