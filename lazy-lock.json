@@ -26,7 +26,7 @@
   "nvim-bufferline.lua": { "branch": "main", "commit": "0b2fd861eee7595015b6561dade52fb060be10c4" },
   "nvim-cmp": { "branch": "main", "commit": "ae644feb7b67bf1ce4260c231d1d4300b19c6f30" },
   "nvim-cmp-toggle": { "branch": "main", "commit": "b3bbf76cf6412738b7c9e48e1419f7bb78e71f99" },
-  "nvim-lspconfig": { "branch": "master", "commit": "efbfce341c9f546ca2a155a9316886fc1b80eace" },
+  "nvim-lspconfig": { "branch": "master", "commit": "dd329912c8d446240584a2dbcd3802af3a19105a" },
   "nvim-tree.lua": { "branch": "master", "commit": "8405ecfbd6bb08a94ffc9c68fef211eea56e8a3b" },
   "nvim-treesitter": { "branch": "master", "commit": "621f5901f0b3e762cc4c5ed0f9246cf1495193ad" },
   "nvim-ts-rainbow": { "branch": "master", "commit": "ef95c15a935f97c65a80e48e12fe72d49aacf9b9" },
