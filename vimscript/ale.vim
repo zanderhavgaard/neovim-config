@@ -22,7 +22,6 @@ let g:ale_fixers = {
   \ '*':['remove_trailing_lines', 'trim_whitespace'],
   \ 'python':['black'],
   \ 'python3':['black'],
-  \ 'terraform':['terraform'],
   \ 'lua':['stylua'],
   \ 'sh':['shfmt'],
   \ 'yaml':['prettier'],
